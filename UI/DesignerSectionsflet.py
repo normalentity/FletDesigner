@@ -2,6 +2,8 @@ import flet as ft
 
 from Parser1.Parserengine import *
 
+from UI.ToolbarItem import ToolbarItem
+
 import sys
 
 
@@ -16,12 +18,14 @@ class DesignerSection(ft.UserControl):
         super().__init__()
 
     def accept_draggable(self, e: ft.DragTargetAcceptEvent):
-        src = e.data
+        src = e.src_id
 
-        id = src[1:14][10:]
+        print(src)
 
-        if id == "_33":
-            print("verified")
+        # id = src[1:14][10:]
+
+        # if id == "_33":
+        #     print("verified")
 
     def build(self):
         self.DesignerSection1 = ft.DragTarget(
