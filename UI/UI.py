@@ -12,17 +12,17 @@ def main(page: ft.Page):
     page.go("/welcome")
 
     def routechange(e: ft.RouteChangeEvent):
-        if page.route == "/welcome":
-            page.views.clear()
-            index = __view__()
-            page.views.append(index.build())
-            page.update()
-            sleep(1)
-            index.randomize("None")
-            sleep(1)
-            index.assemble("None")
-            sleep(2.5)
-            page.go(route="/design")
+        # if page.route == "/welcome":
+        #     page.views.clear()
+        #     index = __view__()
+        #     page.views.append(index.build())
+        #     page.update()
+        #     sleep(1)
+        #     index.randomize("None")
+        #     sleep(1)
+        #     index.assemble("None")
+        #     sleep(2.5)
+        page.go(route="/design")
         if page.route == "/design":
             design_page = DesignPage()
             page.views.clear()

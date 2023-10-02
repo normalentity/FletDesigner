@@ -1,5 +1,13 @@
 import flet as ft
 
+from Parser1.Parserengine import *
+
+import sys
+
+
+# Parser()
+
+
 # ft.Draggable()
 
 
@@ -8,18 +16,12 @@ class DesignerSection(ft.UserControl):
         super().__init__()
 
     def accept_draggable(self, e: ft.DragTargetAcceptEvent):
-        src = self._get_control_name()
-        e.control.content.controls = [
-            ft.Container(
-                bgcolor=ft.colors.BLUE_700,
-                width=50,
-                height=50,
-                border=ft.border.all(3, color=ft.colors.CYAN_300),
-                border_radius=ft.border_radius.all(10),
-                margin=ft.margin.only(left=100, top=25),
-            )
-        ]
-        e.control.update()
+        src = e.data
+
+        id = src[1:14][10:]
+
+        if id == "_33":
+            print("verified")
 
     def build(self):
         self.DesignerSection1 = ft.DragTarget(
@@ -29,12 +31,12 @@ class DesignerSection(ft.UserControl):
                 width=1200,
                 height=1000,
                 controls=[
-                    # ft.Container(
-                    #     border=ft.border.all(3, color=ft.colors.CYAN_300),
-                    #     border_radius=ft.border_radius.all(10),
-                    #     bgcolor=ft.colors.BLACK12,
-                    #     margin=ft.margin.only(left=100, top=25),
-                    # ),
+                    ft.Container(
+                        border=ft.border.all(width=3, color=ft.colors.WHITE12),
+                        border_radius=ft.border_radius.all(10),
+                        bgcolor=ft.colors.BLACK12,
+                        margin=ft.margin.only(left=100, top=25),
+                    ),
                 ],
             ),
         )
