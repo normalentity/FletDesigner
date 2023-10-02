@@ -14,7 +14,7 @@ class ToolbarItem(ft.UserControl):
             animate=200,
             alignment=ft.alignment.center,
             content=ft.Text(
-                self.text,
+                value=self.text,
                 size=16,
                 style=ft.TextStyle(weight=ft.FontWeight.W_900, font_family="Helvetica"),
                 text_align=ft.TextAlign.JUSTIFY,
