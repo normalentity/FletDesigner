@@ -1,0 +1,58 @@
+{
+    "sourceFile": "UI/UI.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 10,
+            "patches": [
+                {
+                    "date": 1695929434911,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1695929587530,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,6 @@\n-import flet as ft\n\\ No newline at end of file\n+import flet as ft\n+\n+\n+def main(page:ft.Page):\n+    page.window_height=1000\n+    page.window_height=1000\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1695929948926,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,20 @@\n import flet as ft\n \n \n+class DisplayNavbar(ft.UserControl):\n+    def __init__(self):\n+        super().__init__()\n\\ No newline at end of file\n+\n+\n+\n+\n+\n+\n def main(page:ft.Page):\n     page.window_height=1000\n-    page.window_height=1000\n+    page.window_height=1000\n+    \n+    \n+    \n+\n+ft.app(main)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1695930833518,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,11 @@\n \n class DisplayNavbar(ft.UserControl):\n     def __init__(self):\n         super().__init__()\n+        \n+    def build(self):\n+        self.navbar=\n \n \n \n \n"
+                },
+                {
+                    "date": 1695931659503,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     def __init__(self):\n         super().__init__()\n         \n     def build(self):\n-        self.navbar=\n+        self.navbar=ft.Container()\n \n \n \n \n"
+                },
+                {
+                    "date": 1695931676496,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     def __init__(self):\n         super().__init__()\n         \n     def build(self):\n-        self.navbar=ft.Container()\n+        self.navbar=ft.Container(width=1000,height=1000)\n \n \n \n \n"
+                },
+                {
+                    "date": 1695990039594,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import flet as ft\n \n \n+\n class DisplayNavbar(ft.UserControl):\n     def __init__(self):\n         super().__init__()\n         \n"
+                },
+                {
+                    "date": 1695990093363,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,9 @@\n         super().__init__()\n         \n     def build(self):\n         self.navbar=ft.Container(width=1000,height=1000)\n+        return \n \n \n \n \n"
+                },
+                {
+                    "date": 1696007000091,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,8 @@\n         super().__init__()\n         \n     def build(self):\n         self.navbar=ft.Container(width=1000,height=1000)\n-        return \n \n \n \n \n"
+                },
+                {
+                    "date": 1696018029462,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,7 +11,8 @@\n \n def main(page: ft.Page):\n     page.window_height = 1000\n     page.window_height = 1000\n+    \n \n \n ft.app(main)\n"
+                },
+                {
+                    "date": 1696018066023,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,7 +11,7 @@\n \n def main(page: ft.Page):\n     page.window_height = 1000\n     page.window_height = 1000\n+    page.go(\"/welcome\")\n \n-\n ft.app(main)\n"
+                }
+            ],
+            "date": 1695929434911,
+            "name": "Commit-0",
+            "content": "import flet as ft"
+        }
+    ]
+}

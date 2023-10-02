@@ -1,0 +1,34 @@
+{
+    "sourceFile": "UI/PreviewSection.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1696081165558,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1696081181255,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import flet as ft\n \n \n-class DesignPage(ft.View):\n+class DesignPage(ft.canvas.Canvas):\n     def __init__(self):\n         super().__init__()\n"
+                },
+                {
+                    "date": 1696081726913,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,11 @@\n import flet as ft\n \n \n-class DesignPage(ft.canvas.Canvas):\n+class DesignPage(ft.Stack):\n     def __init__(self):\n         super().__init__()\n+    \n+    \n+    def build(self):\n+        self.PreviewSection=ft.Container()\n+        \n"
+                },
+                {
+                    "date": 1696081765751,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,5 +5,5 @@\n     def __init__(self):\n         super().__init__()\n \n     def build(self):\n-        self.PreviewSection = ft.Container()\n+        self.PreviewSection = ft.Container(width=200)\n"
+                },
+                {
+                    "date": 1696081781164,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,5 +5,5 @@\n     def __init__(self):\n         super().__init__()\n \n     def build(self):\n-        self.PreviewSection = ft.Container(width=200)\n+        self.PreviewSection = ft.Container(width=800,height=800)\n"
+                }
+            ],
+            "date": 1696081165558,
+            "name": "Commit-0",
+            "content": "import flet as ft\n\n\nclass DesignPage(ft.View):\n    def __init__(self):\n        super().__init__()\n"
+        }
+    ]
+}

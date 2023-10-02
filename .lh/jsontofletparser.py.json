@@ -1,0 +1,42 @@
+{
+    "sourceFile": "jsontofletparser.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1695833764858,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1695833831339,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n \n class Parser:\n     def __init__(self, jsonfilepath):\n-        \n+        pass\n \n     def parse(self):\n         for item in self.json:\n             for key, val in item.items():\n"
+                },
+                {
+                    "date": 1695833971481,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,8 @@\n \n \n class Parser:\n     def __init__(self, jsonfilepath):\n-        pass\n \n     def parse(self):\n         for item in self.json:\n             for key, val in item.items():\n"
+                },
+                {
+                    "date": 1695834041777,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import json\n \n \n class Parser:\n-    def __init__(self, jsonfilepath):\n+    def __init__(self, jsonfilepath,):\n \n     def parse(self):\n         for item in self.json:\n             for key, val in item.items():\n"
+                },
+                {
+                    "date": 1695834595971,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,10 @@\n \n \n class Parser:\n     def __init__(self, jsonfilepath,):\n+        with open(jsonfilepath) as f:\n+            self.json = json.load(f)\n \n     def parse(self):\n         for item in self.json:\n             for key, val in item.items():\n"
+                },
+                {
+                    "date": 1695834860264,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n     ):\n         with open(jsonfilepath) as f:\n             self.json = json.load(f)\n \n-    def parse(self):\n+    def parse(self,page):\n         for item in self.json:\n             for key, val in item.items():\n                 if key == \"Container\":\n                     self.c1 = Container()\n"
+                },
+                {
+                    "date": 1695834874172,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n     ):\n         with open(jsonfilepath) as f:\n             self.json = json.load(f)\n \n-    def parse(self, page):\n+    def parse(self):\n         for item in self.json:\n             for key, val in item.items():\n                 if key == \"Container\":\n                     self.c1 = Container()\n"
+                }
+            ],
+            "date": 1695833764858,
+            "name": "Commit-0",
+            "content": "from flet import *\nimport json\n\n\nclass Parser:\n    def __init__(self, jsonfilepath):\n        \n\n    def parse(self):\n        for item in self.json:\n            for key, val in item.items():\n                if key == \"Container\":\n                    self.c1 = Container()\n                    # Update the properties of self.c1\n                    self.c1.width = val[\"width\"]\n                    self.c1.height = val[\"height\"]\n                    self.c1.bgcolor = val[\"bgcolor\"]\n                    self.page.add(self.c1)\n                if key == \"IconButton\":\n                    self.btn = self.c1.content = TextButton()\n                    # Update the properties of self.c1\n                    self.btn.width = val[\"width\"]\n                    self.btn.height = val[\"height\"]\n                    # self.btn.bgcolor = val[\"bgcolor\"]\n                    self.btn.icon = icons.COFFEE\n                    self.btn.text = \"icon\"\n                    self.page.add(self.btn)\n"
+        }
+    ]
+}

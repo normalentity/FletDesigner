@@ -1,0 +1,30 @@
+{
+    "sourceFile": "LoadObj.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1695834538080,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1695834602300,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,10 +4,9 @@\n \n \n class LoadDesignFile:\n     def __init__(self, jsonfilepath):\n-        with open(jsonfilepath) as f:\n-            self.json = json.load(f)\n+        \n         self.parse_json()\n \n     def parse_json(self):\n         Parser()\n"
+                },
+                {
+                    "date": 1695834638399,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,8 @@\n \n \n class LoadDesignFile:\n     def __init__(self, jsonfilepath):\n-        self.parse_json()\n \n     def parse_json(self):\n         Parser()\n \n"
+                },
+                {
+                    "date": 1695834710573,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,10 @@\n from jsontofletparser import *\n \n \n class LoadDesignFile:\n-    def __init__(self, jsonfilepath):\n+    def __init__(self):\n+        pass\n \n     def parse_json(self):\n         Parser()\n \n"
+                }
+            ],
+            "date": 1695834538080,
+            "name": "Commit-0",
+            "content": "import json\nfrom flet import *\nfrom jsontofletparser import *\n\n\nclass LoadDesignFile:\n    def __init__(self, jsonfilepath):\n        with open(jsonfilepath) as f:\n            self.json = json.load(f)\n        self.parse_json()\n\n    def parse_json(self):\n        Parser()\n\n    def run(self):\n        app(target=self.MainPage)\n\n    def MainPage(self, page: Page):\n        self.page = page\n        self.page.window_height = 800\n        self.page.window_width = 800\n"
+        }
+    ]
+}

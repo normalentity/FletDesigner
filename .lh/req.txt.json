@@ -1,0 +1,18 @@
+{
+    "sourceFile": "req.txt",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1695755902865,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1695755902865,
+            "name": "Commit-0",
+            "content": ":mag: Hi Guys, I am looking for an experienced Python Developer who has Knowledge about this one framework:\n**The Createria**\n**Should be familiar with The Flet framework**\n**About the Framework**\n**It's called Flet it's extremely convenient to develop rich-looking Google Material Design Based on Flutter in Python**\n**So you can easily achieve good looks**\n\n**So if you are eligible for the mentioned criteria then pls DM me**\n\n**Happy Coding**"
+        }
+    ]
+}

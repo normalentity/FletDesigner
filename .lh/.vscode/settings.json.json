@@ -1,0 +1,22 @@
+{
+    "sourceFile": ".vscode/settings.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1696055518446,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1696055535708,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,6 +2,6 @@\n     \"[python]\": {\n         \"editor.defaultFormatter\": \"ms-python.black-formatter\"\n     },\n     \"python.formatting.provider\": \"none\",\n-    \"python.analysis.typeCheckingMode\": \"basic\"\n+    \"python.analysis.typeCheckingMode\": \"off\"\n }\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1696055518446,
+            "name": "Commit-0",
+            "content": "{\n    \"[python]\": {\n        \"editor.defaultFormatter\": \"ms-python.black-formatter\"\n    },\n    \"python.formatting.provider\": \"none\",\n    \"python.analysis.typeCheckingMode\": \"basic\"\n}"
+        }
+    ]
+}

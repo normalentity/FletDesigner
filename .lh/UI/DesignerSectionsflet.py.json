@@ -1,0 +1,18 @@
+{
+    "sourceFile": "UI/DesignerSectionsflet.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1696187563641,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1696187563641,
+            "name": "Commit-0",
+            "content": "import flet as ft\n\n# ft.Draggable()\n\n\nclass DesignerSection(ft.UserControl):\n    def __init__(self):\n        super().__init__()\n\n    def build(self):\n        self.DesignerSection1 = ft.DragTarget(\n            group=\"widget\",\n            content=ft.Container(\n                width=1200,\n                height=1000,\n                border=ft.border.all(3, color=ft.colors.CYAN_300),\n                border_radius=ft.border_radius.all(10),\n                bgcolor=ft.colors.BLACK12,\n                margin=ft.margin.only(left=100, top=25),\n            ),\n        )\n\n        return self.DesignerSection1\n"
+        }
+    ]
+}

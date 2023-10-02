@@ -1,0 +1,30 @@
+{
+    "sourceFile": "Parserengine.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1695843506916,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1695843531900,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import json\n \n \n class Parser:\n-    def __init__(self, jsonfilepath, page):\n+    def __init__(self, jsonfilepath, page,button):\n         self.page = page\n         with open(jsonfilepath) as f:\n             self.json = json.load(f)\n         self.parse()\n"
+                },
+                {
+                    "date": 1695843562636,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import json\n \n \n class Parser:\n-    def __init__(self, jsonfilepath, page, button):\n+    def __init__(self, jsonfilepath: str, page:, button):\n         self.page = page\n         with open(jsonfilepath) as f:\n             self.json = json.load(f)\n         self.parse()\n"
+                },
+                {
+                    "date": 1695844156329,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n         self.page = page\n         with open(jsonfilepath) as f:\n             self.json = json.load(f)\n         self.parse()\n-        self.button = None\n+        self.button = TextButton\n \n     def parse(self):\n         for item in self.json:\n             for key, val in item.items():\n"
+                }
+            ],
+            "date": 1695843506916,
+            "name": "Commit-0",
+            "content": "from flet import *\nimport json\n\n\nclass Parser:\n    def __init__(self, jsonfilepath, page):\n        self.page = page\n        with open(jsonfilepath) as f:\n            self.json = json.load(f)\n        self.parse()\n        self.button = None\n\n    def parse(self):\n        for item in self.json:\n            for key, val in item.items():\n                if key == \"Container\":\n                    self.c1 = Container()\n                    # Update the properties of self.c1\n                    self.c1.width = val[\"width\"]\n                    self.c1.height = val[\"height\"]\n                    self.c1.bgcolor = val[\"bgcolor\"]\n                    self.page.add(self.c1)\n                if key == \"IconButton\":\n                    self.button = self.c1.content = TextButton()\n                    # Update the properties of self.c1\n                    self.button.width = val[\"width\"]\n                    self.button.height = val[\"height\"]\n                    # self.button.bgcolor = val[\"bgcolor\"]\n                    self.button.icon = icons.COFFEE\n                    self.button.text = \"icon\"\n                    self.page.add(self.button)\n"
+        }
+    ]
+}

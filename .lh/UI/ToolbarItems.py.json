@@ -1,0 +1,42 @@
+{
+    "sourceFile": "UI/ToolbarItems.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1696176285359,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1696176305192,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,5 @@\n import flet as ft\n \n-class ToolbarItems(ft.UserControl):\n\\ No newline at end of file\n+class ToolbarItems(ft.UserControl):\n+    def __init__(self):\n+        super().__init__()\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1696176310750,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,4 +3,5 @@\n \n class ToolbarItems(ft.UserControl):\n     def __init__(self):\n         super().__init__()\n+    def bui()\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1696176324173,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,5 +3,6 @@\n \n class ToolbarItems(ft.UserControl):\n     def __init__(self):\n         super().__init__()\n-    def bui()\n\\ No newline at end of file\n+    def build(self):\n+        \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1696176339168,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,5 +4,5 @@\n class ToolbarItems(ft.UserControl):\n     def __init__(self):\n         super().__init__()\n     def build(self):\n-        \n\\ No newline at end of file\n+        self.toolbaritems\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1696176346310,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,5 +5,5 @@\n     def __init__(self):\n         super().__init__()\n \n     def build(self):\n-        self.toolbaritems\n+        self.toolbaritems=\n"
+                },
+                {
+                    "date": 1696176370610,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,5 +5,22 @@\n     def __init__(self):\n         super().__init__()\n \n     def build(self):\n-        self.toolbaritems=\n+        self.toolbaritems=ft.Container(\n+                        bgcolor=ft.colors.GREY_700,\n+                        height=40,\n+                        # border=ft.border.all(2, ft.colors.TEAL_200),\n+                        border_radius=8,\n+                        clip_behavior=ft.ClipBehavior.HARD_EDGE,\n+                        padding=ft.padding.all(10),\n+                        animate=200,\n+                        alignment=ft.alignment.center,\n+                        content=ft.Text(\n+                            \"Container\",\n+                            size=16,\n+                            style=ft.TextStyle(\n+                                weight=ft.FontWeight.W_900, font_family=\"Helvetica\"\n+                            ),\n+                            text_align=ft.TextAlign.JUSTIFY,\n+                        ),\n+                    )\n"
+                }
+            ],
+            "date": 1696176285359,
+            "name": "Commit-0",
+            "content": "import flet as ft\n\nclass ToolbarItems(ft.UserControl):"
+        }
+    ]
+}

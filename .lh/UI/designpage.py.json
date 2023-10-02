@@ -1,0 +1,54 @@
+{
+    "sourceFile": "UI/designpage.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 9,
+            "patches": [
+                {
+                    "date": 1696073094139,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1696073106766,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,4 @@\n import flet as ft\n+\n+\n+class()\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1696073127676,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n import flet as ft\n \n \n-class()\n\\ No newline at end of file\n+class DesignPage(ft.UserControl):\n+    \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1696073159877,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,7 @@\n import flet as ft\n \n \n class DesignPage(ft.UserControl):\n+    def __init__(self):\n+        return super().__init__()\n     \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1696073165752,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,5 +2,5 @@\n \n \n class DesignPage(ft.UserControl):\n     def __init__(self):\n-        return super().__init__()\n+        super().__init__()\n"
+                },
+                {
+                    "date": 1696073197731,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n import flet as ft\n \n \n-class DesignPage(ft.UserControl):\n+class DesignPage(ft.View):\n     def __init__(self):\n         super().__init__()\n+        \n+    def bui\n"
+                },
+                {
+                    "date": 1696073217151,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,5 +4,5 @@\n class DesignPage(ft.View):\n     def __init__(self):\n         super().__init__()\n         \n-    def bui\n+    def build(self):\n"
+                },
+                {
+                    "date": 1696073262987,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,4 +5,5 @@\n     def __init__(self):\n         super().__init__()\n         \n     def build(self):\n+        self.route\n"
+                },
+                {
+                    "date": 1696073282501,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,5 +5,5 @@\n     def __init__(self):\n         super().__init__()\n \n     def build(self):\n-        self.route\n+        self.route=\"/design\"\n"
+                },
+                {
+                    "date": 1696073353994,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,4 +6,5 @@\n         super().__init__()\n \n     def build(self):\n         self.route = \"/design\"\n+        self.bgcolor=ft.colors.BLACK\n"
+                }
+            ],
+            "date": 1696073094139,
+            "name": "Commit-0",
+            "content": "import flet as ft\n\n\n"
+        }
+    ]
+}
