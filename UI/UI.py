@@ -27,7 +27,7 @@ def main(page: ft.Page):
             design_page = DesignPage()
             page.views.clear()
             page.update()
-            page.window_full_screen = True
+            # page.window_full_screen = True
             sleep(0.3)
             page.views.append(design_page.build())
             page.update()
