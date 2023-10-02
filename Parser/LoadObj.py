@@ -1,6 +1,6 @@
 import json
 import flet as ft
-from Parser1.Parserengine import Parser
+from Parser.Parserengine import Parser
 import typing
 
 
