@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 18,
+            "activePatchIndex": 19,
             "patches": [
                 {
                     "date": 1695926737329,
@@ -80,6 +80,10 @@
                 {
                     "date": 1696163599250,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n \n                 if val[\"type\"] == \"IconButton\":\n                     try:\n                         self.keys[f\"{key}\"] = self.keys[f\"c1\"].content = ft.TextButton()\n-                        assert isinstance(self.keys[f\"{key}\"], ft.TextButton.)\n+                        assert isinstance(self.keys[f\"{key}\"], ft.TextButton)\n                         # Update the properties of self.c1\n                         self.keys[f\"{key}\"].width = val[\"width\"]\n                         self.keys[f\"{key}\"].height = val[\"height\"]\n                         # self.button.bgcolor = val[\"bgcolor\"]\n"
+                },
+                {
+                    "date": 1696276857113,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,6 +38,6 @@\n                         self.keys[f\"{key}\"].opacity = val[\"opacity\"]\n                         self.keys[f\"{key}\"].expand = False\n                     except AttributeError:\n                         print(\"There is no widged named such \")\n-    def AddWidget(self, Control):\n-        raise NotImplemented\n\\ No newline at end of file\n+    # def AddWidget(self, Control):\n+    #     raise NotImplemented\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1695926737329,

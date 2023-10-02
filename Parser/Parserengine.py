@@ -39,5 +39,6 @@ class Parser:
                         self.keys[f"{key}"].expand = False
                     except AttributeError:
                         print("There is no widged named such ")
-    def AddWidget(self, Control):
-        raise NotImplemented
+
+    # def AddWidget(self, Control):
+    #     raise NotImplemented

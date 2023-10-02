@@ -1,5 +1,8 @@
 import flet as ft
 from Parser.Parserengine import Parser
+
+from UI.ToolbarItem import ToolbarItem
+
 # ft.Draggable()
 
 
@@ -9,7 +12,9 @@ class DesignerSection(ft.UserControl):
         super().__init__()
 
     def accept_draggable(self, e: ft.DragTargetAcceptEvent):
-        self.parser.AddWidget()
+        # self.parser.AddWidget()
+        getcrlname = ToolbarItem().container.content.value
+        print(getcrlname)
 
     def build(self):
         self.DesignerSection1 = ft.DragTarget(
@@ -25,7 +30,7 @@ class DesignerSection(ft.UserControl):
                     #     bgcolor=ft.colors.BLACK12,
                     #     margin=ft.margin.only(left=100, top=25),
                     # ),
-                ]
+                ],
             ),
         )
 
