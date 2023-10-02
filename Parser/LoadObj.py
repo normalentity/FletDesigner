@@ -14,10 +14,6 @@ class LoadDesignFile:
         self.__parser.parse()
         self.__keys = self.__parser.keys
 
-    @typing.overload
-    def __getattr__(self, name: str) -> ft.TextButton:
-        return self.__getattr__()
-
     def __getattr__(self, name: str):
         try:
             return self.__keys[f"{name}"]

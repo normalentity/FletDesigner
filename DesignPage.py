@@ -1,8 +1,8 @@
 import flet as ft
-from DesignerSectionsflet import DesignerSection
-from Toolbar import Toolbar
-from ToolbarItem import ToolbarItem
-from ToolbarItems import ToolbarItems
+from Designer import DesignerSection
+from UI.Toolbar import Toolbar
+from UI.ToolbarItem import ToolbarItem
+from UI.ToolbarItems import ToolbarItems
 
 
 class DesignPage(ft.View):

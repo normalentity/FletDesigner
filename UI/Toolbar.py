@@ -1,6 +1,5 @@
 import flet as ft
-from ToolbarItems import ToolbarItems
-
+from UI.ToolbarItems import ToolbarItems
 
 class Toolbar(ft.UserControl):
     def __init__(self, ToolbarItems: ToolbarItems):

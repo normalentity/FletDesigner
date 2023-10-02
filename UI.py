@@ -1,14 +1,13 @@
 import flet as ft
 from time import sleep
 
-from animationpage import __view__
-from designpage import DesignPage
+from UI.animationpage import __view__
+from DesignPage import DesignPage
 
 
 def main(page: ft.Page):
     page.window_height = 800
     page.window_height = 800
-    # page.views.append(index)
     page.go("/welcome")
 
     def routechange(e: ft.RouteChangeEvent):

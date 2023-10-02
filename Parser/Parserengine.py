@@ -3,13 +3,11 @@ import json
 
 
 class Parser:
-    def __init__(self, jsonfilepath: str):
-        with open(jsonfilepath) as f:
-            self.json = json.load(f)
+    def __init__(self, jsonfilepath=None):
+        if jsonfilepath:
+            with open(jsonfilepath) as f:
+                self.json = json.load(f)
         self.keys = {}
-        # self.parse()
-        # self.button = self.button
-        # self.button = button
 
     def parse(self):
         for item in self.json:
@@ -41,3 +39,5 @@ class Parser:
                         self.keys[f"{key}"].expand = False
                     except AttributeError:
                         print("There is no widged named such ")
+    def AddWidget(self, Control):
+        raise NotImplemented
