@@ -18,12 +18,11 @@ class DesignerSection(ft.UserControl):
         super().__init__()
 
     def accept_draggable(self, e: ft.DragTargetAcceptEvent):
-        src = e.src_id
-
-        print(src)
-
+        pass
+        # src = e.src_id
+        getctrlname = ToolbarItem().container.content.value
+        print(getctrlname)
         # id = src[1:14][10:]
-
         # if id == "_33":
         #     print("verified")
 
