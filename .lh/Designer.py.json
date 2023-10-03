@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 2,
+            "activePatchIndex": 3,
             "patches": [
                 {
                     "date": 1696276980364,
@@ -16,6 +16,10 @@
                 {
                     "date": 1696277033225,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,9 @@\n \n     def accept_draggable(self, e: ft.DragTargetAcceptEvent):\n         # self.parser.AddWidget()\n         getcrlname = ToolbarItem().container.content.value\n+        print(getcrlname)\n \n     def build(self):\n         self.DesignerSection1 = ft.DragTarget(\n             group=\"widget\",\n"
+                },
+                {
+                    "date": 1696277189221,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n         super().__init__()\n \n     def accept_draggable(self, e: ft.DragTargetAcceptEvent):\n         # self.parser.AddWidget()\n-        getcrlname = ToolbarItem().container.content.value\n+        getcrlname = e.control\n         print(getcrlname)\n \n     def build(self):\n         self.DesignerSection1 = ft.DragTarget(\n"
                 }
             ],
             "date": 1696276980364,

@@ -5,6 +5,7 @@ class ToolbarItem(ft.UserControl):
     def __init__(self, text):
         self.text = text
         self.selected = False
+        # print(self.container.width)
         self.container = ft.Container(
             bgcolor=ft.colors.GREY_700,
             height=40,
@@ -29,6 +30,7 @@ class ToolbarItem(ft.UserControl):
                 width=20,
                 height=20,
                 content=ft.Icon(name=ft.icons.ADD, color=ft.colors.BLUE_300),
+                margin=ft.margin.only(left=140),
             ),
             content=self.container,
         )
