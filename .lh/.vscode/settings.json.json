@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 6,
             "patches": [
                 {
                     "date": 1696055518446,
@@ -12,6 +12,26 @@
                 {
                     "date": 1696055535708,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,6 +2,6 @@\n     \"[python]\": {\n         \"editor.defaultFormatter\": \"ms-python.black-formatter\"\n     },\n     \"python.formatting.provider\": \"none\",\n-    \"python.analysis.typeCheckingMode\": \"basic\"\n+    \"python.analysis.typeCheckingMode\": \"off\"\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1697715938644,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,6 +2,7 @@\n     \"[python]\": {\n         \"editor.defaultFormatter\": \"ms-python.black-formatter\"\n     },\n     \"python.formatting.provider\": \"none\",\n-    \"python.analysis.typeCheckingMode\": \"off\"\n+    \"python.analysis.typeCheckingMode\": \"off\",\n+    \"mojo.modularHomePath\": \"/\"\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1697715954695,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,6 +3,6 @@\n         \"editor.defaultFormatter\": \"ms-python.black-formatter\"\n     },\n     \"python.formatting.provider\": \"none\",\n     \"python.analysis.typeCheckingMode\": \"off\",\n-    \"mojo.modularHomePath\": \"/\"\n+    \"mojo.modularHomePath\": \"/Users/\"\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1697715963923,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,6 +3,6 @@\n         \"editor.defaultFormatter\": \"ms-python.black-formatter\"\n     },\n     \"python.formatting.provider\": \"none\",\n     \"python.analysis.typeCheckingMode\": \"off\",\n-    \"mojo.modularHomePath\": \"/Users/\"\n+    \"mojo.modularHomePath\": \"\"\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1697715970895,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,6 +3,6 @@\n         \"editor.defaultFormatter\": \"ms-python.black-formatter\"\n     },\n     \"python.formatting.provider\": \"none\",\n     \"python.analysis.typeCheckingMode\": \"off\",\n-    \"mojo.modularHomePath\": \"\"\n+    \"mojo.modularHomePath\": \"/\"\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1697715977927,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,6 +3,6 @@\n         \"editor.defaultFormatter\": \"ms-python.black-formatter\"\n     },\n     \"python.formatting.provider\": \"none\",\n     \"python.analysis.typeCheckingMode\": \"off\",\n-    \"mojo.modularHomePath\": \"/\"\n+    \"mojo.modularHomePath\": \"/Users/nafayahmed\"\n }\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1696055518446,

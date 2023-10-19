@@ -1,6 +1,7 @@
 import flet as ft
 from time import sleep
 
+
 from UI.animationpage import __view__
 from DesignPage import DesignPage
 

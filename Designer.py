@@ -12,20 +12,29 @@ class DesignerSection(ft.UserControl):
         self.parser = Parser()
         super().__init__()
 
+    def on_pan_update1(self, e: ft.DragUpdateEvent):
+        e.control.left = max(0, (e.control.left or 0) + e.delta_x)
+        e.control.top = max(0, (e.control.top or 0) + e.delta_y)
+        e.control.width = max(50, (e.control.width or 0) + e.delta_x)
+        e.control.height = max(50, (e.control.height or 0) + e.delta_y)
+        e.control.update()
+
     def accept_draggable(self, e: ft.DragTargetAcceptEvent):
-        # self.parser.AddWidget()
-        getcrlname = e.control
         ctrlname = e.page.get_control(e.src_id)
         name = ctrlname.content.content.value
-
-        # cont = ft.Container(bgcolor=ft.colors.BLUE_900, width=200, height=200)
-
+        self.container = e.control.content.controls
         object = globals()[name]
         object = object(bgcolor=ft.colors.BLUE_900, width=100, height=200)
-        e.control.content.controls[0].content = ft.Container(content=[object])
+        self.container.append(
+            ft.GestureDetector(
+                on_pan_update=self.on_pan_update1,
+                left=max(0, 100),  # Ensure initial left is not less than 0
+                top=50,
+                content=object,
+            )
+        )
 
         e.control.update()
-        # print(ctrlname.content.height)
 
     def build(self):
         self.DesignerSection1 = ft.DragTarget(
@@ -38,7 +47,7 @@ class DesignerSection(ft.UserControl):
                         border_radius=ft.border_radius.all(10),
                         bgcolor=ft.colors.BLACK12,
                         margin=ft.margin.only(left=100, top=25),
-                        width=1200,
+                        width=1000,
                         height=1000,
                         # alignment=ft.alignment.center,
                     ),

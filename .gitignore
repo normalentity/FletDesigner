@@ -1,3 +1,7 @@
 __pycache__/
 .pyc
 **/__pycache__/
+.DS_Store
+fire.mojo.json
+settings.json
+settings.json.json
