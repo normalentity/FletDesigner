@@ -14,7 +14,6 @@ class Parser:
             for key, val in item.items():
                 if val["type"] == "Container":
                     self.keys[f"{key}"] = ft.Container()
-                    assert isinstance(self.keys[f"{key}"], ft.Container)
                     # Update the properties of self.c1
                     self.keys[f"{key}"].width = val["width"]
                     self.keys[f"{key}"].height = val["height"]
@@ -26,19 +25,22 @@ class Parser:
                     self.keys[f"{key}"].expand = False
 
                 if val["type"] == "IconButton":
+                    self.keys[f"c1"].content = ft.Row()
                     try:
-                        self.keys[f"{key}"] = self.keys[f"c1"].content = ft.TextButton()
-                        assert isinstance(self.keys[f"{key}"], ft.TextButton)
+                        self.keys[f"{key}"] = self.keys[f"c1"].content.controls.append(
+                            ft.TextButton()
+                        )
+                        print(self.keys[f"c1"].content)
                         # Update the properties of self.c1
                         self.keys[f"{key}"].width = val["width"]
                         self.keys[f"{key}"].height = val["height"]
-                        # self.button.bgcolor = val["bgcolor"]
+                        # self.button.bgcolcolor"]
                         self.keys[f"{key}"].icon = ft.icons.COFFEE
-                        self.keys[f"{key}"].text = "icon"
+                        self.keys[f"{key}"].text = val["text"]
                         self.keys[f"{key}"].opacity = val["opacity"]
                         self.keys[f"{key}"].expand = False
-                    except AttributeError:
-                        print("There is no widged named such ")
+                    except Exception as e:
+                        print(e)
 
     # def AddWidget(self, Control):
-    #     raise NotImplemented
+    #     pass

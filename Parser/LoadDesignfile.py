@@ -21,7 +21,9 @@ class LoadDesignFile:
             print(f"There is no widget named '{name}")
 
     def __setattr__(self, name, value):
+        # print(name[0:17])
         if name[0:17] == "_LoadDesignFile__":
+            # print("hi")
             super().__setattr__(name, value)
         else:
             self.__keys[f"{name}"] = value

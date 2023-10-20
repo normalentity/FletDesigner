@@ -13,8 +13,8 @@ class DesignerSection(ft.UserControl):
         super().__init__()
 
     def on_pan_update1(self, e: ft.DragUpdateEvent):
-        e.control.left = max(0, (e.control.left or 0) + e.delta_x)
-        e.control.top = max(0, (e.control.top or 0) + e.delta_y)
+        # e.control.left = max(0, (e.control.left or 0) + e.delta_x)
+        # e.control.top = max(0, (e.control.top or 0) + e.delta_y)
         e.control.width = max(50, (e.control.width or 0) + e.delta_x)
         e.control.height = max(50, (e.control.height or 0) + e.delta_y)
         e.control.update()

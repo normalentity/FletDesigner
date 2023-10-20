@@ -1,0 +1,30 @@
+{
+    "sourceFile": "Parser/LoadDesignfile.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1697788462329,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1697788539960,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n         except Exception as e:\n             print(f\"There is no widget named '{name}\")\n \n     def __setattr__(self, name, value):\n-        print()\n+        print(name[])\n         if name[0:17] == \"_LoadDesignFile__\":\n             super().__setattr__(name, value)\n         else:\n             self.__keys[f\"{name}\"] = value\n"
+                },
+                {
+                    "date": 1697788545153,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n         except Exception as e:\n             print(f\"There is no widget named '{name}\")\n \n     def __setattr__(self, name, value):\n-        print(name[0;17])\n+        print(name[0:17])\n         if name[0:17] == \"_LoadDesignFile__\":\n             super().__setattr__(name, value)\n         else:\n             self.__keys[f\"{name}\"] = value\n"
+                },
+                {
+                    "date": 1697788698626,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n \n     def __setattr__(self, name, value):\n         print(name[0:17])\n         if name[0:17] == \"_LoadDesignFile__\":\n-            print(\"\")\n+            print(\"hi\")\n             super().__setattr__(name, value)\n         else:\n             self.__keys[f\"{name}\"] = value\n \n"
+                }
+            ],
+            "date": 1697788462329,
+            "name": "Commit-0",
+            "content": "import json\nimport flet as ft\nfrom Parser.Parserengine import Parser\nimport typing\n\n\nclass LoadDesignFile:\n    def __init__(\n        self,\n        jsonfilepath: str,\n    ):\n        self.__jsonfilepath = jsonfilepath\n        self.__parser = Parser(jsonfilepath=self.__jsonfilepath)\n        self.__parser.parse()\n        self.__keys = self.__parser.keys\n\n    def __getattr__(self, name: str):\n        try:\n            return self.__keys[f\"{name}\"]\n        except Exception as e:\n            print(f\"There is no widget named '{name}\")\n\n    def __setattr__(self, name, value):\n        print()\n        if name[0:17] == \"_LoadDesignFile__\":\n            super().__setattr__(name, value)\n        else:\n            self.__keys[f\"{name}\"] = value\n\n    def run(self):\n        ft.app(target=self.ConstructPage)\n\n    def ConstructPage(self, page: ft.Page):\n        self.__page = page\n        for control in self.__keys.values():\n            self.__page.add(control)\n        page.window_height = 800\n        page.window_width = 800\n"
+        }
+    ]
+}

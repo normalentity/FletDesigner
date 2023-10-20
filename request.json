@@ -1,9 +1,7 @@
 [
 {
-    "c1":{"type":"Container","width":100,"height":100,"bgcolor":"red","opacity":1,"border_radius":20},
+    "c1":{"type":"Container","width":500,"height":500,"bgcolor":"red","opacity":1,"border_radius":20},
     "c3":{"type":"Container","width":100,"height":100,"bgcolor":"red","opacity":1,"border_radius":20},
-    "b1":{"type":"IconButton","width":50,"height":50,"bgcolor":"red","opacity":1},
-    "b12":{"type":"IconButton","width":50,"height":50,"bgcolor":"red","opacity":1},
-    "t1":{"type":"TextField","width":50,"height":500,"bgcolor":"black26"}
+    "b1":{"type":"IconButton","width":200,"height":200,"bgcolor":"red","opacity":1,"text":"smthn1"}
 }
 ]
