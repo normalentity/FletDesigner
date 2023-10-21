@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 44,
+            "activePatchIndex": 52,
             "patches": [
                 {
                     "date": 1695728458966,
@@ -184,6 +184,38 @@
                 {
                     "date": 1697815586284,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n [\n {\n     \"c1\":{\"type\":\"Container\",\"width\":500,\"height\":500,\"bgcolor\":\"red\",\"opacity\":1,\"border_radius\":20},\n     \"c3\":{\"type\":\"Container\",\"width\":100,\"height\":100,\"bgcolor\":\"red\",\"opacity\":1,\"border_radius\":20},\n-    \"b1\":{\"type\":\"IconButton\",\"width\":100,\"height\":50,\"bgcolor\":\"red\",\"opacity\":1,\"text\":\"smthn1\"}\n+    \"b1\":{\"type\":\"IconButton\",\"width\":200,\"height\":500,\"bgcolor\":\"red\",\"opacity\":1,\"text\":\"smthn1\"}\n }\n ]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1697820578769,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n [\n {\n     \"c1\":{\"type\":\"Container\",\"width\":500,\"height\":500,\"bgcolor\":\"red\",\"opacity\":1,\"border_radius\":20},\n     \"c3\":{\"type\":\"Container\",\"width\":100,\"height\":100,\"bgcolor\":\"red\",\"opacity\":1,\"border_radius\":20},\n-    \"b1\":{\"type\":\"IconButton\",\"width\":200,\"height\":500,\"bgcolor\":\"red\",\"opacity\":1,\"text\":\"smthn1\"}\n+    \"b1\":{\"type\":\"IconButton\",\"width\":200,\"height\":200,\"bgcolor\":\"red\",\"opacity\":1,\"text\":\"smthn1\"}\n+    \"b1\":{\"type\":\"IconButton\",\"width\":200,\"height\":200,\"bgcolor\":\"red\",\"opacity\":1,\"text\":\"smthn1\"}\n }\n ]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1697820584820,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n [\n {\n     \"c1\":{\"type\":\"Container\",\"width\":500,\"height\":500,\"bgcolor\":\"red\",\"opacity\":1,\"border_radius\":20},\n     \"c3\":{\"type\":\"Container\",\"width\":100,\"height\":100,\"bgcolor\":\"red\",\"opacity\":1,\"border_radius\":20},\n-    \"b1\":{\"type\":\"IconButton\",\"width\":200,\"height\":200,\"bgcolor\":\"red\",\"opacity\":1,\"text\":\"smthn1\"}\n-    \"b1\":{\"type\":\"IconButton\",\"width\":200,\"height\":200,\"bgcolor\":\"red\",\"opacity\":1,\"text\":\"smthn1\"}\n+    \"b1\":{\"type\":\"IconButton\",\"width\":200,\"height\":200,\"bgcolor\":\"red\",\"opacity\":1,\"text\":\"smthn1\"},\n+    \"b12\":{\"type\":\"IconButton\",\"width\":200,\"height\":200,\"bgcolor\":\"red\",\"opacity\":1,\"text\":\"smthn1\"}\n }\n ]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1697820642965,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,7 +2,7 @@\n {\n     \"c1\":{\"type\":\"Container\",\"width\":500,\"height\":500,\"bgcolor\":\"red\",\"opacity\":1,\"border_radius\":20},\n     \"c3\":{\"type\":\"Container\",\"width\":100,\"height\":100,\"bgcolor\":\"red\",\"opacity\":1,\"border_radius\":20},\n     \"b1\":{\"type\":\"IconButton\",\"width\":200,\"height\":200,\"bgcolor\":\"red\",\"opacity\":1,\"text\":\"smthn1\"},\n-    \"b12\":{\"type\":\"IconButton\",\"width\":200,\"height\":200,\"bgcolor\":\"red\",\"opacity\":1,\"text\":\"smthn1\"}\n+    \"b12\":{\"type\":\"IconButton\",\"width\":200,\"height\":200,\"bgcolor\":\"red\",\"opacity\":1,\"text\":\"smthn2\"}\n }\n ]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1697868255073,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n [\n {\n-    \"c1\":{\"type\":\"Container\",\"width\":500,\"height\":500,\"bgcolor\":\"red\",\"opacity\":1,\"border_radius\":20},\n+    \"c1\":{\"type\":\"Container\",\"width\":500,\"height\":200,\"bgcolor\":\"red\",\"opacity\":1,\"border_radius\":20},\n     \"c3\":{\"type\":\"Container\",\"width\":100,\"height\":100,\"bgcolor\":\"red\",\"opacity\":1,\"border_radius\":20},\n     \"b1\":{\"type\":\"IconButton\",\"width\":200,\"height\":200,\"bgcolor\":\"red\",\"opacity\":1,\"text\":\"smthn1\"},\n     \"b12\":{\"type\":\"IconButton\",\"width\":200,\"height\":200,\"bgcolor\":\"red\",\"opacity\":1,\"text\":\"smthn2\"}\n }\n"
+                },
+                {
+                    "date": 1697868428133,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n [\n {\n-    \"c1\":{\"type\":\"Container\",\"width\":500,\"height\":200,\"bgcolor\":\"red\",\"opacity\":1,\"border_radius\":20},\n+    \"c1\":{\"type\":\"Container\",\"width\":500,\"height\":200,\"bgcolor\":\"red\",\"opacity\":1,\"border_radius\":20,\"\"},\n     \"c3\":{\"type\":\"Container\",\"width\":100,\"height\":100,\"bgcolor\":\"red\",\"opacity\":1,\"border_radius\":20},\n     \"b1\":{\"type\":\"IconButton\",\"width\":200,\"height\":200,\"bgcolor\":\"red\",\"opacity\":1,\"text\":\"smthn1\"},\n     \"b12\":{\"type\":\"IconButton\",\"width\":200,\"height\":200,\"bgcolor\":\"red\",\"opacity\":1,\"text\":\"smthn2\"}\n }\n"
+                },
+                {
+                    "date": 1697868434164,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n [\n {\n-    \"c1\":{\"type\":\"Container\",\"width\":500,\"height\":200,\"bgcolor\":\"red\",\"opacity\":1,\"border_radius\":20,\"\"},\n+    \"c1\":{\"type\":\"Container\",\"width\":500,\"height\":200,\"bgcolor\":\"red\",\"opacity\":1,\"border_radius\":20,\"expand\":\"true\",\"},\n     \"c3\":{\"type\":\"Container\",\"width\":100,\"height\":100,\"bgcolor\":\"red\",\"opacity\":1,\"border_radius\":20},\n     \"b1\":{\"type\":\"IconButton\",\"width\":200,\"height\":200,\"bgcolor\":\"red\",\"opacity\":1,\"text\":\"smthn1\"},\n     \"b12\":{\"type\":\"IconButton\",\"width\":200,\"height\":200,\"bgcolor\":\"red\",\"opacity\":1,\"text\":\"smthn2\"}\n }\n"
+                },
+                {
+                    "date": 1697868440259,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n [\n {\n-    \"c1\":{\"type\":\"Container\",\"width\":500,\"height\":200,\"bgcolor\":\"red\",\"opacity\":1,\"border_radius\":20,\"expand\":\"true\",\"},\n+    \"c1\":{\"type\":\"Container\",\"width\":500,\"height\":200,\"bgcolor\":\"red\",\"opacity\":1,\"border_radius\":20,\"expand\":\"false\"},\n     \"c3\":{\"type\":\"Container\",\"width\":100,\"height\":100,\"bgcolor\":\"red\",\"opacity\":1,\"border_radius\":20},\n     \"b1\":{\"type\":\"IconButton\",\"width\":200,\"height\":200,\"bgcolor\":\"red\",\"opacity\":1,\"text\":\"smthn1\"},\n     \"b12\":{\"type\":\"IconButton\",\"width\":200,\"height\":200,\"bgcolor\":\"red\",\"opacity\":1,\"text\":\"smthn2\"}\n }\n"
+                },
+                {
+                    "date": 1697868480682,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,8 @@\n+[\n+{\n+    \"c1\":{\"type\":\"Container\",\"width\":500,\"height\":200,\"bgcolor\":\"red\",\"opacity\":1,\"border_radius\":20,\"expand\":\"alse\"},\n+    \"c3\":{\"type\":\"Container\",\"width\":100,\"height\":100,\"bgcolor\":\"red\",\"opacity\":1,\"border_radius\":20},\n+    \"b1\":{\"type\":\"IconButton\",\"width\":200,\"height\":200,\"bgcolor\":\"red\",\"opacity\":1,\"text\":\"smthn1\"},\n+    \"b12\":{\"type\":\"IconButton\",\"width\":200,\"height\":200,\"bgcolor\":\"red\",\"opacity\":1,\"text\":\"smthn2\"}\n+}\n+]\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1695728458966,

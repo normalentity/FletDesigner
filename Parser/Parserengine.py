@@ -9,38 +9,31 @@ class Parser:
                 self.json = json.load(f)
         self.keys = {}
 
+    def update_properties(self, key, val):
+        self.keys[f"{key}"].width = val["width"]
+        self.keys[f"{key}"].height = val["height"]
+        self.keys[f"{key}"].expand = val["expand"]
+        self.keys[f"{key}"].opacity = val["opacity"]
+        self.keys[f"{key}"].bgcolor = val["bgcolor"]
+
     def parse(self):
         for item in self.json:
             for key, val in item.items():
                 if val["type"] == "Container":
                     self.keys[f"{key}"] = ft.Container()
-                    # Update the properties of self.c1
-                    self.keys[f"{key}"].width = val["width"]
-                    self.keys[f"{key}"].height = val["height"]
-                    self.keys[f"{key}"].bgcolor = val["bgcolor"]
-                    self.keys[f"{key}"].opacity = val["opacity"]
+                    self.update_properties(key, val)
+                    # Add the properties of self.c1
                     self.keys[f"{key}"].border_radius = ft.border_radius.all(
                         val["border_radius"]
                     )
-                    self.keys[f"{key}"].expand = False
-
+                    self.keys[f"{key}"].content = ft.Row()
+                    
                 if val["type"] == "IconButton":
-                    self.keys[f"c1"].content = ft.Row()
-                    try:
-                        self.keys[f"{key}"] = self.keys[f"c1"].content.controls.append(
-                            ft.TextButton()
-                        )
-                        print(self.keys[f"c1"].content)
-                        # Update the properties of self.c1
-                        self.keys[f"{key}"].width = val["width"]
-                        self.keys[f"{key}"].height = val["height"]
-                        # self.button.bgcolcolor"]
-                        self.keys[f"{key}"].icon = ft.icons.COFFEE
-                        self.keys[f"{key}"].text = val["text"]
-                        self.keys[f"{key}"].opacity = val["opacity"]
-                        self.keys[f"{key}"].expand = False
-                    except Exception as e:
-                        print(e)
+                    self.keys[f"{key}"] = ft.TextButton()
+                    self.update_properties(key, val)
+                    self.keys[f"{key}"].icon = ft.icons.COFFEE
+                    self.keys[f"{key}"].text = val["text"]
+                    self.keys[f"c1"].content.controls.append(self.keys[f"{key}"])
 
     # def AddWidget(self, Control):
     #     pass
