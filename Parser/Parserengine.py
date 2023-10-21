@@ -12,7 +12,7 @@ class Parser:
     def update_properties(self, key, val):
         self.keys[f"{key}"].width = val["width"]
         self.keys[f"{key}"].height = val["height"]
-        self.keys[f"{key}"].expand = val["expand"]
+        # self.keys[f"{key}"].expand = val["expand"]
         self.keys[f"{key}"].opacity = val["opacity"]
         self.keys[f"{key}"].bgcolor = val["bgcolor"]
 
@@ -27,11 +27,10 @@ class Parser:
                         val["border_radius"]
                     )
                     self.keys[f"{key}"].content = ft.Row()
-                    
+
                 if val["type"] == "IconButton":
                     self.keys[f"{key}"] = ft.TextButton()
                     self.update_properties(key, val)
                     self.keys[f"{key}"].icon = ft.icons.COFFEE
                     self.keys[f"{key}"].text = val["text"]
                     self.keys[f"c1"].content.controls.append(self.keys[f"{key}"])
-
