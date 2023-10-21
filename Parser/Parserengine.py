@@ -35,5 +35,3 @@ class Parser:
                     self.keys[f"{key}"].text = val["text"]
                     self.keys[f"c1"].content.controls.append(self.keys[f"{key}"])
 
-    # def AddWidget(self, Control):
-    #     pass
