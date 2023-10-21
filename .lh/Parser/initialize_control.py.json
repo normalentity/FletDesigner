@@ -1,0 +1,26 @@
+{
+    "sourceFile": "Parser/initialize_control.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1697886751216,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1697886758875,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n \n-\n+import flet as ft\n def update_properties(self, key, val):\n     if val[\"type\"] == \"Container\":\n         self.keys[f\"{key}\"].width = val[\"width\"]\n         self.keys[f\"{key}\"].height = val[\"height\"]\n"
+                },
+                {
+                    "date": 1697886840041,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import flet as ft\n \n \n-def update_properties(self, key, val):\n+def In(self, key, val):\n     if val[\"type\"] == \"Container\":\n         \n         self.keys[f\"{key}\"].width = val[\"width\"]\n         self.keys[f\"{key}\"].height = val[\"height\"]\n"
+                }
+            ],
+            "date": 1697886751216,
+            "name": "Commit-0",
+            "content": "def update_properties(self, key, val):\n        if val[\"type\"] == \"Container\":\n            self.keys[f\"{key}\"].width = val[\"width\"]\n            self.keys[f\"{key}\"].height = val[\"height\"]\n            self.keys[f\"{key}\"].opacity = val[\"opacity\"]\n            self.keys[f\"{key}\"].bgcolor = val[\"bgcolor\"]\n            self.keys[f\"{key}\"].border_radius = ft.border_radius.all(\n                val[\"border_radius\"]\n            )\n            self.keys[f\"{key}\"].content = ft.Row()\n        if val[\"type\"] == \"IconButton\":\n            self.keys[f\"{key}\"].width = val[\"width\"]\n            self.keys[f\"{key}\"].height = val[\"height\"]\n            self.keys[f\"{key}\"].opacity = val[\"opacity\"]\n            self.keys[f\"{key}\"].bgcolor = val[\"bgcolor\"]\n            self.keys[f\"{key}\"].text = val[\"text\"]"
+        }
+    ]
+}
