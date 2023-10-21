@@ -8,16 +8,14 @@ class Parser:
         if jsonfilepath:
             with open(jsonfilepath) as f:
                 self.json = json.load(f)
+        # to store all the control names for the user to access
         self.keys = {}
 
     def parse(self):
         for item in self.json:
             for key, val in item.items():
-                if val["type"] == "Container":
-                    Initialize_Components(self, key, val)
-                if val["type"] == "IconButton":
-                    Initialize_Components(self, key, val)
-                    self.keys[f"c1"].content.controls.append(self.keys[f"{key}"])
+                # the val and the key variables are the keys and values we retrieve from the json file
+                Initialize_Components(self, key, val)
 
     def Add_Widgetds(self, Control):
         pass

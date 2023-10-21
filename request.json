@@ -1,8 +1,8 @@
 [
 {
-    "c1":{"type":"Container","width":500,"height":200,"bgcolor":"red","opacity":1,"border_radius":20,"expand":"False"},
+    "c1":{"type":"Container","width":500,"height":200,"bgcolor":"red","opacity":1,"border_radius":20,"expand":"False","padding":150},
     "c3":{"type":"Container","width":100,"height":100,"bgcolor":"red","opacity":1,"border_radius":20},
-    "b1":{"type":"IconButton","width":200,"height":200,"bgcolor":"blue","opacity":0.5,"text":"smthn1","icon":"coffee"},
-    "b12":{"type":"IconButton","width":200,"height":200,"bgcolor":"red","opacity":1,"text":"smthn2","icon":"accessible_forward_rounded"}
+    "b1":{"type":"IconButton","width":150,"height":50,"bgcolor":"blue","opacity":1,"text":"smthn1","icon":"coffee"},
+    "b12":{"type":"IconButton","width":150,"height":50,"bgcolor":"red","opcaity":1,"text":"smthn2","icon":"accessible_forward_rounded"}
 }
 ]

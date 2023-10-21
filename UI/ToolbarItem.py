@@ -5,7 +5,7 @@ class ToolbarItem(ft.UserControl):
     def __init__(self, text):
         self.text = text
         self.selected = False
-        # print(self.container.width)
+        # the names of the control to display in the toolbar
         self.container = ft.Container(
             bgcolor=ft.colors.GREY_700,
             height=40,

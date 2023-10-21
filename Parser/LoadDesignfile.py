@@ -32,6 +32,7 @@ class LoadDesignFile:
         ft.app(target=self.ConstructPage)
 
     def ConstructPage(self, page: ft.Page):
+        # Initialization of the page
         self.__page = page
         for control in self.__keys.values():
             self.__page.add(control)

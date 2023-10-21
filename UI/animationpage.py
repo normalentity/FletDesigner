@@ -6,12 +6,6 @@ import time
 
 
 class __view__:
-    # page.horizontal_alignment = "center"
-    # page.vertical_alignment = "center"
-    # page.spacing = 30
-
-    # page = View(route="/welcome", controls=[])
-    # page.bgcolor = colors.BLACK
     def __init__(self):
         self.size = 40
         self.gap = 2

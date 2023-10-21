@@ -1,12 +1,14 @@
 import flet as ft
 from UI.ToolbarItems import ToolbarItems
 
+
 class Toolbar(ft.UserControl):
     def __init__(self, ToolbarItems: ToolbarItems):
         self.toolbaritems = ToolbarItems
         super().__init__()
 
     def build(self):
+        # The Tool bar for dragging the Controls to the Designer Section
         self.toolbar = ft.Container(
             animate_scale=ft.animation.Animation(5000, ft.AnimationCurve.BOUNCE_OUT),
             width=225,
