@@ -1,6 +1,6 @@
 import flet as ft
 import json
-from .initialize_control import Initialize_Component
+from .initialize_control import Initialize_Components
 
 
 class Parser:
@@ -14,9 +14,9 @@ class Parser:
         for item in self.json:
             for key, val in item.items():
                 if val["type"] == "Container":
-                    Initialize_Component(self, key, val)
+                    Initialize_Components(self, key, val)
                 if val["type"] == "IconButton":
-                    Initialize_Component(self, key, val)
+                    Initialize_Components(self, key, val)
                     self.keys[f"c1"].content.controls.append(self.keys[f"{key}"])
 
     def Add_Widgetds(self, Control):

@@ -1,8 +1,8 @@
 import flet as ft
-ft.icons.ACCESSIBLE_FORWARD_ROUNDED
 
 
-def Initialize_Component(self, key, val):
+
+def Initialize_Components(self, key, val):
     if val["type"] == "Container":
         self.keys[f"{key}"] = ft.Container()
         self.keys[f"{key}"].width = val["width"]
