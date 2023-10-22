@@ -24,7 +24,7 @@ class DesignerSection(ft.UserControl):
         name = ctrlname.content.content.value
         self.container = e.control.content.controls
         object = globals()[name]
-        object = object(bgcolor=ft.colors.BLUE_900, width=100, height=200)
+        object = object(bgcolor=ft.colors.RED, width=100, height=200)
         self.container.append(
             ft.GestureDetector(
                 on_pan_update=self.on_pan_update1,
@@ -47,7 +47,7 @@ class DesignerSection(ft.UserControl):
                         border_radius=ft.border_radius.all(8),
                         bgcolor=ft.colors.BLACK12,
                         margin=ft.margin.only(left=75, top=25),
-                        width=1200,
+                        width=1000,
                         height=1000,
                         # alignment=ft.alignment.center,
                     ),

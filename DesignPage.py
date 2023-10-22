@@ -11,7 +11,7 @@ class DesignPage(ft.View):
 
     def build(self):
         self.route = "/design"
-        self.bgcolor = ft.colors.BLACK
+        self.bgcolor = '#131313'
         self.designsection = DesignerSection()
         Container = ToolbarItem("Container")
         Row = ToolbarItem("Row")
