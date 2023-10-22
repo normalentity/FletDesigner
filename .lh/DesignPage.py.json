@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 6,
+            "activePatchIndex": 8,
             "patches": [
                 {
                     "date": 1697962184769,
@@ -32,6 +32,14 @@
                 {
                     "date": 1697964011421,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n         super().__init__()\n \n     def build(self):\n         self.route = \"/design\"\n-        self.bgcolor = ft.colors.VB\n+        self.bgcolor = ft.colors.BLACK\n         self.designsection = DesignerSection()\n         Container = ToolbarItem(\"Container\")\n         Row = ToolbarItem(\"Row\")\n         # placeholderbuttons\n"
+                },
+                {
+                    "date": 1697965089210,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,27 @@\n+import flet as ft\n+from Designer import DesignerSection\n+from UI.Toolbar import Toolbar\n+from UI.ToolbarItem import ToolbarItem\n+from UI.ToolbarItems import ToolbarItems\n+\n+\n+class DesignPage(ft.View):\n+    def __init__(self):\n+        super().__init__()\n+\n+    def build(self):\n+        self.route = \"/design\"\n+        self.bgcolor = '#131313'\n+        self.designsection = DesignerSection()\n+        Container = ToolbarItem(\"Container\")\n+        Row = ToolbarItem(\"Row\")\n+        itemslist = [Container, Row]\n+        toolbaritems = ToolbarItems(itemslist)\n+        self.toolbar = Toolbar(toolbaritems)\n+        self.sm = ft.Row(\n+            expand=True,\n+            controls=[self.toolbar, self.designsection],\n+            height=1700,\n+        )\n+        self.controls.append(self.sm)\n+        return self\n"
+                },
+                {
+                    "date": 1697965112584,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,35 +14,8 @@\n         self.bgcolor = '#131313'\n         self.designsection = DesignerSection()\n         Container = ToolbarItem(\"Container\")\n         Row = ToolbarItem(\"Row\")\n-        itemslist = [Container, Row]\n-        toolbaritems = ToolbarItems(itemslist)\n-        self.toolbar = Toolbar(toolbaritems)\n-        self.sm = ft.Row(\n-            expand=True,\n-            controls=[self.toolbar, self.designsection],\n-            height=1700,\n-        )\n-        self.controls.append(self.sm)\n-        return self\n-import flet as ft\n-from Designer import DesignerSection\n-from UI.Toolbar import Toolbar\n-from UI.ToolbarItem import ToolbarItem\n-from UI.ToolbarItems import ToolbarItems\n-\n-\n-class DesignPage(ft.View):\n-    def __init__(self):\n-        super().__init__()\n-\n-    def build(self):\n-        self.route = \"/design\"\n-        self.bgcolor = ft.colors.BLACK\n-        self.designsection = DesignerSection()\n-        Container = ToolbarItem(\"Container\")\n-        Row = ToolbarItem(\"Row\")\n         # placeholderbuttons\n         x1 = ToolbarItem(\"x1\")\n         x2 = ToolbarItem(\"x2\")\n         x3 = ToolbarItem(\"x3\")\n"
                 }
             ],
             "date": 1697962184769,
