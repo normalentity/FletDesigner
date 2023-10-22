@@ -43,11 +43,11 @@ class DesignerSection(ft.UserControl):
             content=ft.Stack(
                 controls=[
                     ft.Container(
-                        border=ft.border.all(3, color=ft.colors.WHITE24),
-                        border_radius=ft.border_radius.all(10),
+                        border=ft.border.all(3, color="#383838"),
+                        border_radius=ft.border_radius.all(8),
                         bgcolor=ft.colors.BLACK12,
-                        margin=ft.margin.only(left=100, top=25),
-                        width=1000,
+                        margin=ft.margin.only(left=75, top=25),
+                        width=1200,
                         height=1000,
                         # alignment=ft.alignment.center,
                     ),
