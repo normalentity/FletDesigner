@@ -9,7 +9,7 @@ class ToolbarItems(ft.UserControl):
         super().__init__()
 
     def set_selected(self, container: ft.Container):
-        container.border = ft.border.all(1, ft.colors.CYAN)
+        container.border = ft.border.all(3, ft.colors.RED_100)
         container.update()
         self.update()
 

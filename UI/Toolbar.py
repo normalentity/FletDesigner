@@ -10,16 +10,16 @@ class Toolbar(ft.UserControl):
     def build(self):
         # The Tool bar for dragging the Controls to the Designer Section
         self.toolbar = ft.Container(
-            animate_scale=ft.animation.Animation(5000, ft.AnimationCurve.BOUNCE_OUT),
-            width=225,
-            border_radius=ft.border_radius.all(5),
+            animate_scale=ft.animation.Animation(5000, ft.AnimationCurve.BOUNCE_IN),
+            width=220,
+            border_radius=ft.border_radius.all(3),
             height=1700,
-            bgcolor=ft.colors.with_opacity(opacity=1, color="#1e2124"),
+            bgcolor=ft.colors.with_opacity(opacity=1, color="#1e1e1e"),
             blur=ft.Blur(200, 200, ft.BlurTileMode.MIRROR),
             shadow=ft.BoxShadow(
                 200,
                 200,
-                ft.colors.with_opacity(opacity=1, color="#1e2124"),
+                ft.colors.with_opacity(opacity=1, color= "#1e1e1e"),
                 ft.Offset(55, 200),
                 ft.ShadowBlurStyle.INNER,
             ),

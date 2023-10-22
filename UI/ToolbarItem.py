@@ -7,17 +7,17 @@ class ToolbarItem(ft.UserControl):
         self.selected = False
         # the names of the control to display in the toolbar
         self.container = ft.Container(
-            bgcolor=ft.colors.GREY_700,
+            bgcolor= "#111111", # CONTAINER COLOR 
             height=40,
-            border_radius=8,
+            border_radius=14,
             clip_behavior=ft.ClipBehavior.HARD_EDGE,
-            padding=ft.padding.all(10),
+            padding=ft.padding.all(1),
             animate=200,
             alignment=ft.alignment.center,
             content=ft.Text(
                 value=self.text,
-                size=16,
-                style=ft.TextStyle(weight=ft.FontWeight.W_900, font_family="Helvetica"),
+                size=18,
+                style=ft.TextStyle(weight=ft.FontWeight.W_900, font_family="Hack"),
                 text_align=ft.TextAlign.JUSTIFY,
             ),
         )
@@ -29,7 +29,7 @@ class ToolbarItem(ft.UserControl):
             content_feedback=ft.Container(
                 width=20,
                 height=20,
-                content=ft.Icon(name=ft.icons.ADD, color=ft.colors.BLUE_300),
+                content=ft.Icon(name=ft.icons.ADD, color=ft.colors.GREEN),
                 margin=ft.margin.only(left=140),
             ),
             content=self.container,
