@@ -10,7 +10,6 @@ class ToolbarItem(ft.UserControl):
             bgcolor="#111111",
             height=40,
             border_radius=14,
-            border_radius=14,
             clip_behavior=ft.ClipBehavior.HARD_EDGE,
             padding=ft.padding.all(1),
             animate=200,
