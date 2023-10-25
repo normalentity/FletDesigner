@@ -1,0 +1,26 @@
+{
+    "sourceFile": "UI/ToolbarItem.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1696179772762,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1696180619907,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,10 +6,9 @@\n         self.text = text\n         super().__init__()\n \n     def build(self):\n-        self.toolbaritem = (\n-            ft.Container(\n+        self.toolbaritem = ft.Container(\n                 bgcolor=ft.colors.GREY_700,\n                 height=40,\n                 # border=ft.border.all(2, ft.colors.TEAL_200),\n                 border_radius=8,\n@@ -25,6 +24,5 @@\n                     ),\n                     text_align=ft.TextAlign.JUSTIFY,\n                 ),\n             ),\n-        )\n         return self.toolbaritem\n"
+                },
+                {
+                    "date": 1696180736170,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,25 +6,6 @@\n         self.text = text\n         super().__init__()\n \n     def build(self):\n-        self.toolbaritem = (\n-            ft.Container(\n-                bgcolor=ft.colors.GREY_700,\n-                height=40,\n-                # border=ft.border.all(2, ft.colors.TEAL_200),\n-                border_radius=8,\n-                clip_behavior=ft.ClipBehavior.HARD_EDGE,\n-                padding=ft.padding.all(10),\n-                animate=200,\n-                alignment=ft.alignment.center,\n-                content=ft.Text(\n-                    self.text,\n-                    size=16,\n-                    style=ft.TextStyle(\n-                        weight=ft.FontWeight.W_900, font_family=\"Helvetica\"\n-                    ),\n-                    text_align=ft.TextAlign.JUSTIFY,\n-                ),\n-            ),\n-        )\n+        self.toolbaritem = ft.Container(bgcolor=ft.colors.GREY_700,height=40,border_radius=8,clip_behavior=ft.ClipBehavior.HARD_EDGE,padding=ft.padding.all(10),animate=200,alignment=ft.alignment.center,content=ft.Text(    self.text,    size=16,    style=ft.TextStyle(        weight=ft.FontWeight.W_900, font_family=\"Helvetica\"    ),    text_align=ft.TextAlign.JUSTIFY,),)\n         return self.toolbaritem\n"
+                }
+            ],
+            "date": 1696179772762,
+            "name": "Commit-0",
+            "content": "import flet as ft\n\nclass ToolbarItem(ft.UserControl):\n    def __init__(self, text):\n        self.text = text\n        super().__init__()\n    \n    def build(self):\n        self.toolbaritem = ft.Container(\n                bgcolor=ft.colors.GREY_700,\n                height=40,\n                # border=ft.border.all(2, ft.colors.TEAL_200),\n                border_radius=8,\n                clip_behavior=ft.ClipBehavior.HARD_EDGE,\n                padding=ft.padding.all(10),\n                animate=200,\n                alignment=ft.alignment.center,\n                content=ft.Text(\n                    self.text,\n                    size=16,\n                    style=ft.TextStyle(\n                        weight=ft.FontWeight.W_900, font_family=\"Helvetica\"\n                    ),\n                    text_align=ft.TextAlign.JUSTIFY,\n                ),\n            ),\n        return self.toolbaritem"
+        }
+    ]
+}

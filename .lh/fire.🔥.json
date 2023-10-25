@@ -1,0 +1,114 @@
+{
+    "sourceFile": "fire.🔥",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 24,
+            "patches": [
+                {
+                    "date": 1697716419557,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1697716548462,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,2 @@\n-fn nafay():\n+fn main():\n     print(\"nafay\")\n"
+                },
+                {
+                    "date": 1697716562152,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,2 @@\n fn main():\n-    print(\"nafay\")\n-\n-\n+    print(f\"nafay\")\n"
+                },
+                {
+                    "date": 1697716571047,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,3 @@\n fn main():\n-    print(f\"nafay\")\n+    \n+    print(\"nafay\")\n"
+                },
+                {
+                    "date": 1697716577353,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,2 @@\n fn main():\n-    \n     print(\"nafay\")\n"
+                },
+                {
+                    "date": 1697716587488,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,2 @@\n fn main():\n-    print(\"nafay\")\n+    hl str =print(\"nafay\")\n"
+                },
+                {
+                    "date": 1697716593913,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,2 @@\n fn main():\n-    hl str =print(\"nafay\")\n+    hl: str =print(\"nafay\")\n"
+                },
+                {
+                    "date": 1697716601581,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,2 @@\n fn main():\n-    hl: str =print(\"nafay\")\n+    @str =print(\"nafay\")\n"
+                },
+                {
+                    "date": 1697716636820,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,2 @@\n fn main():\n-    @str =print(\"nafay\")\n+    va\n"
+                },
+                {
+                    "date": 1697716645232,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,2 @@\n fn main():\n-    va\n+    var x: st\n"
+                },
+                {
+                    "date": 1697716653510,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,2 @@\n fn main():\n-    var x: st\n+    var x: String=\"nafay\"\n"
+                },
+                {
+                    "date": 1697717670589,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,5 @@\n+\n+\n fn main():\n-    var x: String=\"nafay\"\n+    var x: String = \"nafay\"\n+    print(x)\n"
+                },
+                {
+                    "date": 1697717677416,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n+from python im\n \n-\n fn main():\n     var x: String = \"nafay\"\n     print(x)\n"
+                },
+                {
+                    "date": 1697717709866,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,7 @@\n-from python im\n+from python import Python\n \n+p\n+\n fn main():\n     var x: String = \"nafay\"\n     print(x)\n"
+                },
+                {
+                    "date": 1697717719541,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n from python import Python\n \n-p\n+Python\n \n fn main():\n     var x: String = \"nafay\"\n     print(x)\n"
+                },
+                {
+                    "date": 1697717725121,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n from python import Python\n \n-Python\n+Python.import_module()\n \n fn main():\n     var x: String = \"nafay\"\n     print(x)\n"
+                },
+                {
+                    "date": 1697717750406,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n from python import Python\n \n-Python.import_module()\n \n+\n fn main():\n     var x: String = \"nafay\"\n     print(x)\n"
+                },
+                {
+                    "date": 1697717756866,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n from python import Python\n \n \n-\n fn main():\n     var x: String = \"nafay\"\n+    Python.import_module(\"numpy\")\n     print(x)\n"
+                },
+                {
+                    "date": 1697717765785,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,6 +2,6 @@\n \n \n fn main():\n     var x: String = \"nafay\"\n-    Python.import_module(\"numpy\")\n+    \n     print(x)\n"
+                },
+                {
+                    "date": 1697717773547,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n from python import Python\n-\n-\n+try:\n+    Python.import_module(\"numpy\")\n fn main():\n     var x: String = \"nafay\"\n     \n     print(x)\n"
+                },
+                {
+                    "date": 1697717779227,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n from python import Python\n try:\n     Python.import_module(\"numpy\")\n+    \n fn main():\n     var x: String = \"nafay\"\n     \n     print(x)\n"
+                },
+                {
+                    "date": 1697717785234,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n from python import Python\n try:\n     Python.import_module(\"numpy\")\n-    \n+    e\n fn main():\n     var x: String = \"nafay\"\n     \n     print(x)\n"
+                },
+                {
+                    "date": 1697717792833,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n from python import Python\n try:\n     Python.import_module(\"numpy\")\n-    e\n+except \n fn main():\n     var x: String = \"nafay\"\n     \n     print(x)\n"
+                },
+                {
+                    "date": 1697717798218,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n from python import Python\n try:\n     Python.import_module(\"numpy\")\n-except :\n+except:\n+    pass\n fn main():\n     var x: String = \"nafay\"\n     \n     print(x)\n"
+                },
+                {
+                    "date": 1697718138722,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,8 @@\n \n fn main():\n     var x: String = \"nafay\"\n     try:\n-\n         Python.import_module(\"numpy\")\n     except:\n         pass\n     print(x)\n"
+                }
+            ],
+            "date": 1697716419557,
+            "name": "Commit-0",
+            "content": "fn nafay():\n    print(\"nafay\")\n\n\n"
+        }
+    ]
+}

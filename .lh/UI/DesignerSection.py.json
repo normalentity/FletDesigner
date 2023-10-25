@@ -1,0 +1,26 @@
+{
+    "sourceFile": "UI/DesignerSection.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1696187149779,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1696187285673,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import flet as ft\n \n-ft.Draggable()\n+# ft.Draggable()\n \n \n class DesignerSection(ft.UserControl):\n     def __init__(self):\n"
+                },
+                {
+                    "date": 1696187304618,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n     def __init__(self):\n         super().__init__()\n \n     def build(self):\n-        self.PreviewSection = ft.DragTarget(\n+        self.DesignerSection = ft.DragTarget(\n             group=\"widget\",\n             content=ft.Container(\n                 width=1200,\n                 height=1000,\n@@ -19,5 +19,5 @@\n                 margin=ft.margin.only(left=100, top=25),\n             ),\n         )\n \n-        return self.PreviewSection\n+        return self.DesignerSection\n"
+                }
+            ],
+            "date": 1696187149779,
+            "name": "Commit-0",
+            "content": "import flet as ft\n\nft.Draggable()\n\n\nclass DesignerSections(ft.UserControl):\n    def __init__(self):\n        super().__init__()\n\n    def build(self):\n        self.PreviewSection = ft.DragTarget(\n            group=\"widget\",\n            content=ft.Container(\n                width=1200,\n                height=1000,\n                border=ft.border.all(3, color=ft.colors.CYAN_300),\n                border_radius=ft.border_radius.all(10),\n                bgcolor=ft.colors.BLACK12,\n                margin=ft.margin.only(left=100, top=25),\n            ),\n        )\n\n        return self.PreviewSection\n"
+        }
+    ]
+}

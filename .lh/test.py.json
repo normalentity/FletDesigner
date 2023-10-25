@@ -1,0 +1,30 @@
+{
+    "sourceFile": "test.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1695828939732,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1695829094510,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,8 @@\n from flet import *\n+\n+\n+def main(page:Page):\n+    page.window_width=800\n+    page.window_height=800\n+    \n+    \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1695829127890,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,4 +3,6 @@\n \n def main(page: Page):\n     page.window_width = 800\n     page.window_height = 800\n+    \n+    btn=IconButton(width=100, height=200)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1695829196421,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,4 +5,12 @@\n     page.window_width = 800\n     page.window_height = 800\n \n     btn = IconButton(width=100, height=200)\n+    \n+    def update1(e):\n+        btn.text = \"Update\"\n+        btn.update()\n+\n+\n+# Now you can access c1 from ldf\n+    btn.on_click = update1\n"
+                }
+            ],
+            "date": 1695828939732,
+            "name": "Commit-0",
+            "content": "from flet import *\n\n"
+        }
+    ]
+}

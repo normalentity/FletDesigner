@@ -1,0 +1,22 @@
+{
+    "sourceFile": "Parser/LoadObj.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1696072992090,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1696276687358,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import json\n import flet as ft\n-from Parser1.Parserengine import Parser\n+from Parser.Parserengine import Parser\n import typing\n \n \n class LoadDesignFile:\n"
+                }
+            ],
+            "date": 1696072992090,
+            "name": "Commit-0",
+            "content": "import json\nimport flet as ft\nfrom Parser.Parserengine import Parser\nimport typing\n\n\nclass LoadDesignFile:\n    def __init__(\n        self,\n        jsonfilepath: str,\n    ):\n        self.__jsonfilepath = jsonfilepath\n        self.__parser = Parser(jsonfilepath=self.__jsonfilepath)\n        self.__parser.parse()\n        self.__keys = self.__parser.keys\n\n    @typing.overload\n    def __getattr__(self, name: str) -> ft.TextButton:\n        return self.__getattr__()\n\n    def __getattr__(self, name: str):\n        try:\n            return self.__keys[f\"{name}\"]\n        except Exception as e:\n            print(f\"There is no widget named '{name}\")\n\n    def __setattr__(self, name, value):\n        if name[0:17] == \"_LoadDesignFile__\":\n            super().__setattr__(name, value)\n        else:\n            self.__keys[f\"{name}\"] = value\n\n    def run(self):\n        ft.app(target=self.ConstructPage)\n\n    def ConstructPage(self, page: ft.Page):\n        self.__page = page\n        for control in self.__keys.values():\n            self.__page.add(control)\n        page.window_height = 800\n        page.window_width = 800\n"
+        }
+    ]
+}

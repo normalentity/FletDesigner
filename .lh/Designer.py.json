@@ -1,0 +1,30 @@
+{
+    "sourceFile": "Designer.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1696276980364,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1696277026189,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,9 @@\n         super().__init__()\n \n     def accept_draggable(self, e: ft.DragTargetAcceptEvent):\n         # self.parser.AddWidget()\n+        getcrlname=ToolbarItem().container.content.value\n \n     def build(self):\n         self.DesignerSection1 = ft.DragTarget(\n             group=\"widget\",\n"
+                },
+                {
+                    "date": 1696277033225,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,9 @@\n \n     def accept_draggable(self, e: ft.DragTargetAcceptEvent):\n         # self.parser.AddWidget()\n         getcrlname = ToolbarItem().container.content.value\n+        print(getcrlname)\n \n     def build(self):\n         self.DesignerSection1 = ft.DragTarget(\n             group=\"widget\",\n"
+                },
+                {
+                    "date": 1696277189221,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n         super().__init__()\n \n     def accept_draggable(self, e: ft.DragTargetAcceptEvent):\n         # self.parser.AddWidget()\n-        getcrlname = ToolbarItem().container.content.value\n+        getcrlname = e.control\n         print(getcrlname)\n \n     def build(self):\n         self.DesignerSection1 = ft.DragTarget(\n"
+                }
+            ],
+            "date": 1696276980364,
+            "name": "Commit-0",
+            "content": "import flet as ft\nfrom Parser.Parserengine import Parser\n\nfrom UI.ToolbarItem import ToolbarItem\n\n# ft.Draggable()\n\n\nclass DesignerSection(ft.UserControl):\n    def __init__(self):\n        self.parser = Parser()\n        super().__init__()\n\n    def accept_draggable(self, e: ft.DragTargetAcceptEvent):\n        # self.parser.AddWidget()\n\n    def build(self):\n        self.DesignerSection1 = ft.DragTarget(\n            group=\"widget\",\n            on_accept=self.accept_draggable,\n            content=ft.Stack(\n                width=1200,\n                height=1000,\n                controls=[\n                    # ft.Container(\n                    #     border=ft.border.all(3, color=ft.colors.CYAN_300),\n                    #     border_radius=ft.border_radius.all(10),\n                    #     bgcolor=ft.colors.BLACK12,\n                    #     margin=ft.margin.only(left=100, top=25),\n                    # ),\n                ]\n            ),\n        )\n\n        return self.DesignerSection1\n"
+        }
+    ]
+}

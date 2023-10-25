@@ -1,0 +1,46 @@
+{
+    "sourceFile": "UI/DesignerSectionsflet.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1696187563641,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1696259041113,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,11 @@\n \n class DesignerSection(ft.UserControl):\n     def __init__(self):\n         super().__init__()\n+        \n+        \n+    def dragtoolbaritems(self):\n \n     def build(self):\n         self.DesignerSection1 = ft.DragTarget(\n             group=\"widget\",\n"
+                },
+                {
+                    "date": 1696259090043,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,10 @@\n     def __init__(self):\n         super().__init__()\n         \n         \n-    def dragtoolbaritems(self):\n+    def accept_draggable(self):\n+        \n \n     def build(self):\n         self.DesignerSection1 = ft.DragTarget(\n             group=\"widget\",\n"
+                },
+                {
+                    "date": 1696259096323,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,9 @@\n         \n         \n     def accept_draggable(self):\n         \n+        \n \n     def build(self):\n         self.DesignerSection1 = ft.DragTarget(\n             group=\"widget\",\n"
+                },
+                {
+                    "date": 1696259156479,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n     def __init__(self):\n         super().__init__()\n         \n         \n-    def accept_draggable(self):\n+    def accept_draggable(self,e:ft.DragTargetAcceptEvent):\n         \n         \n \n     def build(self):\n"
+                },
+                {
+                    "date": 1696259194257,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n         super().__init__()\n         \n         \n     def accept_draggable(self,e:ft.DragTargetAcceptEvent):\n+        src=self._get_control_name()\n         \n         \n \n     def build(self):\n"
+                },
+                {
+                    "date": 1696259206546,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n     def __init__(self):\n         super().__init__()\n \n     def accept_draggable(self, e: ft.DragTargetAcceptEvent):\n-        src = self._get_control_name()\n+        src = self._get_control_name(e.src_id)\n \n     def build(self):\n         self.DesignerSection1 = ft.DragTarget(\n             group=\"widget\",\n"
+                },
+                {
+                    "date": 1696259236417,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n         super().__init__()\n \n     def accept_draggable(self, e: ft.DragTargetAcceptEvent):\n         src = self._get_control_name(e.src_id)\n+        e.control.\n \n     def build(self):\n         self.DesignerSection1 = ft.DragTarget(\n             group=\"widget\",\n"
+                }
+            ],
+            "date": 1696187563641,
+            "name": "Commit-0",
+            "content": "import flet as ft\n\n# ft.Draggable()\n\n\nclass DesignerSection(ft.UserControl):\n    def __init__(self):\n        super().__init__()\n\n    def build(self):\n        self.DesignerSection1 = ft.DragTarget(\n            group=\"widget\",\n            content=ft.Container(\n                width=1200,\n                height=1000,\n                border=ft.border.all(3, color=ft.colors.CYAN_300),\n                border_radius=ft.border_radius.all(10),\n                bgcolor=ft.colors.BLACK12,\n                margin=ft.margin.only(left=100, top=25),\n            ),\n        )\n\n        return self.DesignerSection1\n"
+        }
+    ]
+}

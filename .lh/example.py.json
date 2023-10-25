@@ -1,0 +1,70 @@
+{
+    "sourceFile": "example.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 13,
+            "patches": [
+                {
+                    "date": 1695728460658,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1695729800126,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,24 +0,0 @@\n-import flet as ft\n-\n-\n-def main(page: ft.Page):\n-    page.title = \"Flet Container Example\"\n-    page.vertical_alignment = ft.MainAxisAlignment.CENTER\n-    height = input(\"What do you want the height to be\")\n-    width = input(\"What do you want the width to be\")\n-\n-    # Define the container properties\n-    container_props = {\"width\": width, \"height\": height, \"bgcolor\": \"red\"}\n-\n-    # Create the container\n-    container = ft.Container(\n-        width=container_props[\"width\"],\n-        height=container_props[\"height\"],\n-        bgcolor=container_props[\"bgcolor\"],\n-    )\n-\n-    # Add the container to the page\n-    page.add(container)\n-\n-\n-ft.app(main)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1695729810801,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,2 @@\n+import parserforflet\n+\n"
+                },
+                {
+                    "date": 1695729836613,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,3 @@\n-import parserforflet\n+import parserforflet as ps\n+\n+ps.LoadDesignFile()\n"
+                },
+                {
+                    "date": 1695729844860,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,3 @@\n import parserforflet as ps\n \n ps.LoadDesignFile()\n-\n-\n"
+                },
+                {
+                    "date": 1695729860825,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n import parserforflet as ps\n \n-ps.LoadDesignFile()\n+ps.LoadDesignFile\n"
+                },
+                {
+                    "date": 1695729868030,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n import parserforflet as ps\n \n-ps.LoadDesignFile\n+ps.LoadDesignFile()\n"
+                },
+                {
+                    "date": 1695729938211,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n import parserforflet as ps\n \n-ps.LoadDesignFile()\n+ps.LoadDesignFile(jsonfilepath=)\n"
+                },
+                {
+                    "date": 1695729970345,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n import parserforflet as ps\n \n-ps.LoadDesignFile(jsonfilepath=)\n+ps.LoadDesignFile(jsonfilepath=\"request.json\")\n"
+                },
+                {
+                    "date": 1695755175755,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,5 @@\n import parserforflet as ps\n \n ps.LoadDesignFile(jsonfilepath=\"request.json\")\n+\n+\n"
+                },
+                {
+                    "date": 1695755188889,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,32 @@\n-import parserforflet as ps\n+# import parserforflet as ps\n \n-ps.LoadDesignFile(jsonfilepath=\"request.json\")\n+# ps.LoadDesignFile(jsonfilepath=\"request.json\")\n+import flet as ft\n+\n+def main(page: ft.Page):\n+    page.title = \"Sign In\"\n+    page.vertical_alignment = ft.MainAxisAlignment.CENTER\n+\n+    txt_username = ft.TextField(hint_text=\"Username\", width=200)\n+    txt_password = ft.TextField(hint_text=\"Password\", width=200, obscure_text=True)\n+\n+    def btn_signin_click(e):\n+        username = txt_username.value\n+        password = txt_password.value\n+        # Add your sign-in logic here\n+        print(f\"Username: {username}, Password: {password}\")\n+\n+    page.add(\n+        ft.Column(\n+            [\n+                ft.Text(\"Sign In\", style=ft.TextStyle(font_size=30, color=ft.Colors.BLUE)),\n+                txt_username,\n+                txt_password,\n+                ft.RaisedButton(\"Sign In\", on_click=btn_signin_click, color=ft.Colors.BLUE, text_color=ft.Colors.WHITE),\n+            ],\n+            alignment=ft.MainAxisAlignment.CENTER,\n+            spacing=10,\n+        )\n+    )\n+\n+ft.app(main)\n"
+                },
+                {
+                    "date": 1695755204097,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n     page.title = \"Sign In\"\n     page.vertical_alignment = ft.MainAxisAlignment.CENTER\n \n     txt_username = ft.TextField(hint_text=\"Username\", width=200)\n-    txt_password = ft.TextField(hint_text=\"Password\", width=200, obscure_text=True)\n+    txt_password = ft.TextField(hint_text=\"Password\", width=200)\n \n     def btn_signin_click(e):\n         username = txt_username.value\n         password = txt_password.value\n"
+                },
+                {
+                    "date": 1695755234944,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,17 +20,17 @@\n     page.add(\n         ft.Column(\n             [\n                 ft.Text(\n-                    \"Sign In\", style=ft.TextStyle(font_size=30, color=ft.Colors.BLUE)\n+                    \"Sign In\", style=ft.TextStyle(font_size=30, color=ft.colors.BLUE)\n                 ),\n                 txt_username,\n                 txt_password,\n                 ft.RaisedButton(\n                     \"Sign In\",\n                     on_click=btn_signin_click,\n-                    color=ft.Colors.BLUE,\n-                    text_color=ft.Colors.WHITE,\n+                    color=ft.colors.BLUE,\n+                    text_color=ft.colors.WHITE,\n                 ),\n             ],\n             alignment=ft.MainAxisAlignment.CENTER,\n             spacing=10,\n"
+                },
+                {
+                    "date": 1695755247180,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,41 +1,3 @@\n # import parserforflet as ps\n \n # ps.LoadDesignFile(jsonfilepath=\"request.json\")\n-import flet as ft\n-\n-\n-def main(page: ft.Page):\n-    page.title = \"Sign In\"\n-    page.vertical_alignment = ft.MainAxisAlignment.CENTER\n-\n-    txt_username = ft.TextField(hint_text=\"Username\", width=200)\n-    txt_password = ft.TextField(hint_text=\"Password\", width=200)\n-\n-    def btn_signin_click(e):\n-        username = txt_username.value\n-        password = txt_password.value\n-        # Add your sign-in logic here\n-        print(f\"Username: {username}, Password: {password}\")\n-\n-    page.add(\n-        ft.Column(\n-            [\n-                ft.Text(\n-                    \"Sign In\", style=ft.TextStyle(font_size=30, color=ft.colors.BLUE)\n-                ),\n-                txt_username,\n-                txt_password,\n-                ft.RaisedButton(\n-                    \"Sign In\",\n-                    on_click=btn_signin_click,\n-                    color=ft.colors.BLUE,\n-                    text_color=ft.colors.WHITE,\n-                ),\n-            ],\n-            alignment=ft.MainAxisAlignment.CENTER,\n-            spacing=10,\n-        )\n-    )\n-\n-\n-ft.app(main)\n"
+                }
+            ],
+            "date": 1695728460658,
+            "name": "Commit-0",
+            "content": "import flet as ft\n\n\ndef main(page: ft.Page):\n    page.title = \"Flet Container Example\"\n    page.vertical_alignment = ft.MainAxisAlignment.CENTER\n    height = input(\"What do you want the height to be\")\n    width = input(\"What do you want the width to be\")\n\n    # Define the container properties\n    container_props = {\"width\": width, \"height\": height, \"bgcolor\": \"red\"}\n\n    # Create the container\n    container = ft.Container(\n        width=container_props[\"width\"],\n        height=container_props[\"height\"],\n        bgcolor=container_props[\"bgcolor\"],\n    )\n\n    # Add the container to the page\n    page.add(container)\n\n\nft.app(main)\n"
+        }
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "sourceFile": "jsonparser.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1695833433274,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1695833478267,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,21 @@\n from flet import *\n+import json\n+\n+        for item in self.json:\n+            for key, val in item.items():\n+                if key == \"Container\":\n+                    self.c1 = Container()\n+                    # Update the properties of self.c1\n+                    self.c1.width = val[\"width\"]\n+                    self.c1.height = val[\"height\"]\n+                    self.c1.bgcolor = val[\"bgcolor\"]\n+                    self.page.add(self.c1)\n+                if key == \"IconButton\":\n+                    self.btn = self.c1.content = TextButton()\n+                    # Update the properties of self.c1\n+                    self.btn.width = val[\"width\"]\n+                    self.btn.height = val[\"height\"]\n+                    # self.btn.bgcolor = val[\"bgcolor\"]\n+                    self.btn.icon = icons.COFFEE\n+                    self.btn.text = \"icon\"\n+                    self.page.add(self.btn)\n"
+                },
+                {
+                    "date": 1695833514438,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,11 @@\n from flet import *\n import json\n \n+class Parser:\n+    def __init__(self):\n+        \n+\n         for item in self.json:\n             for key, val in item.items():\n                 if key == \"Container\":\n                     self.c1 = Container()\n"
+                },
+                {
+                    "date": 1695833558469,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,10 @@\n \n \n class Parser:\n     def __init__(self):\n+      \n+    def parse(self):  \n         for item in self.json:\n             for key, val in item.items():\n                 if key == \"Container\":\n                     self.c1 = Container()\n"
+                },
+                {
+                    "date": 1695833566945,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,10 @@\n \n class Parser:\n     def __init__(self):\n         pass\n+    \n+    \n \n     def parse(self):\n         for item in self.json:\n             for key, val in item.items():\n"
+                }
+            ],
+            "date": 1695833433274,
+            "name": "Commit-0",
+            "content": "from flet import *\n\n"
+        }
+    ]
+}
