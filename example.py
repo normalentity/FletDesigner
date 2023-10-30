@@ -6,7 +6,7 @@ ldf = LoadDesignFile(jsonfilepath="request.json")
 
 
 def update1(e):
-    ldf.b1.text = "update"       
+    ldf.b1.text = "update"
     ldf.b1.update()
 
 
@@ -20,3 +20,16 @@ def update12(e):
 
 ldf.b12.on_click = update12
 ldf.run()
+
+
+# # import the library
+# from fletsb import LoadStoryBoard, StoryBoard
+
+
+# # create a target function of the front-end
+# def main(st: StoryBoard):
+#     pass
+
+
+# # start loading
+# LoadStoryBoard(main, "Request.fletsb")

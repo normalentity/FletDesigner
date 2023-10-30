@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 7,
+            "activePatchIndex": 13,
             "patches": [
                 {
                     "date": 1696339790469,
@@ -36,6 +36,30 @@
                 {
                     "date": 1697964207257,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,44 @@\n+import flet as ft\n+from time import sleep\n+\n+\n+from UI.animationpage import __view__\n+from DesignPage import DesignPage\n+\n+\n+def main(page: ft.Page):\n+    page.window_height = 800\n+    page.window_height = 800\n+    page.go(\"/welcome\")\n+\n+    def routechange(e: ft.RouteChangeEvent):\n+        # if page.route == \"/welcome\":\n+        #     page.views.clear()\n+        #     index = __view__()\n+        #     page.views.append(index.build())\n+        #     page.update()\n+        #     sleep(1)\n+        #     index.randomize(\"None\")\n+        #     sleep(1)\n+        #     index.assemble(\"None\")\n+        #     sleep(2.5)\n+        page.go(route=\"/design\")\n+        if page.route == \"/design\":\n+            design_page = DesignPage()\n+            page.views.clear()\n+            page.update()\n+            # page.window_full_screen = True\n+            sleep(0.3)\n+            page.views.append(design_page.build())\n+            page.update()\n+            # design_page.bringintoview()\n+            page.update()\n+\n+    page.bgcolor = ft.colors.BLACK\n+    page.on_route_change = routechange\n+\n+    page.update()\n+\n+\n+if __name__ == \"__main__\":\n+    ft.app(main)\n"
+                },
+                {
+                    "date": 1697992411654,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,62 +11,18 @@\n     page.window_height = 800\n     page.go(\"/welcome\")\n \n     def routechange(e: ft.RouteChangeEvent):\n-        # if page.route == \"/welcome\":\n-        #     page.views.clear()\n-        #     index = __view__()\n-        #     page.views.append(index.build())\n-        #     page.update()\n-        #     sleep(1)\n-        #     index.randomize(\"None\")\n-        #     sleep(1)\n-        #     index.assemble(\"None\")\n-        #     sleep(2.5)\n-        page.go(route=\"/design\")\n-        if page.route == \"/design\":\n-            design_page = DesignPage()\n+        if page.route == \"/welcome\":\n             page.views.clear()\n+            index = __view__()\n+            page.views.append(index.build())\n             page.update()\n-            # page.window_full_screen = True\n-            sleep(0.3)\n-            page.views.append(design_page.build())\n-            page.update()\n-            # design_page.bringintoview()\n-            page.update()\n-\n-    page.bgcolor = ft.colors.BLACK\n-    page.on_route_change = routechange\n-\n-    page.update()\n-\n-\n-if __name__ == \"__main__\":\n-    ft.app(main)\n-import flet as ft\n-from time import sleep\n-\n-\n-from UI.animationpage import __view__\n-from DesignPage import DesignPage\n-\n-\n-def main(page: ft.Page):\n-    page.window_height = 800\n-    page.window_height = 800\n-    page.go(\"/welcome\")\n-\n-    def routechange(e: ft.RouteChangeEvent):\n-        # if page.route == \"/welcome\":\n-        #     page.views.clear()\n-        #     index = __view__()\n-        #     page.views.append(index.build())\n-        #     page.update()\n-        #     sleep(1)\n-        #     index.randomize(\"None\")\n-        #     sleep(1)\n-        #     index.assemble(\"None\")\n-        #     sleep(2.5)\n+            sleep(1)\n+            index.randomize(\"None\")\n+            sleep(1)\n+            index.assemble(\"None\")\n+            sleep(2.5)\n         page.go(route=\"/design\")\n         if page.route == \"/design\":\n             design_page = DesignPage()\n             page.views.clear()\n"
+                },
+                {
+                    "date": 1697992417904,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,8 +21,10 @@\n             index.randomize(\"None\")\n             sleep(1)\n             index.assemble(\"None\")\n             sleep(2.5)\n+            \n+        page.w\n         page.go(route=\"/design\")\n         if page.route == \"/design\":\n             design_page = DesignPage()\n             page.views.clear()\n"
+                },
+                {
+                    "date": 1697992424326,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n             sleep(1)\n             index.assemble(\"None\")\n             sleep(2.5)\n             \n-        page.w\n+        page.ma\n         page.go(route=\"/design\")\n         if page.route == \"/design\":\n             design_page = DesignPage()\n             page.views.clear()\n"
+                },
+                {
+                    "date": 1697992429467,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n             sleep(1)\n             index.assemble(\"None\")\n             sleep(2.5)\n             \n-        page.ma\n+        page.window_maximized\n         page.go(route=\"/design\")\n         if page.route == \"/design\":\n             design_page = DesignPage()\n             page.views.clear()\n"
+                },
+                {
+                    "date": 1697992436544,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n             sleep(1)\n             index.assemble(\"None\")\n             sleep(2.5)\n             \n-        page.window_maximized=t\n+        page.window_maximized=Tu\n         page.go(route=\"/design\")\n         if page.route == \"/design\":\n             design_page = DesignPage()\n             page.views.clear()\n"
+                },
+                {
+                    "date": 1697992453549,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,8 @@\n             sleep(1)\n             index.assemble(\"None\")\n             sleep(2.5)\n             \n-        page.window_full_screen\n \n         page.window_maximized = True\n         page.go(route=\"/design\")\n         if page.route == \"/design\":\n"
                 }
             ],
             "date": 1696339790469,

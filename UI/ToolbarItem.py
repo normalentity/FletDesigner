@@ -7,9 +7,9 @@ class ToolbarItem(ft.UserControl):
         self.selected = False
         # the names of the control to display in the toolbar
         self.container = ft.Container(
-            bgcolor="#111111",
+            bgcolor=ft.colors.with_opacity(color=ft.colors.BLACK38, opacity=0.2),
             height=40,
-            border_radius=14,
+            border_radius=12,
             clip_behavior=ft.ClipBehavior.HARD_EDGE,
             padding=ft.padding.all(1),
             animate=200,

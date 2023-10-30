@@ -17,5 +17,5 @@ class Parser:
                 # the val and the key variables are the keys and values we retrieve from the json file
                 Initialize_Components(self, key, val)
 
-    def Add_Widgetds(self, Control):
+    def Add_Widgets(self, Control):
         pass

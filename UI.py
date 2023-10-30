@@ -22,6 +22,8 @@ def main(page: ft.Page):
         #     sleep(1)
         #     index.assemble("None")
         #     sleep(2.5)
+
+        # page.window_maximized = True
         page.go(route="/design")
         if page.route == "/design":
             design_page = DesignPage()
