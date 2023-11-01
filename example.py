@@ -6,6 +6,7 @@ ldf = LoadDesignFile(jsonfilepath="request.json")
 
 
 def update1(e):
+    
     ldf.b1.text = "update"
     ldf.b1.update()
 
@@ -24,12 +25,3 @@ ldf.run()
 
 # # import the library
 # from fletsb import LoadStoryBoard, StoryBoard
-
-
-# # create a target function of the front-end
-# def main(st: StoryBoard):
-#     pass
-
-
-# # start loading
-# LoadStoryBoard(main, "Request.fletsb")

@@ -1,0 +1,18 @@
+{
+    "sourceFile": "n.fletsb",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1698661950325,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1698661950325,
+            "name": "Commit-0",
+            "content": "{\"storyboard_settings\": {\"template\": \"default\", \"storyboard_suggestions\": false, \"allow_scroll\": false}, \"pages\": {\"main\": {\"settings\": {\"bgcolor\": \"black\", \"suggestions_rules\": \"none\"}, \"widgets\": [{\"widget_class_name\": \"Button\", \"properties\": {\"text\": \"Sent\", \"function name\": \"nafay\", \"text_color\": \"red\", \"bgcolor\": \"green\", \"alignment\": \"center\", \"width\": 165, \"height\": 37, \"hide\": false}}]}}}"
+        }
+    ]
+}
