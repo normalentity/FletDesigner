@@ -43,4 +43,4 @@ def Initialize_Components(self, key, val):
             self.keys[f"{key}"].opacity = val["opacity"]
 
 
-# self.keys[f"c1"].content.controls.append(self.keys[f"{key}"])
+
