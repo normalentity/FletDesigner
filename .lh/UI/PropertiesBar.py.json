@@ -1,0 +1,22 @@
+{
+    "sourceFile": "UI/PropertiesBar.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1698868803975,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1698868810138,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,5 @@\n-import flet as ft\n\\ No newline at end of file\n+import flet as ft\n+\n+\n+\n+def \n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1698868803975,
+            "name": "Commit-0",
+            "content": "import flet as ft"
+        }
+    ]
+}

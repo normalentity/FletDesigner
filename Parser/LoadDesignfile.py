@@ -35,6 +35,9 @@ class LoadDesignFile:
         # Initialization of the page
         self.__page = page
         for control in self.__keys.values():
-            self.__page.add(control)
+            if(not control.__dict__.get("isChild")):
+                self.__page.add(control)
         page.window_height = 800
+        # page.theme = ft.theme.Theme(color_scheme_seed="cyan100")
+        page.update()
         page.window_width = 800
