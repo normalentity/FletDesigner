@@ -10,7 +10,7 @@
         "expand": "False",
         "padding": {"left": 100, "top": 20, "right": 20, "bottom": 20},
         "content": {
-            "type": "Column",
+            "type": "Row",
             "controls": [
                 {
                     "b1": {

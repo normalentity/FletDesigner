@@ -39,23 +39,20 @@ class Parser:
             if "content" in val:
                 if val["content"]["type"] == "Row":
                     control.content = ft.Row()
-                    print(control.content)
                 if val["content"]["type"] == "Column":
                     control.content = ft.Column()
-                    print(control.content)
 
-                    # if isinstance(val["content"]["controls"], list):
-                    for item in val["content"]["controls"]:
-                        for childKey, childVal in item.items():
-                            self.Initialize_Components(
-                                val=childVal, key=childKey, parent=key
-                            )
+                for item in val["content"]["controls"]:
+                    for childKey, childVal in item.items():
+                        self.Initialize_Components(
+                            val=childVal, key=childKey, parent=key
+                        )
 
-                        # Initialize_Components(self, key, val)
-                        # if val["controls"] in val["content"]:
-                        #     print("Control")
-                        # else:
-                        #     print("not kut")
+                    # Initialize_Components(self, key, val)
+                    # if val["controls"] in val["content"]:
+                    #     print("Control")
+                    # else:
+                    #     print("not kut")
             else:
                 return None
 
