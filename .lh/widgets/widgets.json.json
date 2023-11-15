@@ -1,0 +1,318 @@
+{
+    "sourceFile": "widgets/widgets.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 75,
+            "patches": [
+                {
+                    "date": 1699950529795,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1699950536355,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,3 @@\n-{}\n\\ No newline at end of file\n+[{\n+    \n+}]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699950542980,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n [{\n-    \n+    \"type\":\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699950554529,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n [{\n-    \"type\":\n+    \"type:\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699950562467,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n [{\n-    \"type:\n+    \"widget\":C\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699950570221,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n [{\n-    \"widget\":C\n+    \"widget\":{}\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699950576019,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n [{\n-    \"widget\":{}\n+    \"widget\":{\"c\"}\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699950581049,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n [{\n-    \"widget\":{\"c\"}\n+    \"widget\":{\"Con\"}\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699950586701,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n [{\n-    \"widget\":{\"Con\"}\n+    \"widget\":{\"Container\":{\"}\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699950597244,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n [{\n-    \"widget\":{\"Container\":{\"}\n+    \"widget\":{\"Container\"}\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699950640224,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n [{\n-    \"widget\":{\"Container\"}\n+    \"widget\":\"Container\":{}\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699950650045,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n [{\n-    \"widget\":\"Container\":{}\n+    \"widget\":\"Container\"{}\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699950657748,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n [{\n-    \"widget\":\"Container\"{}\n+    \"widget\":{}\"Container\":{}\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699950665668,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n [{\n-    \"widget\":{}\"Container\":{}\n+    \"widget\":{\"Container\":{}}\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699950683713,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n [{\n-    \"widget\":{\"Container\":{}}\n+    \"widget\":{\"Container\":{\"text\"}}\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699950690841,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n [{\n-    \"widget\":{\"Container\":{\"text\"}}\n+    \"widget\":{\"Container\":{\"width\":}}\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699950712563,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n [{\n-    \"widget\":{\"Container\":{\"width\":}}\n+    \"widget\":{\"Container\":{\"width\":200,hei}}\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699950717774,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n [{\n-    \"widget\":{\"Container\":{\"width\":200,hei}}\n+    \"widget\":{\"Container\":{\"width\":200,\"height` \"}}\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699950727088,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n [{\n-    \"widget\":{\"Container\":{\"width\":200,\"height` \"}}\n+    \"widget\":{\"Container\":{\"width\":200}}\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699950827504,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n [{\n-    \"widget\":{\"Container\":{\"width\":200}}\n+    \"widget\":{\"Container\":{pro\"width\":200,\"height\":100}}\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699950839064,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n [{\n-    \"widget\":{\"Container\":{pro\"width\":200,\"height\":100}}\n+    \"widget\":{\"Container\":{\"width\":200,\"height\":100}}\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699950877141,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n [{\n-    \"widget\":{\"Container\":{\"width\":200,\"height\":100}}\n+    \"widget\":{\"Container\":}\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699950884736,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,4 @@\n [{\n-    \"widget\":{\"Container\":}\n+    \"widget\":\"Container\"\n+    \n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699950891596,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n [{\n     \"widget\":\"Container\"\n-    \n+    \"prop\"\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699950899657,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n [{\n-    \"widget\":\"Container\"\n-    \"prop\"\n+    \"widget\":\"Container\",\n+    \"properties\"\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699950906776,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n [{\n     \"widget\":\"Container\",\n-    \"properties\"\n+    \"properties\":{w}\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699950934581,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n [{\n     \"widget\":\"Container\",\n-    \"properties\":{w}\n+    \"properties\":{\"\"}\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699950942049,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n [{\n     \"widget\":\"Container\",\n-    \"properties\":{\"\"}\n+    \"properties\":{\"width\";}\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699950950719,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n [{\n     \"widget\":\"Container\",\n-    \"properties\":{\"width\";}\n+    \"properties\":{\"width\"}\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699950966070,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n [{\n     \"widget\":\"Container\",\n-    \"properties\":{\"width\"}\n+    \"properties\":{\"width\",\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699950977855,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n [{\n     \"widget\":\"Container\",\n-    \"properties\":{\"width\",\n+    \"properties\":\"width\",\"\"\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699950984288,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n [{\n     \"widget\":\"Container\",\n-    \"properties\":\"width\",\"\"\n+    \"properties\":\"width\",\"H\"\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699950993765,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n [{\n     \"widget\":\"Container\",\n-    \"properties\":\"width\",\"H\"\n+    \"properties\":\"width\",\"height\"]\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699950999861,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n [{\n     \"widget\":\"Container\",\n-    \"properties\":\"width\",\"height\"]\n+    \"properties\":[\"width\",\"height\"]\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699951008392,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n [{\n     \"widget\":\"Container\",\n-    \"properties\":[\"width\",\"height\"]\n+    \"properties\":[\"width\",\"height\",m]\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699951030613,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n [{\n     \"widget\":\"Container\",\n-    \"properties\":[\"width\",\"height\",m]\n+    \"properties\":[\"width\",\"height\",\"op\"]\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699951039380,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n [{\n     \"widget\":\"Container\",\n-    \"properties\":[\"width\",\"height\",\"op\"]\n+    \"properties\":[\"width\",\"height\",\"opacity\",]\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699951044925,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n [{\n     \"widget\":\"Container\",\n-    \"properties\":[\"width\",\"height\",\"opacity\",]\n+    \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\"]\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699951051152,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n [{\n     \"widget\":\"Container\",\n-    \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\"]\n+    \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\",padding]\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699951056909,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n [{\n     \"widget\":\"Container\",\n-    \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\",padding]\n+    \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\",\"padding\"]\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699951109815,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n [{\n     \"widget\":\"Container\",\n-    \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\",\"padding\"]\n+    \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\",\"padding\",bor]\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699951115025,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n [{\n     \"widget\":\"Container\",\n-    \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\",\"padding\",bor]\n+    \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\",\"padding\",\"bor\"]\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699951205929,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n [{\n     \"widget\":\"Container\",\n-    \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\",\"padding\",\"bor\"]\n+    \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\",\"padding\",\"border_radius\",\"\"]\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699951304697,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n [{\n     \"widget\":\"Container\",\n-    \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\",\"padding\",\"border_radius\",\"\"]\n+    \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\",\"padding\",\"border_radius\",\"border\",]\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699951312088,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n [{\n     \"widget\":\"Container\",\n-    \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\",\"padding\",\"border_radius\",\"border\",]\n+    \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\",\"padding\",\"border_radius\",\"border\",\"content\"]\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699953570130,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n [{\n     \"widget\":\"Container\",\n     \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\",\"padding\",\"border_radius\",\"border\",\"content\"]\n+    \n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699953576386,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n [{\n     \"widget\":\"Container\",\n     \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\",\"padding\",\"border_radius\",\"border\",\"content\"]\n-    \n+    \"defa\"\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699953584505,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n [{\n     \"widget\":\"Container\",\n     \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\",\"padding\",\"border_radius\",\"border\",\"content\"]\n-    \"defa\"\n+    \"defualt\"\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699953592846,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n [{\n     \"widget\":\"Container\",\n     \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\",\"padding\",\"border_radius\",\"border\",\"content\"]\n-    \"defualt\"\n+    \"defualt\":\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699953624281,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n [{\n     \"widget\":\"Container\",\n-    \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\",\"padding\",\"border_radius\",\"border\",\"content\"]\n-    \"defualt\":\n+    \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\",\"padding\",\"border_radius\",\"border\",\"content\"],\n+    \"defalt\":\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699953681162,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n [{\n     \"widget\":\"Container\",\n     \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\",\"padding\",\"border_radius\",\"border\",\"content\"],\n-    \"defalt\":\n+    \"default\":{}\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699953746505,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n [{\n     \"widget\":\"Container\",\n     \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\",\"padding\",\"border_radius\",\"border\",\"content\"],\n-    \"default\":{}\n+    \"default\":{\"\"}\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699953755457,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n [{\n     \"widget\":\"Container\",\n     \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\",\"padding\",\"border_radius\",\"border\",\"content\"],\n-    \"default\":{\"\"}\n+    \"default\":{\"width\": \"100\", \"height\": \"100%\", \"opacity}\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699953761760,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n [{\n     \"widget\":\"Container\",\n     \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\",\"padding\",\"border_radius\",\"border\",\"content\"],\n-    \"default\":{\"width\": \"100\", \"height\": \"100%\", \"opacity}\n+    \"default\":{\"width\": \"100\", \"height\": \"100\", \"opacity\"}\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699953772274,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n [{\n     \"widget\":\"Container\",\n     \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\",\"padding\",\"border_radius\",\"border\",\"content\"],\n-    \"default\":{\"width\": \"100\", \"height\": \"100\", \"opacity\"}\n+    \"default\":{\"width\": \"100\", \"height\": 100, \"opacity\":}\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699953785782,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n [{\n     \"widget\":\"Container\",\n     \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\",\"padding\",\"border_radius\",\"border\",\"content\"],\n-    \"default\":{\"width\": \"100\", \"height\": 100, \"opacity\":}\n+    \"default\":{\"width\": 100, \"height\": 100, \"opacity\":\"\"}\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699953795212,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n [{\n     \"widget\":\"Container\",\n     \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\",\"padding\",\"border_radius\",\"border\",\"content\"],\n-    \"default\":{\"width\": 100, \"height\": 100, \"opacity\":\"\"}\n+    \"default\":{\"width\": 100, \"height\": 100, \"opacity\":1, \"bgcolor\":}\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699953801748,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n [{\n     \"widget\":\"Container\",\n     \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\",\"padding\",\"border_radius\",\"border\",\"content\"],\n-    \"default\":{\"width\": 100, \"height\": 100, \"opacity\":1, \"bgcolor\":}\n+    \"default\":{\"width\": 100, \"height\": 100, \"opacity\":1, \"bgcolor\":\"r\"}\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699953808698,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n [{\n     \"widget\":\"Container\",\n     \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\",\"padding\",\"border_radius\",\"border\",\"content\"],\n-    \"default\":{\"width\": 100, \"height\": 100, \"opacity\":1, \"bgcolor\":\"r\"}\n+    \"default\":{\"width\": 100, \"height\": 100, \"opacity\":1, \"bgcolor\":\"red\",\"padding}\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699953833504,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n [{\n     \"widget\":\"Container\",\n     \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\",\"padding\",\"border_radius\",\"border\",\"content\"],\n-    \"default\":{\"width\": 100, \"height\": 100, \"opacity\":1, \"bgcolor\":\"red\",\"padding}\n+    \"default\":{\"width\": 100, \"height\": 100, \"opacity\":1, \"bgcolor\":\"red\",\"padding\": {\"left\": 100, \"top\": 20, \"right\": 20, \"bottom\": 20},}\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699953869552,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,5 @@\n+[{\n+    \"widget\":\"Container\",\n+    \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\",\"padding\",\"border_radius\",\"border\",\"content\"],\n+    \"default\":{\"width\": 100, \"height\": 100, \"opacity\":1, \"bgcolor\":\"red\",\"padding\": {\"left\": 100, \"top\": 20, \"right\": 20, \"bottom\": 20},bor}\n+}]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699953875427,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,5 @@\n [{\n     \"widget\":\"Container\",\n     \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\",\"padding\",\"border_radius\",\"border\",\"content\"],\n-    \"default\":{\"width\": 100, \"height\": 100, \"opacity\":1, \"bgcolor\":\"red\",\"padding\": {\"left\": 100, \"top\": 20, \"right\": 20, \"bottom\": 20},bor}\n-}]\n-[{\n-    \"widget\":\"Container\",\n-    \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\",\"padding\",\"border_radius\",\"border\",\"content\"],\n-    \"default\":{\"width\": 100, \"height\": 100, \"opacity\":1, \"bgcolor\":\"red\",\"padding\": {\"left\": 100, \"top\": 20, \"right\": 20, \"bottom\": 20},}\n+    \"default\":{\"width\": 100, \"height\": 100, \"opacity\":1, \"bgcolor\":\"red\",\"padding\": {\"left\": 100, \"top\": 20, \"right\": 20, \"bottom\": 20},\"\"}\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699953884081,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n [{\n     \"widget\":\"Container\",\n     \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\",\"padding\",\"border_radius\",\"border\",\"content\"],\n-    \"default\":{\"width\": 100, \"height\": 100, \"opacity\":1, \"bgcolor\":\"red\",\"padding\": {\"left\": 100, \"top\": 20, \"right\": 20, \"bottom\": 20},\"\"}\n+    \"default\":{\"width\": 100, \"height\": 100, \"opacity\":1, \"bgcolor\":\"red\",\"padding\": {\"left\": 100, \"top\": 20, \"right\": 20, \"bottom\": 20},\"border_radius\":20}\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699953891500,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n [{\n     \"widget\":\"Container\",\n     \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\",\"padding\",\"border_radius\",\"border\",\"content\"],\n-    \"default\":{\"width\": 100, \"height\": 100, \"opacity\":1, \"bgcolor\":\"red\",\"padding\": {\"left\": 100, \"top\": 20, \"right\": 20, \"bottom\": 20},\"border_radius\":20}\n+    \"default\":{\"width\": 100, \"height\": 100, \"opacity\":1, \"bgcolor\":\"red\",\"padding\": {\"left\": 100, \"top\": 20, \"right\": 20, \"bottom\": 20},\"border_radius\":20,}\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699953900404,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n [{\n     \"widget\":\"Container\",\n     \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\",\"padding\",\"border_radius\",\"border\",\"content\"],\n-    \"default\":{\"width\": 100, \"height\": 100, \"opacity\":1, \"bgcolor\":\"red\",\"padding\": {\"left\": 100, \"top\": 20, \"right\": 20, \"bottom\": 20},\"border_radius\":20,}\n+    \"default\":{\"width\": 100, \"height\": 100, \"opacity\":1, \"bgcolor\":\"red\",\"padding\": {\"left\": 100, \"top\": 20, \"right\": 20, \"bottom\": 20},\"border_radius\":20,\"border\"}\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699953940829,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n [{\n     \"widget\":\"Container\",\n     \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\",\"padding\",\"border_radius\",\"border\",\"content\"],\n-    \"default\":{\"width\": 100, \"height\": 100, \"opacity\":1, \"bgcolor\":\"red\",\"padding\": {\"left\": 100, \"top\": 20, \"right\": 20, \"bottom\": 20},\"border_radius\":20,\"border\"}\n+    \"default\":{\"width\": 100, \"height\": 100, \"opacity\":1, \"bgcolor\":\"red\",\"padding\": {\"left\": 100, \"top\": 20, \"right\": 20, \"bottom\": 20},\"border_radius\":20,\"border\":{}}\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699953947349,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n [{\n     \"widget\":\"Container\",\n     \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\",\"padding\",\"border_radius\",\"border\",\"content\"],\n-    \"default\":{\"width\": 100, \"height\": 100, \"opacity\":1, \"bgcolor\":\"red\",\"padding\": {\"left\": 100, \"top\": 20, \"right\": 20, \"bottom\": 20},\"border_radius\":20,\"border\":{}}\n+    \"default\":{\"width\": 100, \"height\": 100, \"opacity\":1, \"bgcolor\":\"red\",\"padding\": {\"left\": 100, \"top\": 20, \"right\": 20, \"bottom\": 20},\"border_radius\":20,\"border\":{\"\"}}\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699953954015,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n [{\n     \"widget\":\"Container\",\n     \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\",\"padding\",\"border_radius\",\"border\",\"content\"],\n-    \"default\":{\"width\": 100, \"height\": 100, \"opacity\":1, \"bgcolor\":\"red\",\"padding\": {\"left\": 100, \"top\": 20, \"right\": 20, \"bottom\": 20},\"border_radius\":20,\"border\":{\"\"}}\n+    \"default\":{\"width\": 100, \"height\": 100, \"opacity\":1, \"bgcolor\":\"red\",\"padding\": {\"left\": 100, \"top\": 20, \"right\": 20, \"bottom\": 20},\"border_radius\":20,\"border\":{\"width\": 20,\"height\": 20,\"opacity}}\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699953965122,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n [{\n     \"widget\":\"Container\",\n     \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\",\"padding\",\"border_radius\",\"border\",\"content\"],\n-    \"default\":{\"width\": 100, \"height\": 100, \"opacity\":1, \"bgcolor\":\"red\",\"padding\": {\"left\": 100, \"top\": 20, \"right\": 20, \"bottom\": 20},\"border_radius\":20,\"border\":{\"width\": 20,\"height\": 20,\"opacity}}\n+    \"default\":{\"width\": 100, \"height\": 100, \"opacity\":1, \"bgcolor\":\"red\",\"padding\": {\"left\": 100, \"top\": 20, \"right\": 20, \"bottom\": 20},\"border_radius\":20,\"border\":{\"width\": 2}}\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699953971161,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n [{\n     \"widget\":\"Container\",\n     \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\",\"padding\",\"border_radius\",\"border\",\"content\"],\n-    \"default\":{\"width\": 100, \"height\": 100, \"opacity\":1, \"bgcolor\":\"red\",\"padding\": {\"left\": 100, \"top\": 20, \"right\": 20, \"bottom\": 20},\"border_radius\":20,\"border\":{\"width\": 2}}\n+    \"default\":{\"width\": 100, \"height\": 100, \"opacity\":1, \"bgcolor\":\"red\",\"padding\": {\"left\": 100, \"top\": 20, \"right\": 20, \"bottom\": 20},\"border_radius\":20,\"border\":{\"width\": 2,\"col\"}}\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699953978828,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n [{\n     \"widget\":\"Container\",\n     \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\",\"padding\",\"border_radius\",\"border\",\"content\"],\n-    \"default\":{\"width\": 100, \"height\": 100, \"opacity\":1, \"bgcolor\":\"red\",\"padding\": {\"left\": 100, \"top\": 20, \"right\": 20, \"bottom\": 20},\"border_radius\":20,\"border\":{\"width\": 2,\"col\"}}\n+    \"default\":{\"width\": 100, \"height\": 100, \"opacity\":1, \"bgcolor\":\"red\",\"padding\": {\"left\": 100, \"top\": 20, \"right\": 20, \"bottom\": 20},\"border_radius\":20,\"border\":{\"width\": 2,\"color\":\"black\",\"}}\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699953986165,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n [{\n     \"widget\":\"Container\",\n     \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\",\"padding\",\"border_radius\",\"border\",\"content\"],\n-    \"default\":{\"width\": 100, \"height\": 100, \"opacity\":1, \"bgcolor\":\"red\",\"padding\": {\"left\": 100, \"top\": 20, \"right\": 20, \"bottom\": 20},\"border_radius\":20,\"border\":{\"width\": 2,\"color\":\"black\",\"}}\n+    \"default\":{\"width\": 100, \"height\": 100, \"opacity\":1, \"bgcolor\":\"red\",\"padding\": {\"left\": 100, \"top\": 20, \"right\": 20, \"bottom\": 20},\"border_radius\":20,\"border\":{\"width\": 2,\"color\":\"red\"}}\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699953992439,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n [{\n     \"widget\":\"Container\",\n     \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\",\"padding\",\"border_radius\",\"border\",\"content\"],\n-    \"default\":{\"width\": 100, \"height\": 100, \"opacity\":1, \"bgcolor\":\"red\",\"padding\": {\"left\": 100, \"top\": 20, \"right\": 20, \"bottom\": 20},\"border_radius\":20,\"border\":{\"width\": 2,\"color\":\"red\"}}\n+    \"default\":{\"width\": 100, \"height\": 100, \"opacity\":1, \"bgcolor\":\"red\",\"padding\": {\"left\": 100, \"top\": 20, \"right\": 20, \"bottom\": 20},\"border_radius\":20,\"border\":{\"width\": 2,\"color\":\"red\"},co}\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699953998439,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n [{\n     \"widget\":\"Container\",\n     \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\",\"padding\",\"border_radius\",\"border\",\"content\"],\n-    \"default\":{\"width\": 100, \"height\": 100, \"opacity\":1, \"bgcolor\":\"red\",\"padding\": {\"left\": 100, \"top\": 20, \"right\": 20, \"bottom\": 20},\"border_radius\":20,\"border\":{\"width\": 2,\"color\":\"red\"},co}\n+    \"default\":{\"width\": 100, \"height\": 100, \"opacity\":1, \"bgcolor\":\"red\",\"padding\": {\"left\": 100, \"top\": 20, \"right\": 20, \"bottom\": 20},\"border_radius\":20,\"border\":{\"width\": 2,\"color\":\"red\"},\"content\"}\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699954009965,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n [{\n     \"widget\":\"Container\",\n     \"properties\":[\"width\",\"height\",\"opacity\",\"bgcolor\",\"padding\",\"border_radius\",\"border\",\"content\"],\n-    \"default\":{\"width\": 100, \"height\": 100, \"opacity\":1, \"bgcolor\":\"red\",\"padding\": {\"left\": 100, \"top\": 20, \"right\": 20, \"bottom\": 20},\"border_radius\":20,\"border\":{\"width\": 2,\"color\":\"red\"},\"content\":\"\"}\n+    \"default\":{\"width\": 100, \"height\": 100, \"opacity\":1, \"bgcolor\":\"red\",\"padding\": {\"left\": 100, \"top\": 20, \"right\": 20, \"bottom\": 20},\"border_radius\":20,\"border\":{\"width\": 2,\"color\":\"red\"},\"content\":\"None\"}\n }]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699954391500,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,33 @@\n+[\n+    {\n+        \"widget\": \"Container\",\n+        \"properties\": [\n+            \"width\",\n+            \"height\",\n+            \"opacity\",\n+            \"bgcolor\",\n+            \"padding\",\n+            \"border_radius\",\n+            \"border\",\n+            \"content\"\n+        ],\n+        \"default\": {\n+            \"width\": 100,\n+            \"height\": 100,\n+            \"opacity\": 1,\n+            \"bgcolor\": \"red\",\n+            \"padding\": {\n+                \"left\": 100,\n+                \"top\": 20,\n+                \"right\": 20,\n+                \"bottom\": 20\n+            },\n+            \"border_radius\": 20,\n+            \"border\": {\n+                \"width\": 2,\n+                \"color\": \"red\"\n+            },\n+            \"content\": \"None\"\n+        }\n+    }\n+]\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1699950529795,
+            "name": "Commit-0",
+            "content": "{}"
+        }
+    ]
+}

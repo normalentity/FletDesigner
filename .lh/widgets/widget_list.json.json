@@ -1,0 +1,42 @@
+{
+    "sourceFile": "widgets/widget_list.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1699954770152,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1699954781615,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,3 @@\n-[]\n\\ No newline at end of file\n+[{\n+    \"\"\n+}]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699954790497,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,1 @@\n-[{\n-    \"\"\n-}]\n\\ No newline at end of file\n+[]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699954796267,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-[]\n\\ No newline at end of file\n+[\"Container\"]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699954801383,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-[\"Container\"]\n\\ No newline at end of file\n+[{}]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699954808470,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,3 @@\n-[{}]\n\\ No newline at end of file\n+[{\n+    \"Container\":\"c\"\n+}]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699954818898,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n [{\n-    \"Container\":\"c\"\n+    \"Container\":\"Container\"\n }]\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1699954770152,
+            "name": "Commit-0",
+            "content": "[]"
+        }
+    ]
+}
