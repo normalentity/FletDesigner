@@ -13,20 +13,13 @@ class DesignPage(ft.View):
         self.route = "/design"
         self.bgcolor = "#131313"
         self.designsection = DesignerSection()
-        Container = ToolbarItem("Container")
-        Row = ToolbarItem("Row")
+        Container = ToolbarItem(text="Container", widget="Container")
+        Row = ToolbarItem(text="Row", widget="Row")
         # placeholderbuttons
-        x1 = ToolbarItem("x1")
-        x2 = ToolbarItem("x2")
-        x3 = ToolbarItem("x3")
-     
+
         itemslist = [
             Container,
             Row,
-            x1,
-            x2,
-            x3,
-
         ]
         toolbaritems = ToolbarItems(itemslist)
         self.toolbar = Toolbar(toolbaritems)

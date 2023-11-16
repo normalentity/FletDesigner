@@ -2,9 +2,10 @@ import flet as ft
 
 
 class ToolbarItem(ft.UserControl):
-    def __init__(self, text):
+    def __init__(self, text, widget):
         self.text = text
         self.selected = False
+        self.widget = widget
         # the names of the control to display in the toolbar
         self.container = ft.Container(
             bgcolor=ft.colors.with_opacity(color=ft.colors.BLACK38, opacity=0.2),
