@@ -1,5 +1,5 @@
 import flet as ft
-from flet import Container
+from flet import Container, Row
 from Parser.Parserengine import Parser
 import json
 from UI.ToolbarItem import ToolbarItem
@@ -111,6 +111,7 @@ class DesignerSection(ft.UserControl):
             print("Control will be added later")
             return
         self.load_control_list()
+        print(name)
         default_properties = control_data[name]["default"]
         object = globals()[name]
         object = object(**default_properties)

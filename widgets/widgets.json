@@ -19,6 +19,23 @@
             "top":200
         }
     },
-    "Row" : {}
+    "Row" : {"properties": [
+        "width",
+        "height",
+        "opacity",
+        "bgcolor",
+        "padding",
+        "border_radius",
+        "border",
+        "content"
+    ],
+    "default": {
+        "width": 300,
+        "height": 200,
+        "opacity": 1,
+        "left":200,
+        "top":200
+    }
+}
 }
 ]
