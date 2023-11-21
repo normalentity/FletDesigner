@@ -21,17 +21,18 @@ class DesignPage(
         Row = ToolbarItem(text="Row", widget="Row")
         Column = ToolbarItem(text="Column", widget="Column")
         Text = ToolbarItem(text="Text", widget="Text")
+        TextButton = ToolbarItem(text="TextButton", widget="Text")
         property_toolbar = PropertiesToolbar(page=self.page)
 
         # placeholderbuttons
 
-        itemslist = [Container, Row, Column, Text]
+        itemslist = [Container, Row, Column, Text, TextButton]
         toolbaritems = ToolbarItems(itemslist)
         self.toolbar = Toolbar(toolbaritems)
         self.displayarea = ft.Row(
             expand=True,
             controls=[self.toolbar, self.designsection, property_toolbar],
-            height=1700,
+            height=1400,
         )
         self.controls.append(self.displayarea)
         return self

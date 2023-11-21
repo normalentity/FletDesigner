@@ -7,8 +7,6 @@ ldf = LoadDesignFile(jsonfilepath="request.json")
 def update1(e):
     ldf.b1.text = "update"
     ldf.b1.update()
-
-
 ldf.b1.on_click = update1
 
 

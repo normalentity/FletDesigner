@@ -76,6 +76,27 @@
         "left": 200,
         "top": 200
       }
+    },
+    "TextButton": {
+      "properties": [
+        "width",
+        "height",
+        "opacity",
+        "bgcolor",
+        "padding",
+        "border_radius",
+        "border",
+        "content"
+      ],
+      "default": {
+        "width": 400,
+        "height": 40,
+        "opacity": 1,
+        "left": 200,
+        "top": 200,
+        "text": "Nafay",
+        "disabled": "True"
+      }
     }
   }
 ]
