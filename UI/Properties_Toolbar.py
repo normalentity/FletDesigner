@@ -39,7 +39,7 @@ class PropertiesToolbar(ft.UserControl):
             self.width = m.width
 
         self.propertiesContainer = ft.Container(
-            width=self.width,
+            width=480,
             height=1200,
             bgcolor=ft.colors.with_opacity(opacity=0.6, color=ft.colors.BLACK45),
             border_radius=ft.border_radius.all(15),
