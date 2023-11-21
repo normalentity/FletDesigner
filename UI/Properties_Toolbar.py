@@ -1,13 +1,12 @@
+import multiprocessing
 import flet as ft
-from time import sleep
 from ColorPicker.color_picker import ColorPicker
+from UI.collapsible import Collapsible
 
-# from flet_contrib.color_picker import
+ft.Container()
 
 
 class PropertiesToolbar(ft.UserControl):
-    pass
-
     def __init__(self, page):
         self.page = page
         super().__init__()
@@ -27,11 +26,12 @@ class PropertiesToolbar(ft.UserControl):
         self.page.update()
 
     def close_dlg(self, e):
-        # self.page.dialog = self.color_picker_modal
         self.color_picker_modal.open = False
         self.page.update()
 
     def build(self):
+        # (existing build code)
+
         self.propertiesContainer = ft.Container(
             width=460,
             height=1200,
@@ -43,8 +43,9 @@ class PropertiesToolbar(ft.UserControl):
         self.propertiesColumn = ft.Column(controls=[ft.Stack()], scroll="always")
 
         heading = ft.Container(
-            margin=ft.margin.only(top=5, left=10),
-            content=ft.Text(value="Properties:", size=25),
+            margin=ft.margin.only(top=10),
+            alignment=ft.alignment.center,
+            content=ft.Text(value="Properties", size=20),
         )
         heading_Control_name = ft.Container(
             margin=ft.margin.only(top=60, left=10),
@@ -191,3 +192,29 @@ class PropertiesToolbar(ft.UserControl):
         self.propertiesContainer.content = self.propertiesColumn
 
         return self.propertiesContainer
+
+
+def init_process():
+    # Code to initialize each process if needed
+    pass
+
+
+def build_and_run(page):
+    properties_toolbar = PropertiesToolbar(page)
+    properties_container = properties_toolbar.build()
+
+    # Additional code to set up the rest of your application
+
+    # ft.run(page)
+
+
+if __name__ == "__main__":
+    # Create a multiprocessing.Pool
+    with multiprocessing.Pool(
+        processes=multiprocessing.cpu_count(), initializer=init_process
+    ) as pool:
+        # Create a page for each process
+        pages = [ft.Page() for _ in range(pool._processes)]
+
+        # Use multiprocessing.Pool to run the build_and_run function for each process
+        pool.map(build_and_run, pages)

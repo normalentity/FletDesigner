@@ -1,0 +1,30 @@
+{
+    "sourceFile": "ColorPicker/hue_slider.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1700566822717,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1700566850540,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n \n from .utils import *\n \n SLIDER_WIDTH = 180\n-CIRCLE_SIZE = 18\n+CIRCLE_SIZE = 20\n \n \n class HueSlider(ft.GestureDetector):\n     def __init__(self, on_change_hue, hue=1):\n"
+                },
+                {
+                    "date": 1700566867847,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n \n from .utils import *\n \n SLIDER_WIDTH = 180\n-CIRCLE_SIZE = 20\n+CIRCLE_SIZE = 26\n \n \n class HueSlider(ft.GestureDetector):\n     def __init__(self, on_change_hue, hue=1):\n"
+                },
+                {
+                    "date": 1700566879028,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n \n from .utils import *\n \n SLIDER_WIDTH = 180\n-CIRCLE_SIZE = 26\n+CIRCLE_SIZE = 20\n \n \n class HueSlider(ft.GestureDetector):\n     def __init__(self, on_change_hue, hue=1):\n"
+                }
+            ],
+            "date": 1700566822717,
+            "name": "Commit-0",
+            "content": "import colorsys\n\nimport flet as ft\nfrom flet_core.utils import is_asyncio, is_coroutine\n\nfrom .utils import *\n\nSLIDER_WIDTH = 180\nCIRCLE_SIZE = 18\n\n\nclass HueSlider(ft.GestureDetector):\n    def __init__(self, on_change_hue, hue=1):\n        super().__init__()\n        self.__hue = hue\n        self.__number_of_hues = 10\n        self.content = ft.Stack(height=CIRCLE_SIZE, width=SLIDER_WIDTH)\n        self.generate_slider()\n        self.on_change_hue = on_change_hue\n        self.on_pan_start = self.drag_start_async if is_asyncio() else self.drag_start\n        self.on_pan_update = (\n            self.drag_update_async if is_asyncio() else self.drag_update\n        )\n\n    # hue\n    @property\n    def hue(self) -> float:\n        return self.__hue\n\n    @hue.setter\n    def hue(self, value: float):\n        if isinstance(value, float):\n            self.__hue = value\n            if value < 0 or value > 1:\n                raise Exception(\"Hue value should be between 0 and 1\")\n        else:\n            raise Exception(\"Hue value should be a float number\")\n\n    def _before_build_command(self):\n        super()._before_build_command()\n        # called every time on self.update()\n        self.thumb.left = self.__hue * self.track.width\n        self.thumb.bgcolor = rgb2hex(colorsys.hsv_to_rgb(self.__hue, 1, 1))\n\n    def __update_selected_hue(self, x):\n        self.__hue = max(0, min((x - CIRCLE_SIZE / 2) / self.track.width, 1))\n        self.thumb.left = self.__hue * self.track.width\n        self.thumb.bgcolor = rgb2hex(colorsys.hsv_to_rgb(self.__hue, 1, 1))\n\n    def update_selected_hue(self, x):\n        self.__update_selected_hue(x)\n        self.thumb.update()\n        self.on_change_hue()\n\n    async def update_selected_hue_async(self, x):\n        self.__update_selected_hue(x)\n        await self.thumb.update_async()\n        if is_coroutine(self.on_change_hue):\n            await self.on_change_hue()\n        else:\n            self.on_change_hue()\n\n    def drag_start(self, e: ft.DragStartEvent):\n        self.update_selected_hue(x=e.local_x)\n\n    async def drag_start_async(self, e: ft.DragStartEvent):\n        await self.update_selected_hue_async(x=e.local_x)\n\n    def drag_update(self, e: ft.DragUpdateEvent):\n        self.update_selected_hue(x=e.local_x)\n\n    async def drag_update_async(self, e: ft.DragUpdateEvent):\n        await self.update_selected_hue_async(x=e.local_x)\n\n    def generate_gradient_colors(self):\n        colors = []\n        for i in range(0, self.__number_of_hues + 1):\n            color = rgb2hex(colorsys.hsv_to_rgb(i / self.__number_of_hues, 1, 1))\n            colors.append(color)\n        return colors\n\n    def generate_slider(self):\n        self.track = ft.Container(\n            gradient=ft.LinearGradient(\n                begin=ft.alignment.center_left,\n                end=ft.alignment.center_right,\n                colors=self.generate_gradient_colors(),\n            ),\n            width=SLIDER_WIDTH - CIRCLE_SIZE,\n            height=CIRCLE_SIZE / 2,\n            border_radius=5,\n            top=CIRCLE_SIZE / 4,\n            left=CIRCLE_SIZE / 2,\n        )\n\n        self.thumb = ft.Container(\n            width=CIRCLE_SIZE,\n            height=CIRCLE_SIZE,\n            border_radius=CIRCLE_SIZE,\n            border=ft.border.all(width=2, color=\"white\"),\n        )\n\n        self.content.controls.append(self.track)\n        self.content.controls.append(self.thumb)\n"
+        }
+    ]
+}

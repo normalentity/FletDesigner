@@ -1,0 +1,18 @@
+{
+    "sourceFile": "UI/collapsible.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1700557657115,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1700557657115,
+            "name": "Commit-0",
+            "content": "from math import pi\nfrom typing import Optional\n\nfrom flet import Column, Container, Control, Icon, Row, Text, icons, padding\n\n\nclass Collapsible(Column):\n    def __init__(\n        self,\n        title: str,\n        content: Control,\n        icon: Optional[Control] = None,\n        spacing: float = 3,\n    ):\n        super().__init__()\n        self.icon = icon\n        self.title = title\n        self.shevron = Icon(\n            icons.KEYBOARD_ARROW_DOWN_ROUNDED,\n            animate_rotation=100,\n            rotate=0,\n        )\n        self.content = Column(\n            [Container(height=spacing), content],\n            height=0,\n            spacing=0,\n            animate_size=100,\n            opacity=0,\n            animate_opacity=100,\n        )\n        self.spacing = 0\n\n    def header_click(self, e):\n        self.content.height = None if self.content.height == 0 else 0\n        self.content.opacity = 0 if self.content.height == 0 else 1\n        self.shevron.rotate = pi if self.shevron.rotate == 0 else 0\n        self.update()\n\n    def _build(self):\n        title_row = Row()\n        if self.icon != None:\n            title_row.controls.append(self.icon)\n        title_row.controls.append(Text(self.title))\n        self.controls.extend(\n            [\n                Container(\n                    Row([title_row, self.shevron], alignment=\"spaceBetween\"),\n                    padding=padding.only(left=8, right=8),\n                    height=38,\n                    border_radius=4,\n                    ink=True,\n                    on_click=self.header_click,\n                ),\n                self.content,\n            ]\n        )"
+        }
+    ]
+}

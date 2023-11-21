@@ -6,7 +6,7 @@ from flet_core.utils import is_asyncio, is_coroutine
 from .utils import *
 
 SLIDER_WIDTH = 180
-CIRCLE_SIZE = 16
+CIRCLE_SIZE = 20
 
 
 class HueSlider(ft.GestureDetector):
