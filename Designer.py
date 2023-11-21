@@ -13,8 +13,9 @@ def clamp(n, smallest, largest):
 
 
 class DesignerSection(ft.UserControl):
-    def __init__(self):
+    def __init__(self, window_width):
         self.parser = Parser()
+        self.window_width = window_width
         self.list_file = "widgets/widgets.json"
         self.all_controls = {}
         self.all_regions = {}
@@ -141,11 +142,12 @@ class DesignerSection(ft.UserControl):
         self.main_stack.update()
 
     def build(self):
+        width = ((6 / 10) * self.window_width)
         self.load_control_list()
         self.main_stack = ft.Stack(
             controls=[
                 ft.Container(
-                    width=1200,
+                    width=width,
                     height=1290,
                     border=ft.border.all(1.9, color="#383838"),
                     border_radius=ft.border_radius.all(8),
@@ -154,14 +156,14 @@ class DesignerSection(ft.UserControl):
                 ),
                 self.outlineContainer,
             ],
-            width=1200,
+            width=width,
             height=1290,
         )
         self.DesignerSection1 = ft.DragTarget(
             group="widget",
             on_accept=self.accept_draggable,
             content=ft.GestureDetector(
-                width=1200,
+                width=width,
                 height=1290,
                 content=self.main_stack,
                 on_tap_down=self.buttonDown1,

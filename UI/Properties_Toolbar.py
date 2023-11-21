@@ -9,8 +9,9 @@ ft.Container()
 
 
 class PropertiesToolbar(ft.UserControl):
-    def __init__(self, page):
+    def __init__(self, page, window_width):
         self.page = page
+        self.window_width = window_width
         super().__init__()
 
     def open_alert_dlg(self, e):
@@ -39,7 +40,7 @@ class PropertiesToolbar(ft.UserControl):
             self.width = m.width
 
         self.propertiesContainer = ft.Container(
-            width=480,
+            width=((2.5 / 10) * self.window_width),
             height=1200,
             bgcolor=ft.colors.with_opacity(opacity=0.6, color=ft.colors.BLACK45),
             border_radius=ft.border_radius.all(15),
@@ -57,7 +58,7 @@ class PropertiesToolbar(ft.UserControl):
             margin=ft.margin.only(top=60, left=10),
             content=ft.Row(
                 controls=[
-                    ft.Text(value="Control Name", size=15, height=20),
+                    ft.Text(value="Control Name", size=10),
                 ]
             ),
         )
@@ -69,7 +70,7 @@ class PropertiesToolbar(ft.UserControl):
                     margin=ft.margin.only(left=270, top=155),
                     content=ft.Row(
                         controls=[
-                            ft.Text(value="Width", size=15, height=20),
+                            ft.Text(value="Width", size=15),
                         ]
                     ),
                 )
@@ -80,7 +81,7 @@ class PropertiesToolbar(ft.UserControl):
             margin=ft.margin.only(top=155, left=10),
             content=ft.Row(
                 controls=[
-                    ft.Text(value="Height", size=15, height=20),
+                    ft.Text(value="Height", size=15),
                 ]
             ),
         )
@@ -91,7 +92,7 @@ class PropertiesToolbar(ft.UserControl):
             controls=[
                 ft.Container(
                     margin=ft.margin.only(top=260, left=10),
-                    content=ft.Text(value="Color", size=15, height=20),
+                    content=ft.Text(value="Color", size=15),
                 )
             ],
         )
