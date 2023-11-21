@@ -3,6 +3,8 @@ import flet as ft
 from ColorPicker.color_picker import ColorPicker
 from UI.collapsible import Collapsible
 
+from screeninfo import get_monitors
+
 ft.Container()
 
 
@@ -32,8 +34,12 @@ class PropertiesToolbar(ft.UserControl):
     def build(self):
         # (existing build code)
 
+        for m in get_monitors():
+            self.height = m.height
+            self.width = m.width
+
         self.propertiesContainer = ft.Container(
-            width=460,
+            width=self.width,
             height=1200,
             bgcolor=ft.colors.with_opacity(opacity=0.6, color=ft.colors.BLACK45),
             border_radius=ft.border_radius.all(15),
