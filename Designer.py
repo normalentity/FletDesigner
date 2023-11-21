@@ -1,5 +1,5 @@
 import flet as ft
-from flet import Container, Row
+from flet import Container, Row, Column, Text
 from Parser.Parserengine import Parser
 import json
 from UI.ToolbarItem import ToolbarItem
@@ -70,6 +70,8 @@ class DesignerSection(ft.UserControl):
         return
 
     def on_pan_end(self, e: ft.DragEndEvent):
+        if self.selected == None:
+            return
         self.show_outline()
 
     def on_pan_update(self, e: ft.DragUpdateEvent):

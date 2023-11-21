@@ -26,7 +26,7 @@ def main(page: ft.Page):
         # page.window_maximized = True
         page.go(route="/design")
         if page.route == "/design":
-            design_page = DesignPage()
+            design_page = DesignPage(page=page)
             page.views.clear()
             page.update()
             # page.window_full_screen = True
