@@ -1,0 +1,22 @@
+{
+    "sourceFile": "dbact.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1700756910449,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1700756930197,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,20 @@\n+import sqlite3\n+\n+\n+def create_table():\n+    try:\n+        conn = sqlite3.connect(\"mydb.db\", check_same_thread=False)\n+        c = conn.cursor()\n+\n+        c.execute(\n+            \"\"\"CREATE TABLE IF NOT EXISTS users(\n+                     id INTEGER PRIMARY KEY,\n+                     name TEXT,\n+                     email TEXT,\n+                     password TEXT)\"\"\"\n+        )\n+        conn.commit()\n+    except sqlite3.Error as e:\n+        print(f\"SQLite error: {e}\")\n+    finally:\n+        conn.close()\n"
+                }
+            ],
+            "date": 1700756910449,
+            "name": "Commit-0",
+            "content": "import sqlite3\n\ndef create_table():\n    try:\n        conn = sqlite3.connect(\"db/mydb.db\", check_same_thread=False)\n        c = conn.cursor()\n\n        c.execute('''CREATE TABLE IF NOT EXISTS users(\n                     id INTEGER PRIMARY KEY,\n                     name TEXT,\n                     email TEXT,\n                     password TEXT)''')\n        conn.commit()\n    except sqlite3.Error as e:\n        print(f\"SQLite error: {e}\")\n    finally:\n        conn.close()"
+        }
+    ]
+}

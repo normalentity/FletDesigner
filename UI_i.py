@@ -26,9 +26,10 @@ def main(page: ft.Page):
 
         page.go(route="/design")
         if page.route == "/design":
-            page.window_maximized = True
+            # page.window_maximized = True
             page.window_full_screen = True
             page.update()
+            sleep(1)
             window_width1 = page.window_width
             page.update()
             design_page = DesignPage(window_width1=window_width1)

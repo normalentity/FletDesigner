@@ -11,10 +11,11 @@ CIRCLE_SIZE = 20
 
 
 class ColorPicker(ft.Column):
-    def __init__(self, color="#000000", width=COLOR_MATRIX_WIDTH):
+    def __init__(self, color="#000000", width=COLOR_MATRIX_WIDTH, on_change=None):
         super().__init__()
         self.tight = True
         self.width = width
+        self.on_change = on_change
         self.__color = color
         self.hue_slider = HueSlider(
             on_change_hue=self.update_color_picker_on_hue_change_async
@@ -32,7 +33,12 @@ class ColorPicker(ft.Column):
 
     @color.setter
     def color(self, value):
+        old_color = self.__color
         self.__color = value
+        if (
+            self.on_change and self.page and old_color != value
+        ):  # Check if on_change is not None, if ColorPicker has been added to a page, and if the color has changed
+            self.on_change(self.__color)
 
     def _before_build_command(self):
         super()._before_build_command()
@@ -52,6 +58,8 @@ class ColorPicker(ft.Column):
         s = x / self.color_map.width
         v = (self.color_map.height - y) / self.color_map.height
         self.color = rgb2hex(colorsys.hsv_to_rgb(h, s, v))
+        if self.on_change:
+            self.on_change(self.color)
 
     def generate_selected_color_view(self):
         rgb = hex2rgb(self.color)
