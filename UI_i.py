@@ -9,6 +9,7 @@ from DesignPage import DesignPage
 def main(page: ft.Page):
     # page.window_width = 800
     page.window_height = 800
+    page.theme_mode = ft.ThemeMode.DARK
 
     page.go("/welcome")
 
