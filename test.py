@@ -153,3 +153,40 @@
 # #  # def __init__(self, conn: Connection, session_id):
 # #     #     super(ft.Page).__init__(conn, session_id)
 # #     container = None
+
+
+import flet as ft
+
+from ColorPicker.color_picker import ColorPicker
+
+
+class test(ft.UserControl):
+    def __init__(self):
+        super().__init__()
+
+    def change_color(self, e):
+        self.check.bgcolor = self.color_picker.color
+
+    def build(self):
+        self.check = ft.Container(width=50, height=50)
+        self.color_picker = ColorPicker(color="#c8df6f", on_change=self.change_color)
+
+        test = ft.Column(controls=[self.color_picker, self.check])
+
+        return test
+
+
+def main(page: ft.Page):
+    check = ft.Container(width=50, height=50)
+
+    def change_color(e):
+        check.bgcolor = color_picker.color
+        check.update()
+
+    color_picker = ColorPicker(color="#c8df6f", on_change=change_color)
+    page.add(color_picker, check)
+
+    page.update()
+
+
+ft.app(target=main)
