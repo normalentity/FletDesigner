@@ -77,7 +77,7 @@
         "top": 200
       }
     },
-    "TextButton": {
+    "ElevatedButton": {
       "properties": [
         "width",
         "height",
@@ -95,7 +95,8 @@
         "left": 200,
         "top": 200,
         "text": "Nafay",
-        "disabled": "True"
+        "disabled": "True",
+        "bgcolor": "red"
       }
     }
   }

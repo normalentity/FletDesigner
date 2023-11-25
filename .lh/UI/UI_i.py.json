@@ -1,0 +1,18 @@
+{
+    "sourceFile": "UI/UI_i.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1700922852413,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1700922852413,
+            "name": "Commit-0",
+            "content": "import flet as ft\nfrom time import sleep\n\n\nfrom UI.animationpage import __view__\nfrom .DesignPage import DesignPage\n\n\ndef main(page: ft.Page):\n    # page.window_width = 800\n    page.window_height = 800\n\n    page.go(\"/welcome\")\n\n    def routechange(e: ft.RouteChangeEvent):\n        # if page.route == \"/welcome\":\n        #     page.views.clear()\n        #     index = __view__()\n        #     page.views.append(index.build())\n        #     page.update()\n        #     sleep(1)\n        #     index.randomize(\"None\")\n        #     sleep(1)\n        #     index.assemble(\"None\")\n        #     sleep(2.5)\n\n        page.go(route=\"/design\")\n        if page.route == \"/design\":\n            # page.window_maximized = True\n            page.window_full_screen = True\n            page.update()\n            sleep(1)\n            window_width1 = page.window_width\n            page.update()\n            design_page = DesignPage(window_width1=window_width1)\n            page.views.clear()\n            page.update()\n            # page.window_full_screen = True\n            sleep(0.3)\n            page.views.append(design_page.build())\n            page.update()\n            page.on_resize\n            # design_page.bringintoview()\n\n    page.bgcolor = ft.colors.BLACK\n    page.on_route_change = routechange\n\n    page.update()\n\n\nif __name__ == \"__main__\":\n    ft.app(main)\n"
+        }
+    ]
+}

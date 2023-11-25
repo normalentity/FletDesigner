@@ -1,5 +1,5 @@
 import flet as ft
-from flet import Container, Row, Column, Text, TextButton
+from flet import Container, Row, Column, Text, TextButton, ElevatedButton
 from Parser.Parserengine import Parser
 import json
 from UI.ToolbarItem import ToolbarItem
@@ -112,12 +112,15 @@ class DesignerSection(ft.UserControl):
         control_data = next(
             (item for item in self.control_definations if item.get(name)), None
         )
+
+        ft.ElevatedButton
         if control_data is None:
             print("Control will be added later")
             return
         self.load_control_list()
         print(name)
         default_properties = control_data[name]["default"]
+        print(default_properties)
         object = globals()[name]
         object = object(**default_properties)
         unique_name = f"container{self.control_counter}"
@@ -142,7 +145,7 @@ class DesignerSection(ft.UserControl):
         self.main_stack.update()
 
     def build(self):
-        width = ((6 / 10) * self.window_width)
+        width = (6 / 10) * self.window_width
         self.load_control_list()
         self.main_stack = ft.Stack(
             controls=[

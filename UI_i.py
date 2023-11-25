@@ -3,7 +3,7 @@ from time import sleep
 
 
 from UI.animationpage import __view__
-from DesignPage import DesignPage
+from UI.DesignPage import DesignPage
 
 
 def main(page: ft.Page):

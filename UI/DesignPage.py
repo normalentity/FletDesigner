@@ -1,5 +1,5 @@
 import flet as ft
-from Designer import DesignerSection
+from UI.Designer import DesignerSection
 from UI.Toolbar import Toolbar
 from UI.ToolbarItem import ToolbarItem
 from UI.ToolbarItems import ToolbarItems
@@ -22,7 +22,7 @@ class DesignPage(
         Row = ToolbarItem(text="Row", widget="Row")
         Column = ToolbarItem(text="Column", widget="Column")
         Text = ToolbarItem(text="Text", widget="Text")
-        TextButton = ToolbarItem(text="TextButton", widget="Text")
+        TextButton = ToolbarItem(text="ElevatedButton", widget="Text")
         property_toolbar = PropertiesToolbar(
             page=self.page, window_width=self.window_width
         )
