@@ -1,10 +1,9 @@
 import flet as ft
 from flet import Container, Row, Column, Text, TextButton, ElevatedButton
-from Parser.Parserengine import Parser
+from ..Parser.Parserengine import Parser
 import json
-from UI.ToolbarItem import ToolbarItem
-
-ft.TextButton
+from ..UI.ToolbarItem import ToolbarItem
+from ..widgets.widgets import ALL_WIDGETS
 
 
 # ft.Draggable()
@@ -31,10 +30,8 @@ class DesignerSection(ft.UserControl):
 
     def load_control_list(self):
         self.supported_widgets = []
-        with open(self.list_file, "rb") as f:
-            self.control_definations = json.load(fp=f)
-
-            # print(self.supportedControls[0])
+        
+        self.control_definations = ALL_WIDGETS
 
     def buttonDown1(self, e: ft.TapEvent):
         self.buttonDown = True
