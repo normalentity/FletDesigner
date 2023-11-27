@@ -10,11 +10,10 @@ ft.Container()
 
 
 class PropertiesToolbar(ft.UserControl):
-    def __init__(self, page,):# window_width):
+    def __init__(self, page, window_width):
         self.page = page
-        # self.window_width = window_width
+        self.window_width = window_width
         super().__init__()
-        self.expand = int((1 + 0.2) * 5)
 
     def on_change(self, e):
         self.selection_value = e.control.value
@@ -79,7 +78,7 @@ class PropertiesToolbar(ft.UserControl):
         # (existing build code)
 
         self.propertiesContainer = ft.Container(
-            # width=((2.5 / 10) * self.window_width),
+            width=((2.5 / 10) * self.window_width),
             height=1200,
             bgcolor=ft.colors.with_opacity(opacity=0.6, color=ft.colors.BLACK45),
             border_radius=ft.border_radius.all(15),
@@ -334,10 +333,8 @@ class PropertiesToolbar(ft.UserControl):
             content=ft.TextField(
                 text_align=ft.alignment.center,
                 # content_padding=ft.padding.only(left=5, right=80),
-                # label="Control Name",
+                label="Control Name",
                 width=380,
-                hint_text= "Add Name",
-                border= ft.InputBorder.UNDERLINE
             ),
             margin=ft.margin.only(left=10, top=90),
         )
@@ -357,8 +354,7 @@ class PropertiesToolbar(ft.UserControl):
                 text_align=ft.alignment.center,
                 width=140,
                 # content_padding=ft.padding.only(left=5, right=5),
-                hint_text= "Add Width",
-                border= ft.InputBorder.UNDERLINE
+                label="Width",
             ),
             margin=ft.margin.only(left=160, top=185),
         )
@@ -432,8 +428,7 @@ class PropertiesToolbar(ft.UserControl):
                 text_align=ft.alignment.center,
                 width=140,
                 # content_padding=ft.padding.only(left=5, right=5),
-                hint_text= "Add Opacity",
-                border= ft.InputBorder.UNDERLINE
+                label="Opacity",
             ),
             margin=ft.margin.only(left=310, top=185),
         )
@@ -442,13 +437,12 @@ class PropertiesToolbar(ft.UserControl):
 
         self.control_height = ft.Container(
             content=ft.Container(
-                # width=140,
+                width=140,
                 content=ft.TextField(
                     # text_align=ft.alignment.center,
                     width=140,
                     # content_padding=ft.padding.only(left=5, right=15, top=30),
-                    hint_text= "Add Height",
-                    border= ft.InputBorder.UNDERLINE
+                    label="Height",
                 ),
             ),
             margin=ft.margin.only(left=15, top=185),
@@ -479,7 +473,6 @@ class PropertiesToolbar(ft.UserControl):
         )
 
         heading_opacity = ft.Container(
-            margin=ft.margin.only(left=310, top=155),
             content=ft.Row(
                 controls=[
                     ft.Text(value="Opacity", size=15),

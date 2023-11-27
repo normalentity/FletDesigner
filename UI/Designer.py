@@ -13,12 +13,9 @@ def clamp(n, smallest, largest):
 
 
 class DesignerSection(ft.UserControl):
-    def __init__(self, 
-                    imanager
-                 ):
+    def __init__(self, window_width):
         self.parser = Parser()
-        self.IManager = imanager
-        
+        self.window_width = window_width
         self.list_file = "widgets/widgets.json"
         self.all_controls = {}
         self.all_regions = {}
@@ -31,7 +28,6 @@ class DesignerSection(ft.UserControl):
         )
         self.control_counter = 1
         super().__init__()
-        self.expand = 3*5
 
     def load_control_list(self):
         self.supported_widgets = []
@@ -84,22 +80,17 @@ class DesignerSection(ft.UserControl):
     def on_pan_update(self, e: ft.DragUpdateEvent):
         if self.selected == None:
             return
-        full_width = self.page.window_width * (3/5)
-        full_height = 1290 #self.page.window_height #1290
-        # print(full_height,1290,e.control.content.height)
         self.outlineContainer.visible = False
         self.outlineContainer.update()
         self.new_left = clamp(
             (self.selected.left or 0) + e.delta_x,
             0 + 5,
-            # e.control.content.width - self.selected.width - 5,
-            full_width - self.selected.width - 5,
+            e.control.content.width - self.selected.width - 5,
         )
         self.new_top = clamp(
             (self.selected.top or 0) + e.delta_y,
             0 + 5,
-            # e.control.content.height - (self.selected.height * 2) - 35,
-            full_height - (self.selected.height * 2) - 35,
+            e.control.content.height - (self.selected.height * 2) - 35,
         )
         self.all_regions.update(
             {
@@ -144,7 +135,6 @@ class DesignerSection(ft.UserControl):
                 }
             }
         )
-        self.IManager.select(defualt_properties = default_properties, name= name) # change this to selected
         (
             self.main_stack.controls.append(
                 list(self.all_controls.values())[self.control_counter - 1]
@@ -155,14 +145,13 @@ class DesignerSection(ft.UserControl):
         self.main_stack.update()
 
     def build(self):
-        # width = (6 / 10) * self.window_width
+        width = (6 / 10) * self.window_width
         self.load_control_list()
         self.main_stack = ft.Stack(
             controls=[
                 ft.Container(
-                    # width=width,
-                    # height=1290,
-                    expand= True,
+                    width=width,
+                    height=1290,
                     border=ft.border.all(1.9, color="#383838"),
                     border_radius=ft.border_radius.all(8),
                     bgcolor=ft.colors.BLACK,
@@ -170,17 +159,15 @@ class DesignerSection(ft.UserControl):
                 ),
                 self.outlineContainer,
             ],
-            expand= True,
-            # width=width,
-            # height=1290,
+            width=width,
+            height=1290,
         )
         self.DesignerSection1 = ft.DragTarget(
             group="widget",
             on_accept=self.accept_draggable,
             content=ft.GestureDetector(
-                # width=width,
-                # height=1290,
-                expand= True,
+                width=width,
+                height=1290,
                 content=self.main_stack,
                 on_tap_down=self.buttonDown1,
                 on_pan_update=self.on_pan_update,
