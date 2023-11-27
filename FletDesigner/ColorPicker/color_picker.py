@@ -1,7 +1,6 @@
-import colorsys
-
 import flet as ft
 from flet_core.utils import is_asyncio
+import colorsys
 
 from .hue_slider import HueSlider
 from .utils import *
@@ -9,20 +8,21 @@ from .utils import *
 COLOR_MATRIX_WIDTH = 340
 CIRCLE_SIZE = 20
 
-
 class ColorPicker(ft.Column):
     def __init__(self, color="#000000", width=COLOR_MATRIX_WIDTH, on_change=None):
         super().__init__()
+        self.__color = color
+
         self.tight = True
         self.width = width
         self.on_change = on_change
-        self.__color = color
         self.hue_slider = HueSlider(
             on_change_hue=self.update_color_picker_on_hue_change_async
             if is_asyncio()
             else self.update_color_picker_on_hue_change,
             hue=hex2hsv(self.color)[0],
         )
+        
         self.generate_color_map()
         self.generate_selected_color_view()
 

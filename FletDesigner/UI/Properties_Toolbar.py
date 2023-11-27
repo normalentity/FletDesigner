@@ -1,6 +1,6 @@
 import multiprocessing
 import flet as ft
-from ColorPicker.color_picker import ColorPicker
+from ..ColorPicker.color_picker import ColorPicker
 
 # ft.Dis
 

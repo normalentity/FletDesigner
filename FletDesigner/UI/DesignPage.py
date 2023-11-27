@@ -1,9 +1,9 @@
 import flet as ft
-from UI.Designer import DesignerSection
-from UI.Toolbar import Toolbar
-from UI.ToolbarItem import ToolbarItem
-from UI.ToolbarItems import ToolbarItems
-from UI.Properties_Toolbar import PropertiesToolbar
+from ..UI.Designer import DesignerSection
+from ..UI.Toolbar import Toolbar
+from ..UI.ToolbarItem import ToolbarItem
+from ..UI.ToolbarItems import ToolbarItems
+from ..UI.Properties_Toolbar import PropertiesToolbar
 
 
 class DesignPage(

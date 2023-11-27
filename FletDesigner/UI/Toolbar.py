@@ -1,5 +1,5 @@
 import flet as ft
-from UI.ToolbarItems import ToolbarItems
+from ..UI.ToolbarItems import ToolbarItems
 
 
 class Toolbar(ft.UserControl):

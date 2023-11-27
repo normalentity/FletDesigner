@@ -1,7 +1,6 @@
-import colorsys
-
 import flet as ft
 from flet_core.utils import is_asyncio, is_coroutine
+import colorsys
 
 from .utils import *
 
