@@ -3,16 +3,17 @@ from UI.ToolbarItems import ToolbarItems
 
 
 class Toolbar(ft.UserControl):
-    def __init__(self, ToolbarItems: ToolbarItems, window_width):
+    def __init__(self, ToolbarItems: ToolbarItems, ):#window_width):
         self.toolbaritems = ToolbarItems
-        self.window_width = window_width
+        # self.window_width = window_width
         super().__init__()
+        self.expand = int((1 - 0.25) * 5)
 
     def build(self):
         # The Tool bar for dragging the Controls to the Designer Section
         self.toolbar = ft.Container(
             animate_scale=ft.animation.Animation(5000, ft.AnimationCurve.BOUNCE_OUT),
-            width=((1.28 / 10) * self.window_width),
+            # width=((1.28 / 10) * self.window_width),
             border_radius=ft.border_radius.all(5),
             height=1700,
             bgcolor=ft.colors.with_opacity(opacity=1, color="#1e2124"),
