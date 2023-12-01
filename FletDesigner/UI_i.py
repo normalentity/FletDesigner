@@ -11,7 +11,6 @@ class Main:
         self.page : ft.Page = page
 
         # Set Page Props
-        page.window_width = 800
         page.theme_mode = ft.ThemeMode.DARK
         page.bgcolor = ft.colors.BLACK
         page.window_maximized = True
@@ -25,7 +24,6 @@ class Main:
 
     def routechange (self, e):
         page = self.page
-        page.go(route="/design")
         
         if page.route == "/design":
             design_page = DesignPage()
