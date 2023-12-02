@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 24,
+            "activePatchIndex": 26,
             "patches": [
                 {
                     "date": 1701446983186,
@@ -104,6 +104,14 @@
                 {
                     "date": 1701511745315,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n         else:\n             self.detail.control_width.content.value = defualt_properties[\n                 \"width\"\n             ]  # could change this to use controlrefs instead\n-            self.detail.control_width.content.on_submit=\n+            self.detail.control_width.content.on_submit=self.s\n             \n             \n             self.detail.control_height.content.content.value = defualt_properties[\n                 \"height\"\n"
+                },
+                {
+                    "date": 1701513522502,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,11 +11,10 @@\n     }  # properties add them\n \n     def __init__(self) -> None:\n         pass\n-    \n-    \n-    def submit(self,e):\n+\n+    def submit(self, e):\n         self.defualt_properties.u\n \n     # will chanage the propeties to have be if present and invisible if absent !important\n \n@@ -29,17 +28,10 @@\n             self.detail.control_height.content.value = heigth\n             self.detail.control_opacity.content.value = opacity\n             # self.cover_component,\n         else:\n-            self.detail.control_width.content.value = defualt_properties[\n-                \"width\"\n-            ]  # could change this to use controlrefs instead\n-            self.detail.control_width.content.on_submit=self.s\n-            \n-            \n-            self.detail.control_height.content.content.value = defualt_properties[\n-                \"height\"\n-            ]\n-            self.detail.control_opacity.content.value = defualt_properties[\"opacity\"]\n+            self.detail.control_width.content.value = defualt_properties['width'] # could change this to use controlrefs instead\n+            self.detail.control_height.content.content.value = defualt_properties['height']\n+            self.detail.control_opacity.content.value = defualt_properties['opacity']\n         self.detail.control_name_space.content.value = name\n \n         self.detail.update()\n"
+                },
+                {
+                    "date": 1701513628475,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n             self.detail.control_opacity.content.value = opacity\n             # self.cover_component,\n         else:\n             self.detail.control_width.content.value = defualt_properties['width'] # could change this to use controlrefs instead\n-            self.detail.control_height.content.content.value = defualt_properties['height']\n+            self.detail.control_height.content.value = defualt_properties['height']\n             self.detail.control_opacity.content.value = defualt_properties['opacity']\n         self.detail.control_name_space.content.value = name\n \n         self.detail.update()\n"
                 }
             ],
             "date": 1701446983185,
