@@ -24,7 +24,7 @@ class IManager():
             # self.cover_component,
         else:
             self.detail.control_width.content.value = defualt_properties['width'] # could change this to use controlrefs instead
-            self.detail.control_height.content.content.value = defualt_properties['height']
+            self.detail.control_height.content.value = defualt_properties['height']
             self.detail.control_opacity.content.value = defualt_properties['opacity']
         self.detail.control_name_space.content.value = name
         
