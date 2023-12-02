@@ -1,20 +1,26 @@
 from ..UI.Properties_Toolbar import PropertiesToolbar
 
-class IManager():
+
+class IManager:
     detail: PropertiesToolbar = None
     defualt_properties = {
-        'width' : 100,
-        'height' : 100,
-        'opacity' : 1,
-        'bg_color' : 'red',
-    } # properties add them
+        "width": 100,
+        "height": 100,
+        "opacity": 1,
+        "bg_color": "red",
+    }  # properties add them
 
     def __init__(self) -> None:
         pass
 
+    def submit(self, e):
+        self.defualt_properties.u
+
     # will chanage the propeties to have be if present and invisible if absent !important
 
-    def select(self, width = None, heigth=None, opacity= None, defualt_properties = None, name= None):
+    def select(
+        self, width=None, heigth=None, opacity=None, defualt_properties=None, name=None
+    ):
         if defualt_properties == None:
             # self.control_name_space,
             self.detail.control_width.content.value = width
@@ -27,5 +33,5 @@ class IManager():
             self.detail.control_height.content.value = defualt_properties['height']
             self.detail.control_opacity.content.value = defualt_properties['opacity']
         self.detail.control_name_space.content.value = name
-        
+
         self.detail.update()

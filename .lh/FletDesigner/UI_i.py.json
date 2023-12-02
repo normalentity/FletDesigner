@@ -1,0 +1,70 @@
+{
+    "sourceFile": "FletDesigner/UI_i.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 13,
+            "patches": [
+                {
+                    "date": 1701444820807,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1701444840571,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import flet as ft\n import time\n \n-from ..UI.animationpage import __view__\n+from UI.animationpage import __view__\n from .UI.DesignPage import DesignPage\n \n \n \n"
+                },
+                {
+                    "date": 1701444849550,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import flet as ft\n import time\n \n-from UI.animationpage import __view__\n+from ..\n from .UI.DesignPage import DesignPage\n \n \n \n"
+                },
+                {
+                    "date": 1701444857801,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import flet as ft\n import time\n \n-from ..\n+# from ..FletDesigner.\n from .UI.DesignPage import DesignPage\n \n \n \n"
+                },
+                {
+                    "date": 1701444864640,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import flet as ft\n import time\n \n # from ..FletDesigner.\n-from .UI.DesignPage import DesignPage\n+from ...UI.DesignPage import DesignPage\n \n \n \n class Main:\n"
+                },
+                {
+                    "date": 1701444881800,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import flet as ft\n import time\n \n # from ..FletDesigner.\n-from ...UI.DesignPage import DesignPage\n+from ..FletDesigner..UI.DesignPage import DesignPage\n \n \n \n class Main:\n"
+                },
+                {
+                    "date": 1701444935154,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,14 @@\n import flet as ft\n import time\n \n # from ..FletDesigner.\n-from ..FletDesigner..UI.DesignPage import DesignPage\n+from .UI.DesignPage import DesignPage\n \n \n-\n class Main:\n-    def __init__(self, page:ft.Page) -> None:\n-        self.page : ft.Page = page\n+    def __init__(self, page: ft.Page) -> None:\n+        self.page: ft.Page = page\n \n         # Set Page Props\n         page.theme_mode = ft.ThemeMode.DARK\n         page.bgcolor = ft.colors.BLACK\n@@ -21,11 +20,11 @@\n         # Update page\n         page.go(route=\"/design\")\n         page.update()\n \n-    def routechange (self, e):\n+    def routechange(self, e):\n         page = self.page\n-        \n+\n         if page.route == \"/design\":\n             design_page = DesignPage()\n\\ No newline at end of file\n             page.views.append(design_page.build())\n-            page.update()\n+            page.update()\n"
+                },
+                {
+                    "date": 1701446257655,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import flet as ft\n import time\n \n # from ..FletDesigner.\n-from .UI.DesignPage import DesignPage\n+from UI.DesignPage import DesignPage\n \n \n class Main:\n     def __init__(self, page: ft.Page) -> None:\n@@ -26,5 +26,5 @@\n \n         if page.route == \"/design\":\n             design_page = DesignPage()\n             page.views.append(design_page.build())\n-            page.update()\n\\ No newline at end of file\n+            page.update()\n"
+                },
+                {
+                    "date": 1701446305600,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,8 @@\n         page.update()\n \n     def routechange(self, e):\n         page = self.page\n-\n         if page.route == \"/design\":\n             design_page = DesignPage()\n             page.views.append(design_page.build())\n             page.update()\n"
+                },
+                {
+                    "date": 1701446314971,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,4 +26,7 @@\n         if page.route == \"/design\":\n             design_page = DesignPage()\n             page.views.append(design_page.build())\n             page.update()\n+            \n+            \n+ft.ap\n"
+                },
+                {
+                    "date": 1701446320286,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,5 +28,5 @@\n             page.views.append(design_page.build())\n             page.update()\n             \n             \n-ft.ap\n+ft.app(t)\n"
+                },
+                {
+                    "date": 1701446327773,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,5 +28,5 @@\n             page.views.append(design_page.build())\n             page.update()\n             \n             \n-ft.app(t)\n+ft.app(target=M)\n"
+                },
+                {
+                    "date": 1701446334530,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import flet as ft\n import time\n \n # from ..FletDesigner.\n-from UI.DesignPage import DesignPage\n+from .UI.DesignPage import DesignPage\n \n \n class Main:\n     def __init__(self, page: ft.Page) -> None:\n@@ -26,7 +26,7 @@\n         if page.route == \"/design\":\n             design_page = DesignPage()\n             page.views.append(design_page.build())\n             page.update()\n-            \n-            \n-ft.app(target=M)\n+\n+\n+ft.app(target=Main)\n"
+                },
+                {
+                    "date": 1701446402999,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,5 +28,6 @@\n             page.views.append(design_page.build())\n             page.update()\n \n \n-ft.app(target=Main)\n+if __name__ == \"__main__\":\n+    ft.app(Main)\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1701444820807,
+            "name": "Commit-0",
+            "content": "import flet as ft\nimport time\n\nfrom ..UI.animationpage import __view__\nfrom .UI.DesignPage import DesignPage\n\n\n\nclass Main:\n    def __init__(self, page:ft.Page) -> None:\n        self.page : ft.Page = page\n\n        # Set Page Props\n        page.theme_mode = ft.ThemeMode.DARK\n        page.bgcolor = ft.colors.BLACK\n        page.window_maximized = True\n\n        # Set Page Events\n        page.on_route_change = self.routechange\n\n        # Update page\n        page.go(route=\"/design\")\n        page.update()\n\n    def routechange (self, e):\n        page = self.page\n        \n        if page.route == \"/design\":\n            design_page = DesignPage()\n            page.views.append(design_page.build())\n            page.update()"
+        }
+    ]
+}
