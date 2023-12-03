@@ -24,8 +24,9 @@ class DesignPage(
         Column = ToolbarItem(text="Column", widget="Column")
         Text = ToolbarItem(text="Text", widget="Text")
         TextButton = ToolbarItem(text="ElevatedButton", widget="Text")
-        property_toolbar : PropertiesToolbar = PropertiesToolbar(page=self.page,)
+        property_toolbar : PropertiesToolbar = PropertiesToolbar(self.page, self.manager)
         self.manager.detail = property_toolbar
+        self.manager.object_controller = self.designsection
 
         # placeholderbuttons
         itemslist = [Container, Row, Column, Text, TextButton]
