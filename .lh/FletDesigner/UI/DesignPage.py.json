@@ -1,0 +1,22 @@
+{
+    "sourceFile": "FletDesigner/UI/DesignPage.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1701446211902,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1701446996134,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n         Row = ToolbarItem(text=\"Row\", widget=\"Row\")\n         Column = ToolbarItem(text=\"Column\", widget=\"Column\")\n         Text = ToolbarItem(text=\"Text\", widget=\"Text\")\n         TextButton = ToolbarItem(text=\"ElevatedButton\", widget=\"Text\")\n-        property_toolbar : PropertiesToolbar = PropertiesToolbar(page=self.page)\n+        property_toolbar= PropertiesToolbar(page=self.page)\n         self.manager.detail = property_toolbar\n \n         # placeholderbuttons\n         itemslist = [Container, Row, Column, Text, TextButton]\n"
+                }
+            ],
+            "date": 1701446211902,
+            "name": "Commit-0",
+            "content": "import flet as ft\nfrom ..UI.Designer import DesignerSection\nfrom ..UI.Toolbar import Toolbar\nfrom ..UI.ToolbarItem import ToolbarItem\nfrom ..UI.ToolbarItems import ToolbarItems\nfrom ..UI.Properties_Toolbar import PropertiesToolbar\nfrom ..UI.Interactve_manager import IManager\n\n\nclass DesignPage(\n    ft.View,\n):\n    def __init__(self):\n        self.manager = IManager()\n        super().__init__()\n        self.expand = True\n\n    def build(self):\n        self.route = \"/design\"\n        self.bgcolor = \"#131313\"\n        self.designsection = DesignerSection(self.manager)\n        Container = ToolbarItem(text=\"Container\", widget=\"Container\")\n        Row = ToolbarItem(text=\"Row\", widget=\"Row\")\n        Column = ToolbarItem(text=\"Column\", widget=\"Column\")\n        Text = ToolbarItem(text=\"Text\", widget=\"Text\")\n        TextButton = ToolbarItem(text=\"ElevatedButton\", widget=\"Text\")\n        property_toolbar : PropertiesToolbar = PropertiesToolbar(page=self.page)\n        self.manager.detail = property_toolbar\n\n        # placeholderbuttons\n        itemslist = [Container, Row, Column, Text, TextButton]\n        toolbaritems = ToolbarItems(itemslist)\n        self.toolbar = Toolbar(toolbaritems)\n        self.displayarea = ft.Row(\n            expand=True,\n            controls=[self.toolbar, self.designsection, property_toolbar],\n            height=1400,\n        )\n        self.controls.append(self.displayarea)\n        return self\n"
+        }
+    ]
+}

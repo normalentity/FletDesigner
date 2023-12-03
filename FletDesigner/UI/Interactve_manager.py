@@ -1,6 +1,7 @@
 from ..UI.Properties_Toolbar import PropertiesToolbar
 
-class IManager():
+
+class IManager:
     detail: PropertiesToolbar = None
     object_controller = None
     defualt_properties = {
@@ -13,9 +14,14 @@ class IManager():
     def __init__(self) -> None:
         pass
 
+    def submit(self, e):
+        self.defualt_properties.u
+
     # will chanage the propeties to have be if present and invisible if absent !important
 
-    def select(self, width = None, heigth=None, opacity= None, defualt_properties = None, name= None):
+    def select(
+        self, width=None, heigth=None, opacity=None, defualt_properties=None, name=None
+    ):
         if defualt_properties == None:
             self.detail.control_width.content.value = width
             self.detail.control_height.content.value = heigth
@@ -54,3 +60,5 @@ class IManager():
                 item['end_'+region] += -(item['end_'+region] - item['begin_'+region]) + value
                 return value
         return False
+
+        self.detail.update()
