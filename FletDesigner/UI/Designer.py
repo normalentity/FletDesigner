@@ -13,7 +13,7 @@ def clamp(n, smallest, largest):
 
 
 class DesignerSection(ft.UserControl):
-    def __init__(self, imanager:IManager):
+    def __init__(self, imanager: IManager):
         self.parser = Parser()
         self.IManager = imanager
         self.list_file = "widgets/widgets.json"
@@ -57,7 +57,7 @@ class DesignerSection(ft.UserControl):
         return False
 
     def itemselection(self, e: ft.TapEvent, created_name: str= None):
-        self.selected = None
+        self.selected = None # change and update selected
         self.outlineContainer.visible = False
         self.outlineContainer.update()
 
@@ -75,6 +75,7 @@ class DesignerSection(ft.UserControl):
             self.itemName = name
         
         if self.selected == None:
+            self.IManager.select(defualt_properties= self.IManager.defualt_properties,name= "")
             return
         self.show_outline()
         item_properties = {k:v[0] for k,v in item._Control__attrs.items()}
@@ -84,13 +85,14 @@ class DesignerSection(ft.UserControl):
     def on_pan_end(self, e: ft.DragEndEvent):
         if self.selected == None:
             return
+        
         self.show_outline()
 
     def on_pan_update(self, e: ft.DragUpdateEvent):
         if self.selected == None:
             return
         full_width = self.page.window_width * (3/5)
-        full_height = 1290 #self.page.window_height #1290
+        full_height = 1290 #self.page.window_height #1290 # issue is here 
         self.outlineContainer.visible = False
         self.outlineContainer.update()
         self.new_left = clamp(
@@ -103,7 +105,7 @@ class DesignerSection(ft.UserControl):
             0 + 5,
             full_height - (self.selected.height * 2) - 35,
         )
-        self.all_regions.update(
+        self.all_regions.update( # key us tommorow
             {
                 self.itemName: {
                     "begin_x": self.new_left,

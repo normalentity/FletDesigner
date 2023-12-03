@@ -10,9 +10,10 @@ ft.Container()
 
 
 class PropertiesToolbar(ft.UserControl):
-    def __init__(self, page,):
+    def __init__(self, page, manager):
         self.page = page
         super().__init__()
+        self.imanager = manager
         self.expand = int((1 + 0.2) * 5)
 
     def on_change(self, e):
@@ -73,6 +74,10 @@ class PropertiesToolbar(ft.UserControl):
     def close_dlg2(self, e):
         self.color_picker_modal2.open = False
         self.page.update()
+
+    def change(self, e: ft.ControlEvent, prop):
+        # add code to check and not allow for alphabets and soon
+        self.imanager.change_property(prop, e.control.value)
 
     def build(self):
         # (existing build code)
@@ -336,7 +341,8 @@ class PropertiesToolbar(ft.UserControl):
                 text_align=ft.alignment.center,
                 width=140,
                 hint_text= "Add Width",
-                border= ft.InputBorder.UNDERLINE
+                border= ft.InputBorder.UNDERLINE,
+                on_change= lambda e: self.change(e, "-w")
             ),
         )
         self.control_height = ft.Container(
@@ -344,7 +350,8 @@ class PropertiesToolbar(ft.UserControl):
                 text_align=ft.alignment.center,
                 width=140,
                 hint_text= "Add Height",
-                border= ft.InputBorder.UNDERLINE
+                border= ft.InputBorder.UNDERLINE,
+                on_change= lambda e: self.change(e, "-h")
             ),
         )
         self.control_opacity = ft.Container(
@@ -352,7 +359,9 @@ class PropertiesToolbar(ft.UserControl):
                 text_align=ft.alignment.center,
                 width=140,
                 hint_text= "Add Opacity",
-                border= ft.InputBorder.UNDERLINE
+                border= ft.InputBorder.UNDERLINE,
+                # ,
+                on_change= lambda e: self.change(e, "-o")
             ),
         )
         self.color_box = ft.Container( # why does it have two containers
