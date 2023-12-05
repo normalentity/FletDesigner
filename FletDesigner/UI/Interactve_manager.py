@@ -42,7 +42,8 @@ class IManager():
             if value := self.check_value('y', value):
                 self.object_controller.selected.height = value
         if prop == '-c':
-            self.object_controller.selected.bg_color = value
+            self.object_controller.selected.bgcolor = value # check if this exists
+            
         self.object_controller.selected.update()
         self.object_controller.show_outline()
     
