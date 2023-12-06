@@ -39,6 +39,7 @@ class PropertiesToolbar(ft.UserControl):
     def use_color(self, e):
         self.color_holder.bgcolor = self.color_picker.color
         self.hex_holder.content.value = self.color_picker.color
+        self.imanager.change_property('-c', self.color_picker.color)
         self.color_holder.update()
         self.hex_holder.content.update()
         self.color_picker_modal.open = False
