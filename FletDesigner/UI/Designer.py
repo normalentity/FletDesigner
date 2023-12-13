@@ -1,6 +1,5 @@
 import flet as ft
 from flet import Container, Row, Column, Text, TextButton, ElevatedButton
-from ..Parser.Parserengine import Parser
 from ..Parser.parser import ParserEngine
 import json
 from ..UI.ToolbarItem import ToolbarItem
