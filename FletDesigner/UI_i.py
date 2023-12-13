@@ -5,8 +5,13 @@ import time
 from .UI.DesignPage import DesignPage
 
 
-class Main:
-    def __init__(self, page: ft.Page) -> None:
+class MainDesigner:
+    def __init__(self, file_path:str) -> None:
+        self.file_path = file_path
+        ft.app(target=self.app)
+    
+    def app (self, page:ft.Page):
+        # Store the page as a class property
         self.page: ft.Page = page
 
         # Set Page Props
@@ -24,10 +29,8 @@ class Main:
     def routechange(self, e):
         page = self.page
         if page.route == "/design":
-            design_page = DesignPage()
+            design_page = DesignPage(
+                project_file_path=self.file_path
+            )
             page.views.append(design_page.build())
             page.update()
-
-
-if __name__ == "__main__":
-    ft.app(Main)

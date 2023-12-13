@@ -69,14 +69,18 @@ ALL_WIDGETS = [
         "padding",
         "border_radius",
         "border",
-        "content"
+        "content",
+        "color",
+        "value"
       ],
       "default": {
         "width": 80,
         "height": 80,
         "opacity": 1,
         "left": 200,
-        "top": 200
+        "top": 200,
+        "color": "white",
+        "value": "Hello, world!"
       }
     },
     "ElevatedButton": {
