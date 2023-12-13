@@ -1,5 +1,5 @@
-from FletDesigner.UI_i import Main
+from FletDesigner.UI_i import MainDesigner
 import flet
 
 
-flet.app(target=Main)
+MainDesigner(file_path="test.json")

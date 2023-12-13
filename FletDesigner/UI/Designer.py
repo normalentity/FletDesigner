@@ -1,6 +1,6 @@
 import flet as ft
 from flet import Container, Row, Column, Text, TextButton, ElevatedButton
-from ..Parser.Parserengine import Parser
+from ..Parser.parser import ParserEngine
 import json
 from ..UI.ToolbarItem import ToolbarItem
 from ..widgets.widgets import ALL_WIDGETS
@@ -13,8 +13,9 @@ def clamp(n, smallest, largest):
 
 
 class DesignerSection(ft.UserControl):
-    def __init__(self, imanager: IManager):
-        self.parser = Parser()
+    def __init__(self, imanager: IManager, project_file_path:str, parser_engine:ParserEngine):
+        self.parser_engine = parser_engine
+        # self.parser = Parser()
         self.IManager = imanager
         self.list_file = "widgets/widgets.json"
         self.all_controls = {}
@@ -119,6 +120,19 @@ class DesignerSection(ft.UserControl):
         self.selected.top = self.new_top
         self.selected.update()
 
+        # Edit & Update the Control Positioning Property via the Parser
+        self.parser_engine.edit_control_property(
+            control_uniqe_name=str(self.itemName),
+            property_name="top",
+            new_property_value=int(self.new_top)
+        )
+
+        self.parser_engine.edit_control_property(
+            control_uniqe_name=str(self.itemName),
+            property_name="left",
+            new_property_value=int(self.new_left)
+        )
+
     def accept_draggable(self, e: ft.DragTargetAcceptEvent):
         ctrlname = e.page.get_control(e.src_id)
         name = ctrlname.content.content.value
@@ -126,7 +140,6 @@ class DesignerSection(ft.UserControl):
             (item for item in self.control_definations if item.get(name)), None
         )
 
-        ft.ElevatedButton
         if control_data is None:
             print("Control will be added later")
             return
@@ -134,7 +147,9 @@ class DesignerSection(ft.UserControl):
         default_properties = control_data[name]["default"]
         object = globals()[name]
         object = object(**default_properties)
-        unique_name = f"container{self.control_counter}"
+
+        current_control_counter_number = self.parser_engine.get_new_control_counter_number()
+        unique_name = f"container{current_control_counter_number}"
         self.all_controls.update({unique_name: object})
         self.all_regions.update(
             {
@@ -146,15 +161,19 @@ class DesignerSection(ft.UserControl):
                 }
             }
         )
-        (
-            self.main_stack.controls.append(
-                list(self.all_controls.values())[self.control_counter - 1]
-            )
+        self.main_stack.controls.append(
+            list(self.all_controls.values())[current_control_counter_number-1]
         )
-        self.control_counter += 1
         e.control.update()
         self.main_stack.update()
         self.itemselection('', unique_name)
+
+        # Make The Parser Save This New Control.
+        self.parser_engine.add_new_control_to_content(
+            control_uniqe_name=str(unique_name),
+            control_dict=dict(control_data[name]["default"]),
+            control_class_name=str(name)
+        )
 
     def build(self):
         self.load_control_list()
@@ -182,4 +201,13 @@ class DesignerSection(ft.UserControl):
                 on_tap_up=self.itemselection,
             ),
         )
+
+        # Load the saved control to the deigner
+        self.parser_engine.load_content(designer_section_class=self)
+
+
         return self.DesignerSection1
+
+
+    def add_control_to_designer (self, control):
+        pass

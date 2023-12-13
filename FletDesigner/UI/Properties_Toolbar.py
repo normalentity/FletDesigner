@@ -10,16 +10,21 @@ ft.Container()
 
 
 class PropertiesToolbar(ft.UserControl):
-    def __init__(self, page, manager):
+    def __init__(self, page, manager, parser_engine):
         self.page = page
         super().__init__()
         self.imanager = manager
+        self.parser_engine = parser_engine
         self.expand = int((1 + 0.2) * 5)
 
     def on_change(self, e):
         self.selection_value = e.control.value
         if self.selection_value == "LinearGradient":
             pass
+    
+    def on_update_control_property (self, control_unique_name:str, property_name:str, property_value:str):
+        pass
+
 
     def open_alert_dlg(self, e):
         self.page.dialog = self.color_picker_modal
