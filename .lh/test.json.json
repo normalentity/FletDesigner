@@ -1,0 +1,38 @@
+{
+    "sourceFile": "test.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1702479531229,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1702479680929,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,7 @@\n {\n-    \"page_props\": {\n-        \"bgcolor\": \"black\",\n-        \"control_counter_number\": 3\n-    },\n-    \"widgets\": {\n-    }\n-}\n\\ No newline at end of file\n+  \"page_props\": {\n+    \"bgcolor\": \"black\",\n+    \"control_counter_number\": 3\n+  },\n+  \"widgets\": {}\n+}\n"
+                },
+                {
+                    "date": 1702479712933,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +0,0 @@\n-{\n-  \"page_props\": {\n-    \"bgcolor\": \"black\",\n-    \"control_counter_number\": 3\n-  },\n-  \"widgets\": {}\n-}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1702479722275,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,7 @@\n-\n+{\n+    \"page_props\": {\n+        \"bgcolor\": \"black\",\n+        \"control_counter_number\": 0\n+    },\n+    \"widgets\": {}\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1702480070365,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,17 +1,8 @@\n {\n     \"page_props\": {\n         \"bgcolor\": \"black\",\n-        \"control_counter_number\": 1\n+        \"control_counter_number\": 0\n     },\n     \"widgets\": {\n-        \"container1\": {\n-            \"width\": 300,\n-            \"height\": 200,\n-            \"opacity\": 1,\n-            \"bgcolor\": \"red\",\n-            \"left\": 432,\n-            \"top\": 398,\n-            \"control_type\": \"Container\"\n-        }\n     }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1702480101039,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,17 @@\n {\n     \"page_props\": {\n         \"bgcolor\": \"black\",\n-        \"control_counter_number\": \n+        \"control_counter_number\": 1\n     },\n     \"widgets\": {\n+        \"container1\": {\n+            \"width\": 300,\n+            \"height\": 200,\n+            \"opacity\": 1,\n+            \"bgcolor\": \"red\",\n+            \"left\": 432,\n+            \"top\": 398,\n+            \"control_type\": \"Container\"\n+        }\n     }\n }\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1702479531229,
+            "name": "Commit-0",
+            "content": "{\n    \"page_props\": {\n        \"bgcolor\": \"black\",\n        \"control_counter_number\": 3\n    },\n    \"widgets\": {\n    }\n}"
+        }
+    ]
+}

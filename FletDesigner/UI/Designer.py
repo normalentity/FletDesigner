@@ -13,7 +13,9 @@ def clamp(n, smallest, largest):
 
 
 class DesignerSection(ft.UserControl):
-    def __init__(self, imanager: IManager, project_file_path:str, parser_engine:ParserEngine):
+    def __init__(
+        self, imanager: IManager, project_file_path: str, parser_engine: ParserEngine
+    ):
         self.parser_engine = parser_engine
         # self.parser = Parser()
         self.IManager = imanager
@@ -22,6 +24,7 @@ class DesignerSection(ft.UserControl):
         self.all_regions = {}
         self.selected = None
         self.itemName = None
+        self.unique_name = None
         self.buttonDown = False
         self.outline_width = 3
         self.outlineContainer = ft.Container(
@@ -29,11 +32,11 @@ class DesignerSection(ft.UserControl):
         )
         self.control_counter = 1
         super().__init__()
-        self.expand = 3*5
+        self.expand = 3 * 5
 
     def load_control_list(self):
         self.supported_widgets = []
-        
+
         self.control_definations = ALL_WIDGETS
 
     def buttonDown1(self, e: ft.TapEvent):
@@ -57,8 +60,8 @@ class DesignerSection(ft.UserControl):
             return True
         return False
 
-    def itemselection(self, e: ft.TapEvent, created_name: str= None):
-        self.selected = None # change and update selected
+    def itemselection(self, e: ft.TapEvent, created_name: str = None):
+        self.selected = None  # change and update selected
         self.outlineContainer.visible = False
         self.outlineContainer.update()
 
@@ -74,39 +77,43 @@ class DesignerSection(ft.UserControl):
             item = self.all_controls.get(name)
             self.selected = item
             self.itemName = name
-        
+
         if self.selected == None:
-            self.IManager.select(defualt_properties= self.IManager.defualt_properties,name= "")
+            self.IManager.select(
+                defualt_properties=self.IManager.defualt_properties, name=""
+            )
             return
         self.show_outline()
-        item_properties = {k:v[0] for k,v in item._Control__attrs.items()}
-        self.IManager.select(defualt_properties = item_properties, name= name)
+        item_properties = {k: v[0] for k, v in item._Control__attrs.items()}
+        self.IManager.select(defualt_properties=item_properties, name=name)
         return
 
     def on_pan_end(self, e: ft.DragEndEvent):
         if self.selected == None:
             return
-        
+
         self.show_outline()
 
     def on_pan_update(self, e: ft.DragUpdateEvent):
         if self.selected == None:
             return
-        full_width = self.page.window_width * (3/5)
-        full_height = 1290 #self.page.window_height #1290 # issue is here 
+        full_width = self.page.window_width * (3 / 5)
+        full_height = 1290  # self.page.window_height #1290 # issue is here
         self.outlineContainer.visible = False
         self.outlineContainer.update()
+        # print(self.selected)
         self.new_left = clamp(
-            (self.selected.left or 0) + e.delta_x,
+            (self.selected.left if self.selected else 0) + e.delta_x,
             0 + 5,
-            full_width - self.selected.width - 5,
+            full_width - (self.selected.width if self.selected else 0) - 5,
         )
         self.new_top = clamp(
             (self.selected.top or 0) + e.delta_y,
             0 + 5,
             full_height - (self.selected.height * 2) - 35,
         )
-        self.all_regions.update( # key us tommorow
+        # print(self.itemName)
+        self.all_regions.update(  # key us tommorow
             {
                 self.itemName: {
                     "begin_x": self.new_left,
@@ -124,13 +131,13 @@ class DesignerSection(ft.UserControl):
         self.parser_engine.edit_control_property(
             control_uniqe_name=str(self.itemName),
             property_name="top",
-            new_property_value=int(self.new_top)
+            new_property_value=int(self.new_top),
         )
 
         self.parser_engine.edit_control_property(
             control_uniqe_name=str(self.itemName),
             property_name="left",
-            new_property_value=int(self.new_left)
+            new_property_value=int(self.new_left),
         )
 
     def accept_draggable(self, e: ft.DragTargetAcceptEvent):
@@ -148,12 +155,14 @@ class DesignerSection(ft.UserControl):
         object = globals()[name]
         object = object(**default_properties)
 
-        current_control_counter_number = self.parser_engine.get_new_control_counter_number()
-        unique_name = f"container{current_control_counter_number}"
-        self.all_controls.update({unique_name: object})
+        current_control_counter_number = (
+            self.parser_engine.get_new_control_counter_number()
+        )
+        self.unique_name = f"container{current_control_counter_number}"
+        self.all_controls.update({self.unique_name: object})
         self.all_regions.update(
             {
-                unique_name: {
+                self.unique_name: {
                     "begin_x": object.left,
                     "begin_y": object.top,
                     "end_x": object.left + object.width,
@@ -162,17 +171,17 @@ class DesignerSection(ft.UserControl):
             }
         )
         self.main_stack.controls.append(
-            list(self.all_controls.values())[current_control_counter_number-1]
+            list(self.all_controls.values())[current_control_counter_number - 1]
         )
         e.control.update()
         self.main_stack.update()
-        self.itemselection('', unique_name)
+        self.itemselection("", self.unique_name)
 
         # Make The Parser Save This New Control.
         self.parser_engine.add_new_control_to_content(
-            control_uniqe_name=str(unique_name),
+            control_uniqe_name=str(self.unique_name),
             control_dict=dict(control_data[name]["default"]),
-            control_class_name=str(name)
+            control_class_name=str(name),
         )
 
     def build(self):
@@ -180,20 +189,20 @@ class DesignerSection(ft.UserControl):
         self.main_stack = ft.Stack(
             controls=[
                 ft.Container(
-                    expand= True,
+                    expand=True,
                     border=ft.border.all(1.9, color="#383838"),
                     border_radius=ft.border_radius.all(8),
                     bgcolor=ft.colors.BLACK,
                 ),
                 self.outlineContainer,
             ],
-            expand= True,
+            expand=True,
         )
         self.DesignerSection1 = ft.DragTarget(
             group="widget",
             on_accept=self.accept_draggable,
             content=ft.GestureDetector(
-                expand= True,
+                expand=True,
                 content=self.main_stack,
                 on_tap_down=self.buttonDown1,
                 on_pan_update=self.on_pan_update,
@@ -205,9 +214,7 @@ class DesignerSection(ft.UserControl):
         # Load the saved control to the deigner
         self.parser_engine.load_content(designer_section_class=self)
 
-
         return self.DesignerSection1
 
-
-    def add_control_to_designer (self, control):
+    def add_control_to_designer(self, control):
         pass

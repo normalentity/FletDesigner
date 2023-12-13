@@ -1,0 +1,38 @@
+{
+    "sourceFile": "FletDesigner/example.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1702477771705,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1702477778639,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-from Pa import LoadDesignFile\n+from Parser.parser import LoadDesignFile\n import flet\n \n ldf = LoadDesignFile(jsonfilepath=\"request.json\")\n \n"
+                },
+                {
+                    "date": 1702477787873,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-from Parser.parser import LoadDesignFile\n+from Parser.parser import \n import flet\n \n ldf = LoadDesignFile(jsonfilepath=\"request.json\")\n \n"
+                },
+                {
+                    "date": 1702477941137,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-from Parser.parser import \n+from Parser.parser import C\n import flet\n \n ldf = LoadDesignFile(jsonfilepath=\"request.json\")\n \n"
+                },
+                {
+                    "date": 1702477948389,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,15 @@\n-from Parser.parser import C\n+from Parser.parser import ParserEngine\n import flet\n \n-ldf = LoadDesignFile(jsonfilepath=\"request.json\")\n+ldf = ParserEngine.LoadDesignFile(jsonfilepath=\"request.json\")\n \n \n def update1(e):\n     ldf.b1.text = \"update\"\n     ldf.b1.update()\n+\n+\n ldf.b1.on_click = update1\n \n \n def update12(e):\n"
+                },
+                {
+                    "date": 1702477953669,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n from Parser.parser import ParserEngine\n import flet\n \n-ldf = ParserEngine.LoadDesignFile(jsonfilepath=\"request.json\")\n+ldf = ParserEngine.load_content(jsonfilepath=\"request.json\")\n \n \n def update1(e):\n     ldf.b1.text = \"update\"\n"
+                }
+            ],
+            "date": 1702477771705,
+            "name": "Commit-0",
+            "content": "from Pa import LoadDesignFile\nimport flet\n\nldf = LoadDesignFile(jsonfilepath=\"request.json\")\n\n\ndef update1(e):\n    ldf.b1.text = \"update\"\n    ldf.b1.update()\nldf.b1.on_click = update1\n\n\ndef update12(e):\n    ldf.b12.text = \"update\"\n    ldf.b12.update()\n\n\nldf.b12.on_click = update12\nldf.run()\n\n\n# # # import the library\n# from fletsb import LoadStoryBoard, StoryBoard\nimport flet as ft\n"
+        }
+    ]
+}
