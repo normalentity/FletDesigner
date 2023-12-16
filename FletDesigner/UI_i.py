@@ -6,11 +6,11 @@ from .UI.DesignPage import DesignPage
 
 
 class MainDesigner:
-    def __init__(self, file_path:str) -> None:
+    def __init__(self, file_path: str) -> None:
         self.file_path = file_path
         ft.app(target=self.app)
-    
-    def app (self, page:ft.Page):
+
+    def app(self, page: ft.Page):
         # Store the page as a class property
         self.page: ft.Page = page
 
@@ -30,7 +30,8 @@ class MainDesigner:
         page = self.page
         if page.route == "/design":
             design_page = DesignPage(
-                project_file_path=self.file_path
+                project_file_path=self.file_path,
+                page=page,
             )
             page.views.append(design_page.build())
             page.update()

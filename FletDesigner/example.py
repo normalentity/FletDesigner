@@ -1,23 +1,18 @@
-from Parser.parser import ParserEngine
+from .Parser.LoadDesignFile import LoadDesignFile
 import flet
 
-ldf = ParserEngine.load_content(jsonfilepath="request.json")
+ldf = LoadDesignFile(jsonfilepath="test.json")
+
+then = None
 
 
-def update1(e):
-    ldf.b1.text = "update"
-    ldf.b1.update()
+def change_color(e):
+    ldf.container1.bgcolor = "blue"
+    ldf.container1.update()
 
 
-ldf.b1.on_click = update1
-
-
-def update12(e):
-    ldf.b12.text = "update"
-    ldf.b12.update()
-
-
-ldf.b12.on_click = update12
+ldf.container1.ink = True
+ldf.container1.on_click = change_color
 ldf.run()
 
 

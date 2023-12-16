@@ -1,17 +1,19 @@
 {
     "page_props": {
         "bgcolor": "black",
-        "control_counter_number": 1
+        "control_counter_number": 2
     },
     "widgets": {
         "container1": {
             "width": 300,
-            "height": 200,
+            "height": 250,
             "opacity": 1,
-            "bgcolor": "red",
-            "left": 463,
-            "top": 341,
-            "control_type": "Container"
+            "bgcolor": "#7316bd",
+            "left": 333,
+            "top": 430,
+            "control_type": "Container",
+            "border_radius": 12,
+            "gradient": {}
         }
     }
 }

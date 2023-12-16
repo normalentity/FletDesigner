@@ -12,19 +12,71 @@ ft.Container()
 class PropertiesToolbar(ft.UserControl):
     def __init__(self, page, manager, parser_engine):
         self.page = page
-        super().__init__()
+        self.object_controller = None
         self.imanager = manager
+        self.control_height = None
         self.parser_engine = parser_engine
+        super().__init__(self.parser_engine)
         self.expand = int((1 + 0.2) * 5)
 
-    def on_change(self, e):
+    def on_change_begin(self, e, control_name=None):
         self.selection_value = e.control.value
-        if self.selection_value == "LinearGradient":
-            pass
-    
-    def on_update_control_property (self, control_unique_name:str, property_name:str, property_value:str):
-        pass
 
+        if self.selection_value == "top_left":
+            self.selection_value = ft.alignment.top_left
+        if self.selection_value == "top_center":
+            self.selection_value = ft.alignment.top_center
+        if self.selection_value == "top_right":
+            self.selection_value = ft.alignment.top_right
+        if self.selection_value == "bottom_left":
+            self.selection_value = ft.alignment.bottom_left
+        if self.selection_value == "bottom_center":
+            self.selection_value = ft.alignment.bottom_center
+        if self.selection_value == "bottom_right":
+            self.selection_value = ft.alignment.bottom_right
+        if self.selection_value == "center_left":
+            self.selection_value = ft.alignment.center_left
+        if self.selection_value == "center_right":
+            self.selection_value = ft.alignment.center_right
+        if self.selection_value == "center":
+            self.selection_value = ft.alignment.center
+        self.imanager.change_property(
+            prop="-change_begin",
+            begin=self.selection_value,
+        )
+
+    def on_change_end(self, e, control_name=None):
+        self.selection_value = e.control.value
+        if self.selection_value == "top_left":
+            self.selection_value = ft.alignment.top_left
+        if self.selection_value == "top_center":
+            self.selection_value = ft.alignment.top_center
+        if self.selection_value == "top_right":
+            self.selection_value = ft.alignment.top_right
+        if self.selection_value == "bottom_left":
+            self.selection_value = ft.alignment.bottom_left
+        if self.selection_value == "bottom_center":
+            self.selection_value = ft.alignment.bottom_center
+        if self.selection_value == "bottom_right":
+            self.selection_value = ft.alignment.bottom_right
+        if self.selection_value == "center_left":
+            self.selection_value = ft.alignment.center_left
+        if self.selection_value == "center_right":
+            self.selection_value = ft.alignment.center_right
+        if self.selection_value == "center":
+            self.selection_value = ft.alignment.center
+
+        self.imanager.change_property(
+            prop="-change_end",
+            end=self.selection_value,
+        )
+
+    def change_rotation(self, e):
+        self.rotation = e.control.value
+        self.imanager.change_property(
+            prop="-rotation",
+            rotation=self.rotation,
+        )
 
     def open_alert_dlg(self, e):
         self.page.dialog = self.color_picker_modal
@@ -44,16 +96,17 @@ class PropertiesToolbar(ft.UserControl):
     def use_color(self, e):
         self.color_holder.bgcolor = self.color_picker.color
         self.hex_holder.content.value = self.color_picker.color
-        self.imanager.change_property('-c', self.color_picker.color)
+        self.imanager.change_property(prop="-c", value=self.color_picker.color)
         self.color_holder.update()
         self.hex_holder.content.update()
-        self.color_picker_modal.open = False
+        # self.color_picker_modal.open = False
         self.color_holder.update()
         self.page.update()
 
     def use_color_gradient(self, e):
         self.gradient_color_holder.bgcolor = self.color_picker1.color
         self.gradient_hex_holder.content.value = self.color_picker1.color
+        self.imanager.change_property(prop="-gc", value=self.color_picker1.color)
         self.gradient_color_holder.update()
         self.gradient_hex_holder.content.update()
         self.color_picker_modal1.open = False
@@ -63,11 +116,25 @@ class PropertiesToolbar(ft.UserControl):
     def use_color_gradient1(self, e):
         self.gradient_color_holder1.bgcolor = self.color_picker2.color
         self.gradient_hex_holder1.content.value = self.color_picker2.color
+        self.imanager.change_property(
+            prop="-gc", value_gradient=self.color_picker2.color
+        )
+
         self.gradient_color_holder1.update()
         self.gradient_hex_holder1.content.update()
         self.color_picker_modal2.open = False
         self.gradient_color_holder1.update()
         self.page.update()
+
+    def change_visibilty_gradient(self, e, value=None):
+        if self.gradient_switch.content.value == True:
+            self.imanager.change_property(prop="-gc")
+            self.cover_component.visible = True
+        elif self.gradient_switch.content.value == False:
+            self.imanager.change_property(prop="-gcr")
+            self.cover_component.visible = False
+        self.page.update()
+        self.cover_component.update()
 
     def close_dlg(self, e):
         self.color_picker_modal.open = False
@@ -83,7 +150,7 @@ class PropertiesToolbar(ft.UserControl):
 
     def change(self, e: ft.ControlEvent, prop):
         # add code to check and not allow for alphabets and soon
-        self.imanager.change_property(prop, e.control.value)
+        self.imanager.change_property(prop=prop, value=e.control.value)
 
     def build(self):
         # (existing build code)
@@ -101,18 +168,18 @@ class PropertiesToolbar(ft.UserControl):
             alignment=ft.alignment.center,
             content=ft.Text(value="Properties", size=20),
         )
-        
+
         # tight=True,
         # spacing=1,
-        heading_beign = ft.Container( # Be more specific 
+        heading_beign = ft.Container(  # Be more specific
             margin=ft.margin.all(10),
             content=ft.Text(value="Begin", size=15),
-            )
+        )
         heading_end = ft.Container(
             margin=ft.margin.all(10),
             content=ft.Text(value="End", size=15),
-            )
-        
+        )
+
         self.color_holder = ft.Container(
             width=20,
             height=20,
@@ -141,12 +208,15 @@ class PropertiesToolbar(ft.UserControl):
             # ink=True,
         )
 
-        self.color_picker = ColorPicker(color="#c8df6f", width=300)
+        self.color_picker = ColorPicker(color="#c8df6f", width=290)
+
         self.color_picker1 = ColorPicker(color="#c8df6f", width=300)
         self.color_picker2 = ColorPicker(color="#c8df6f", width=300)
         self.color_picker_modal = ft.AlertDialog(
             shape=ft.RoundedRectangleBorder(radius=6),
             content=self.color_picker,
+            modal=False,
+            on_dismiss=lambda e: print("Modal dialog dismissed!"),
             actions=[
                 ft.Container(
                     width=90,
@@ -239,7 +309,6 @@ class PropertiesToolbar(ft.UserControl):
             content=ft.Text(value="#ff0000", size=16)
         )
         self.hex_holder = ft.Container(content=ft.Text(value="#ff0000", size=16))
-        
 
         self.gradient_color_box = ft.Container(
             content=ft.Container(
@@ -270,13 +339,15 @@ class PropertiesToolbar(ft.UserControl):
                 label="Rotation",
                 width=120,
                 height=40,
+                on_change=self.change_rotation,
             ),
         )
- 
+
         self.gradient = ft.Container(
             content=ft.Dropdown(
                 width=170,
                 autofocus=False,
+                value="LinearGradient",
                 border_color="black",
                 border=ft.border.all(color="black", width=1),
                 hint_text="Choose Gradient Type",
@@ -285,7 +356,7 @@ class PropertiesToolbar(ft.UserControl):
                     ft.dropdown.Option(key="RadialGradient"),
                     ft.dropdown.Option(key="SweepGradient"),
                 ],
-                on_change=self.on_change,
+                # on_change=self.on_change,
             ),
         )
 
@@ -307,13 +378,14 @@ class PropertiesToolbar(ft.UserControl):
                     ft.dropdown.Option(key="top_right"),
                     ft.dropdown.Option(key="top_left"),
                 ],
-                on_change=self.on_change,
+                on_change=self.on_change_begin,
             ),
         )
         self.choose_end = ft.Container(
             content=ft.Dropdown(
                 width=170,
                 autofocus=False,
+                value="top_left",
                 border_color="black",
                 border=ft.border.all(color="black", width=1),
                 hint_text="Choose End",
@@ -328,49 +400,76 @@ class PropertiesToolbar(ft.UserControl):
                     ft.dropdown.Option(key="top_right"),
                     ft.dropdown.Option(key="top_left"),
                 ],
-                on_change=self.on_change,
+                on_change=self.on_change_end,
             ),
         )
-
-        
-        ft.Column()
 
         self.control_name_space = ft.Container(
             content=ft.TextField(
                 text_align=ft.alignment.center,
-                hint_text= "Add Name",
-                border= ft.InputBorder.UNDERLINE
+                hint_text="Add Name",
+                border=ft.InputBorder.UNDERLINE,
             ),
         )
         self.control_width = ft.Container(
             content=ft.TextField(
                 text_align=ft.alignment.center,
                 width=140,
-                hint_text= "Add Width",
-                border= ft.InputBorder.UNDERLINE,
-                on_change= lambda e: self.change(e, "-w")
+                hint_text="Add Width",
+                border=ft.InputBorder.UNDERLINE,
+                on_change=lambda e: self.change(e, "-w"),
             ),
         )
         self.control_height = ft.Container(
             content=ft.TextField(
                 text_align=ft.alignment.center,
                 width=140,
-                hint_text= "Add Height",
-                border= ft.InputBorder.UNDERLINE,
-                on_change= lambda e: self.change(e, "-h")
+                hint_text="Add Height",
+                border=ft.InputBorder.UNDERLINE,
+                on_change=lambda e: self.change(e, "-h"),
+            ),
+        )
+
+        self.control_border_radius = ft.Container(
+            content=ft.TextField(
+                text_align=ft.alignment.center,
+                width=140,
+                hint_text="Border Radius",
+                border=ft.InputBorder.UNDERLINE,
+                on_change=lambda e: self.change(e, "-b"),
             ),
         )
         self.control_opacity = ft.Container(
             content=ft.TextField(
                 text_align=ft.alignment.center,
                 width=140,
-                hint_text= "Add Opacity",
-                border= ft.InputBorder.UNDERLINE,
+                hint_text="Add Opacity",
+                border=ft.InputBorder.UNDERLINE,
                 # ,
-                on_change= lambda e: self.change(e, "-o")
+                on_change=lambda e: self.change(e, "-o"),
             ),
         )
-        self.color_box = ft.Container( # why does it have two containers
+        self.control_width_border = ft.Container(
+            content=ft.TextField(
+                text_align=ft.alignment.center,
+                width=140,
+                hint_text="Add Border Width",
+                border=ft.InputBorder.UNDERLINE,
+                # ,
+                on_change=lambda e: self.change(e, "-bw"),
+            ),
+        )
+        self.control_color_border = ft.Container(
+            content=ft.TextField(
+                text_align=ft.alignment.center,
+                width=140,
+                hint_text="Add Border Width",
+                border=ft.InputBorder.UNDERLINE,
+                # ,
+                on_change=lambda e: self.change(e, "-bc"),
+            ),
+        )
+        self.color_box = ft.Container(  # why does it have two containers
             content=ft.Container(
                 width=140,
                 height=30,
@@ -381,116 +480,150 @@ class PropertiesToolbar(ft.UserControl):
         )
         self.cover_component = ft.Container(
             width=460,
+            visible=False,
+            animate=ft.animation.Animation(
+                duration=10, curve=ft.animation.AnimationCurve.DECELERATE
+            ),
+            animate_opacity=200,
             border=ft.border.all(width=2, color="cyan"),
             height=400,
-            padding= ft.padding.all(10),
+            padding=ft.padding.all(10),
             content=ft.Column(
-                spacing= 0,
+                spacing=0,
                 controls=[
                     ft.Row(
-                        wrap= True,
+                        wrap=True,
                         controls=[
                             self.gradient,
                             self.control_rotation,
                         ],
-                        alignment= ft.MainAxisAlignment.SPACE_BETWEEN,
+                        alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
                     ),
-                    heading_beign, # Be more specific with the naming
+                    heading_beign,  # Be more specific with the naming
                     ft.Row(
-                        wrap= True,
+                        wrap=True,
                         controls=[
                             self.gradient_color_box,
                             self.choose_begin,
-                            
-                        ]
+                        ],
                     ),
                     heading_end,
                     ft.Row(
-                        wrap= True,
+                        wrap=True,
                         controls=[
                             self.gradient_color_box1,
                             self.choose_end,
-                            
-                        ]
-                    )
+                        ],
+                    ),
                 ],
                 scroll="always",
             ),
             border_radius=5,
         )
-        
+
         heading_Control_name = ft.Container(
             margin=ft.margin.all(10),
             content=ft.Column(
-                spacing= 0,
+                spacing=0,
                 controls=[
                     ft.Text(value="Control Name", size=15),
                     self.control_name_space,
-                ]
+                ],
             ),
         )
-        
+
         heading_width = ft.Container(
             margin=ft.margin.all(10),
             content=ft.Column(
-                spacing= 0,
+                spacing=0,
                 controls=[
                     ft.Text(value="Width", size=15),
                     self.control_width,
-                ]
+                ],
             ),
         )
         heading_height = ft.Container(
             margin=ft.margin.all(10),
             content=ft.Column(
-                spacing= 0,
+                spacing=0,
                 controls=[
                     ft.Text(value="Height", size=15),
                     self.control_height,
-                ]
+                ],
             ),
         )
         heading_opacity = ft.Container(
             margin=ft.margin.all(10),
             content=ft.Column(
-                spacing= 0,
+                spacing=0,
                 controls=[
                     ft.Text(value="Opacity", size=15),
                     self.control_opacity,
-                ]
+                ],
             ),
         )
-        
+
         heading_color = ft.Container(
             margin=ft.margin.all(10),
             content=ft.Column(
-                spacing= 5,
+                spacing=5,
                 controls=[
                     ft.Text(value="Color", size=15),
                     self.color_box,
-                ]
+                ],
             ),
         )
-        heading_gradient = ft.Container(
+        heading_border_radius = ft.Container(
             margin=ft.margin.all(10),
             content=ft.Column(
-                spacing= 5,
+                spacing=5,
                 controls=[
-                    ft.Text(value="Gradient", size=15),
-                    self.cover_component,
-                ]
+                    ft.Text(value="Border Radius", size=15),
+                    self.control_border_radius,
+                ],
             ),
         )
-        
+
+        self.gradient_switch = ft.Container(
+            # width=690,
+            # margin=ft.margin.only(top=2, left=160),
+            content=ft.Switch(
+                thumb_color=ft.colors.BLUE_100,
+                on_change=self.change_visibilty_gradient,
+                track_color=ft.colors.BLACK,
+            ),
+        )
+
+        heading_gradient = ft.Container(
+            margin=ft.margin.only(top=6),
+            content=ft.Column(
+                spacing=4,
+                controls=[
+                    ft.Column(
+                        controls=[
+                            ft.Row(
+                                spacing=3,
+                                controls=[
+                                    ft.Text(value="Gradient", size=15),
+                                    self.gradient_switch,
+                                ],
+                            )
+                        ]
+                    ),
+                    self.cover_component,
+                ],
+            ),
+        )
+
         # can use a for loop instead to reduce redundancy
         heading_grid = ft.GridView(
-            max_extent= 150,
-            child_aspect_ratio= 1.5,
+            max_extent=150,
+            child_aspect_ratio=1.5,
             controls=[
                 heading_height,
                 heading_width,
                 heading_opacity,
-            ]
+            ],
         )
 
         self.propertiesColumn.controls = [
@@ -498,6 +631,7 @@ class PropertiesToolbar(ft.UserControl):
             heading_Control_name,
             heading_grid,
             heading_color,
+            heading_border_radius,
             heading_gradient,
         ]
 
@@ -508,6 +642,7 @@ class PropertiesToolbar(ft.UserControl):
 
 def init_process():
     # Code to initialize each process if needed
+
     pass
 
 

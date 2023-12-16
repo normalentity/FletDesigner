@@ -1,0 +1,26 @@
+{
+    "sourceFile": "FletDesigner/Parser/LoadDesignFile.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1702566654104,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1702566686548,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,43 @@\n+import json\n+import flet as ft\n+from Parser.Parserengine import Parser\n+import typing\n+\n+\n+class LoadDesignFile:\n+    def __init__(\n+        self,\n+        jsonfilepath: str,\n+    ):\n+        self.__jsonfilepath = jsonfilepath\n+        self.__parser = Parser(jsonfilepath=self.__jsonfilepath)\n+        self.__parser.parse()\n+        self.__keys = self.__parser.keys\n+\n+    def __getattr__(self, name: str):\n+        try:\n+            return self.__keys[f\"{name}\"]\n+        except Exception as e:\n+            print(f\"There is no widget named '{name}\")\n+\n+    def __setattr__(self, name, value):\n+        # print(name[0:17])\n+        if name[0:17] == \"_LoadDesignFile__\":\n+            # print(\"hi\")\n+            super().__setattr__(name, value)\n+        else:\n+            self.__keys[f\"{name}\"] = value\n+\n+    def run(self):\n+        ft.app(target=self.ConstructPage)\n+\n+    def ConstructPage(self, page: ft.Page):\n+        # Initialization of the page\n+        self.__page = page\n+        for control in self.__keys.values():\n+            if not control.__dict__.get(\"isChild\"):\n+                self.__page.add(control)\n+        page.window_height = 800\n+        # page.theme = ft.theme.Theme(color_scheme_seed=\"cyan100\")\n+        page.update()\n+        page.window_width = 800\n"
+                },
+                {
+                    "date": 1702566701407,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import json\n import flet as ft\n-from Parser.Parserengine import Parser\n+from  import Parser\n import typing\n \n \n class LoadDesignFile:\n@@ -40,5 +40,4 @@\n         page.window_height = 800\n         # page.theme = ft.theme.Theme(color_scheme_seed=\"cyan100\")\n         page.update()\n         page.window_width = 800\n-/Users/nafayahmed/Downloads/FletDesigner/FletDesigner/Parser/LoadDesignfile.py\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1702566654104,
+            "name": "Commit-0",
+            "content": "/Users/nafayahmed/Downloads/FletDesigner/FletDesigner/Parser/LoadDesignfile.py"
+        }
+    ]
+}

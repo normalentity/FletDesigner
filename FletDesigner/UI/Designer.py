@@ -4,7 +4,10 @@ from ..Parser.parser import ParserEngine
 import json
 from ..UI.ToolbarItem import ToolbarItem
 from ..widgets.widgets import ALL_WIDGETS
-from ..UI.Interactve_manager import IManager
+from .Interactive_Manager import IManager
+
+
+global current_control_counter_number
 
 
 # ft.Draggable()
@@ -21,9 +24,11 @@ class DesignerSection(ft.UserControl):
         self.IManager = imanager
         self.list_file = "widgets/widgets.json"
         self.all_controls = {}
+        self.current_control_counter_number = 0
         self.all_regions = {}
         self.selected = None
         self.itemName = None
+        self.control_to_name = {}
         self.unique_name = None
         self.buttonDown = False
         self.outline_width = 3
@@ -31,6 +36,7 @@ class DesignerSection(ft.UserControl):
             border=ft.border.all(color=ft.colors.WHITE, width=self.outline_width),
         )
         self.control_counter = 1
+        global current_control_counter_number
         super().__init__()
         self.expand = 3 * 5
 
@@ -71,6 +77,8 @@ class DesignerSection(ft.UserControl):
                     item = self.all_controls.get(name)
                     self.selected = item
                     self.itemName = name
+                    self.unique_name = name
+                    print(f"Item selected: {self.unique_name}")
                     break
         else:
             name = created_name
@@ -80,12 +88,18 @@ class DesignerSection(ft.UserControl):
 
         if self.selected == None:
             self.IManager.select(
-                defualt_properties=self.IManager.defualt_properties, name=""
+                defualt_properties=self.IManager.defualt_properties,
+                name="",
+                unique_name=self.unique_name,
             )
+
             return
         self.show_outline()
         item_properties = {k: v[0] for k, v in item._Control__attrs.items()}
-        self.IManager.select(defualt_properties=item_properties, name=name)
+        print(item_properties)
+        self.IManager.select(
+            defualt_properties=item_properties, name=name, unique_name=self.unique_name
+        )
         return
 
     def on_pan_end(self, e: ft.DragEndEvent):
@@ -141,6 +155,7 @@ class DesignerSection(ft.UserControl):
         )
 
     def accept_draggable(self, e: ft.DragTargetAcceptEvent):
+        global current_control_counter_number
         ctrlname = e.page.get_control(e.src_id)
         name = ctrlname.content.content.value
         control_data = next(
@@ -154,12 +169,12 @@ class DesignerSection(ft.UserControl):
         default_properties = control_data[name]["default"]
         object = globals()[name]
         object = object(**default_properties)
-
         current_control_counter_number = (
             self.parser_engine.get_new_control_counter_number()
         )
         self.unique_name = f"container{current_control_counter_number}"
         self.all_controls.update({self.unique_name: object})
+
         self.all_regions.update(
             {
                 self.unique_name: {

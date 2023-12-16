@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 13,
+            "activePatchIndex": 15,
             "patches": [
                 {
                     "date": 1701444820807,
@@ -60,6 +60,14 @@
                 {
                     "date": 1701446402999,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,5 +28,6 @@\n             page.views.append(design_page.build())\n             page.update()\n \n \n-ft.app(target=Main)\n+if __name__ == \"__main__\":\n+    ft.app(Main)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1702614405266,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,37 @@\n+import flet as ft\n+import time\n+\n+# from ..FletDesigner.\n+from .UI.DesignPage import DesignPage\n+\n+\n+class MainDesigner:\n+    def __init__(self, file_path:str) -> None:\n+        self.file_path = file_path\n+        ft.app(target=self.app)\n+    \n+    def app (self, page:ft.Page):\n+        # Store the page as a class property\n+        self.page: ft.Page = page\n+\n+        # Set Page Props\n+        page.theme_mode = ft.ThemeMode.DARK\n+        page.bgcolor = ft.colors.BLACK\n+        page.window_maximized = True\n+\n+        # Set Page Events\n+        page.on_route_change = self.routechange\n+\n+        # Update page\n+        page.go(route=\"/design\")\n+        page.update()\n+\n+    def routechange(self, e):\n+        page = self.page\n+        if page.route == \"/design\":\n+            design_page = DesignPage(\n+                project_file_path=self.file_path\n+                p\n+            )\n+            page.views.append(design_page.build())\n+            page.update()\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1702614411271,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,8 +30,8 @@\n         page = self.page\n         if page.route == \"/design\":\n             design_page = DesignPage(\n                 project_file_path=self.file_path\n-                page=page\n+                page=page,\n             )\n             page.views.append(design_page.build())\n             page.update()\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1701444820807,
