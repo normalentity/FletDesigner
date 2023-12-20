@@ -21,7 +21,7 @@ class ParserEngine:
 
         # Experiance
         self.file_content: str = open(file_path, encoding="utf-8").read()
-        self.the_content = json.loads(self.file_content)
+        self.the_content: dict = json.loads(self.file_content)
         self.__control_counter = int(
             self.the_content["page_props"]["control_counter_number"]
         )
@@ -37,6 +37,14 @@ class ParserEngine:
     def load_content(self, designer_section_class):
         """Load the content into the canvas (designer)."""
         # Add the controls to the 'self.all_controls' of the designer_section_class
+        if self.is_content_empty == True:
+            self.edit_control_counter(value=0)
+            self.control_counter = 0
+        else:
+            if self.control_counter > len(self.the_content["widgets"]):
+                # If so, reduce the control counter to the number of widgets
+                self.edit_control_counter(len(self.the_content["widgets"]))
+                self.control_counter = len(self.the_content["widgets"])
         for ctrl in self.the_content["widgets"]:
             flet_cls = None
             properies = dict(self.the_content["widgets"][ctrl])
@@ -54,7 +62,6 @@ class ParserEngine:
                     begin = eval(gradient["begin"])
                     end = eval(gradient["end"])
                     color = gradient["color"]
-                    print(color)
                     properies["gradient"] = ft.LinearGradient(
                         begin=begin, end=end, colors=color
                     )
@@ -147,6 +154,12 @@ class ParserEngine:
         self.control_counter = self.control_counter + 1
         return self.control_counter
 
+    def edit_control_counter(self, value):
+        self.the_content["page_props"].update({"control_counter_number": value})
+        # self.control_counter = value
+
+        self.save_all()
+
     # Properties
     @property
     def is_content_empty(self):
@@ -170,5 +183,6 @@ class ParserEngine:
         self.the_content["page_props"]["control_counter_number"] = (
             self.the_content["page_props"]["control_counter_number"] + 1
         )
+
         self.__control_counter = new_value
         self.save_all()

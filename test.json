@@ -4,16 +4,14 @@
         "control_counter_number": 2
     },
     "widgets": {
-        "container1": {
+        "container2": {
             "width": 300,
-            "height": 250,
+            "height": 200,
             "opacity": 1,
-            "bgcolor": "#7316bd",
-            "left": 333,
-            "top": 430,
-            "control_type": "Container",
-            "border_radius": 12,
-            "gradient": {}
+            "bgcolor": "red",
+            "left": 265,
+            "top": 230,
+            "control_type": "Container"
         }
     }
 }

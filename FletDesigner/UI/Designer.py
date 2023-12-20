@@ -49,12 +49,21 @@ class DesignerSection(ft.UserControl):
         self.buttonDown = True
 
     def show_outline(self):
-        self.outlineContainer.left = self.selected.left - self.outline_width
-        self.outlineContainer.top = self.selected.top - self.outline_width
-        self.outlineContainer.width = self.selected.width + (self.outline_width * 2)
-        self.outlineContainer.height = self.selected.height + (self.outline_width * 2)
-        self.outlineContainer.visible = True
-        self.outlineContainer.update()
+        if self.selected is not None:
+            self.outlineContainer.left = self.selected.left - self.outline_width
+            self.outlineContainer.top = self.selected.top - self.outline_width
+            self.outlineContainer.width = self.selected.width + (self.outline_width * 2)
+            self.outlineContainer.height = self.selected.height + (
+                self.outline_width * 2
+            )
+            self.outlineContainer.visible = True
+            self.outlineContainer.update()
+        if self.selected is None:
+            self.IManager.select(
+                defualt_properties=self.IManager.defualt_properties,
+                name="",
+                unique_name=self.unique_name,
+            )
 
     def isInRange(self, x, y, region):
         if (
@@ -68,6 +77,7 @@ class DesignerSection(ft.UserControl):
 
     def itemselection(self, e: ft.TapEvent, created_name: str = None):
         self.selected = None  # change and update selected
+        # if self.selected is not None:
         self.outlineContainer.visible = False
         self.outlineContainer.update()
 
@@ -81,25 +91,29 @@ class DesignerSection(ft.UserControl):
                     print(f"Item selected: {self.unique_name}")
                     break
         else:
+            # print("No item selected")
             name = created_name
             item = self.all_controls.get(name)
             self.selected = item
             self.itemName = name
 
-        if self.selected == None:
+            if self.selected == None:
+                print("No item selected")
+            #     self.IManager.select(
+            #         defualt_properties=self.IManager.defualt_properties,
+            #         name="",
+            #         unique_name=self.unique_name,
+            #     )
+
+            # return
+        self.show_outline()
+        if self.selected is not None:
+            item_properties = {k: v[0] for k, v in item._Control__attrs.items()}
             self.IManager.select(
-                defualt_properties=self.IManager.defualt_properties,
-                name="",
+                defualt_properties=item_properties,
+                name=name,
                 unique_name=self.unique_name,
             )
-
-            return
-        self.show_outline()
-        item_properties = {k: v[0] for k, v in item._Control__attrs.items()}
-        print(item_properties)
-        self.IManager.select(
-            defualt_properties=item_properties, name=name, unique_name=self.unique_name
-        )
         return
 
     def on_pan_end(self, e: ft.DragEndEvent):

@@ -83,6 +83,11 @@ class PropertiesToolbar(ft.UserControl):
         self.color_picker_modal.open = True
         self.page.update()
 
+    def Delete(self, e):
+        self.imanager.change_property(
+            prop="-del",
+        )
+
     def open_alert_dlg1(self, e):
         self.page.dialog = self.color_picker_modal1
         self.color_picker_modal1.open = True
@@ -130,6 +135,7 @@ class PropertiesToolbar(ft.UserControl):
         if self.gradient_switch.content.value == True:
             self.imanager.change_property(prop="-gc")
             self.cover_component.visible = True
+            # self.DeleteButton.margin = ft.margin.only(top=200)
         elif self.gradient_switch.content.value == False:
             self.imanager.change_property(prop="-gcr")
             self.cover_component.visible = False
@@ -615,6 +621,28 @@ class PropertiesToolbar(ft.UserControl):
             ),
         )
 
+        self.DeleteButton = ft.Container(
+            width=500,
+            visible=True,
+            # animate=ft.animation.Animation("400", "decelerate"),
+            # animate_positio=200,
+            alignment=ft.alignment.center,
+            height=39,
+            margin=ft.margin.only(top=400),
+            content=ft.Column(
+                horizontal_alignment="center",
+                controls=[
+                    ft.ElevatedButton(
+                        color=ft.colors.BLACK54,
+                        text="Delete",
+                        width=150,
+                        height=39,
+                        on_click=self.Delete,
+                    )
+                ],
+            ),
+        )
+
         # can use a for loop instead to reduce redundancy
         heading_grid = ft.GridView(
             max_extent=150,
@@ -633,6 +661,7 @@ class PropertiesToolbar(ft.UserControl):
             heading_color,
             heading_border_radius,
             heading_gradient,
+            self.DeleteButton,
         ]
 
         self.propertiesContainer.content = self.propertiesColumn
@@ -640,28 +669,28 @@ class PropertiesToolbar(ft.UserControl):
         return self.propertiesContainer
 
 
-def init_process():
-    # Code to initialize each process if needed
+# def init_process():
+#     # Code to initialize each process if needed
 
-    pass
-
-
-def build_and_run(page):
-    properties_toolbar = PropertiesToolbar(page)
-    properties_container = properties_toolbar.build()
-
-    # Additional code to set up the rest of your application
-
-    # ft.run(page)
+#     pass
 
 
-if __name__ == "__main__":
-    # Create a multiprocessing.Pool
-    with multiprocessing.Pool(
-        processes=multiprocessing.cpu_count(), initializer=init_process
-    ) as pool:
-        # Create a page for each process
-        pages = [ft.Page() for _ in range(pool._processes)]
+# def build_and_run(page):
+#     properties_toolbar = PropertiesToolbar(page)
+#     properties_container = properties_toolbar.build()
 
-        # Use multiprocessing.Pool to run the build_and_run function for each process
-        pool.map(build_and_run, pages)
+#     # Additional code to set up the rest of your application
+
+#     # ft.run(page)
+
+
+# if __name__ == "__main__":
+#     # Create a multiprocessing.Pool
+#     with multiprocessing.Pool(
+#         processes=multiprocessing.cpu_count(), initializer=init_process
+#     ) as pool:
+#         # Create a page for each process
+#         pages = [ft.Page() for _ in range(pool._processes)]
+
+#         # Use multiprocessing.Pool to run the build_and_run function for each process
+#         pool.map(build_and_run, pages)
