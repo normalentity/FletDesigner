@@ -165,6 +165,7 @@ class PropertiesToolbar(ft.UserControl):
             height=1200,
             bgcolor=ft.colors.with_opacity(opacity=0.6, color=ft.colors.BLACK45),
             border_radius=ft.border_radius.all(15),
+            visible=False,
         )
 
         self.propertiesColumn = ft.Column(scroll="always")
@@ -415,6 +416,7 @@ class PropertiesToolbar(ft.UserControl):
                 text_align=ft.alignment.center,
                 hint_text="Add Name",
                 border=ft.InputBorder.UNDERLINE,
+                on_change=lambda e: self.change(e, "-ctrlname"),
             ),
         )
         self.control_width = ft.Container(

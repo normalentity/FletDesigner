@@ -4,13 +4,13 @@
         "control_counter_number": 2
     },
     "widgets": {
-        "container2": {
+        "junaid": {
             "width": 300,
             "height": 200,
             "opacity": 1,
             "bgcolor": "red",
-            "left": 265,
-            "top": 230,
+            "left": 200,
+            "top": 200,
             "control_type": "Container"
         }
     }

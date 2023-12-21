@@ -88,7 +88,6 @@ class DesignerSection(ft.UserControl):
                     self.selected = item
                     self.itemName = name
                     self.unique_name = name
-                    print(f"Item selected: {self.unique_name}")
                     break
         else:
             # print("No item selected")
@@ -97,15 +96,14 @@ class DesignerSection(ft.UserControl):
             self.selected = item
             self.itemName = name
 
-            if self.selected == None:
-                print("No item selected")
-            #     self.IManager.select(
-            #         defualt_properties=self.IManager.defualt_properties,
-            #         name="",
-            #         unique_name=self.unique_name,
-            #     )
+            # # if self.selected == None:
+            # #     self.IManager.select(
+            # #         defualt_properties=self.IManager.defualt_properties,
+            # #         name="",
+            # #         unique_name=self.unique_name,
+            # #     )
 
-            # return
+            # # return
         self.show_outline()
         if self.selected is not None:
             item_properties = {k: v[0] for k, v in item._Control__attrs.items()}

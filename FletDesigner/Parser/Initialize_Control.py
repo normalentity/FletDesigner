@@ -20,21 +20,6 @@ class Parser:
             del val["top"]
             control = ft.Container(**val)
 
-            # control.width = val["width"]
-            # control.opacity = val["opacity"]
-            # control.height = val["height"]
-            # control.bgcolor = val["bgcolor"]
-            # control.border_radius = ft.border_radius.all(val["border_radius"])
-            # self.padding = val.get("padding")
-            # if self.padding is not None:
-            #     left = val["padding"]["left"]
-            #     right = val["padding"]["right"]
-            #     bottom = val["padding"]["bottom"]
-            #     top = val["padding"]["top"]
-            #     control.padding = ft.padding.only(
-            #         left=left, right=right, bottom=bottom, top=top
-            #     )
-
             if parent is None:
                 self.keys[f"{key}"] = control
             else:

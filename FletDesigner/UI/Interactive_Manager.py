@@ -36,11 +36,13 @@ class IManager:
         self.defualt_properties11 = defualt_properties
         # if defualt_properties == None:
         if self.object_controller.selected is None:
+            self.detail.propertiesContainer.visible = False
             self.detail.control_width.content.value = width
             self.detail.control_height.content.value = heigth
             self.detail.control_opacity.content.value = opacity
             # self.color_box,
         else:
+            self.detail.propertiesContainer.visible = True
             self.detail.control_width.content.value = defualt_properties[
                 "width"
             ]  # could change this to use controlrefs instea
@@ -284,6 +286,27 @@ class IManager:
             if self.object_controller.selected is not None:
                 self.object_controller.selected.gradient.rotation = rotation
                 self.object_controller.selected.update()
+        if prop == "-ctrlname":
+            if (
+                str(self.object_controller.unique_name)
+                in self.parser_engine.the_content["widgets"]
+            ):
+                # Check if the new key already exists in the widgets dictionary
+                if value in self.parser_engine.the_content["widgets"]:
+                    print(f"Key {value} already exists in widgets dictionary.")
+                else:
+                    self.parser_engine.the_content["widgets"][
+                        value
+                    ] = self.parser_engine.the_content["widgets"].pop(
+                        str(self.object_controller.unique_name)
+                    )
+                    # Update the unique_name attribute of the object_controller
+                    self.object_controller.unique_name = value
+            else:
+                print(
+                    f"Key {str(self.object_controller.unique_name)} not found in widgets dictionary."
+                )
+            self.parser_engine.save_all()
 
     def check_value(self, region="x", value="0"):
         if value.isnumeric():
