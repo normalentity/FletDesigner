@@ -1,6 +1,6 @@
 from ..tools.create_new_file import create_new_file
 import os, json, flet as ft
-from ..UI.Properties_Toolbar import PropertiesToolbar
+from ..UI.Properties_Toolbar import ContainerPropertiesToolbar
 from flet import Alignment
 
 
@@ -8,7 +8,7 @@ class ParserEngine:
 
     """The Parser Engine is the one that responsible for saving & Editing the canvas content. It have an automatic saver built-in."""
 
-    properties_class: PropertiesToolbar = None
+    properties_class: ContainerPropertiesToolbar = None
     manager = None
 
     def __init__(self, file_path: str) -> None:
@@ -54,7 +54,6 @@ class ParserEngine:
             if gradient == {}:
                 del properies["gradient"]
                 gradient = None
-                # self.manager.change_property(prop="-cfg", value=False)
 
             if gradient is not None:
                 gradient_str = properies.get("gradient")
@@ -105,26 +104,6 @@ class ParserEngine:
             "control_type"
         ] = control_class_name
         self.save_all()
-
-    # def parse_gradient(self, gradient_str):
-    #     # Remove the 'ft.LinearGradient' from the start and the parentheses from the ends
-    #     gradient_str = gradient_str.replace("ft.LinearGradient(", "")[:-1]
-
-    #     # Split the string into components
-    #     components = gradient_str.split(",")
-
-    #     # Parse each component
-    #     begin = eval(components[0].split("=")[1])
-    #     end = eval(components[1].split("=")[1])
-
-    #     # The color component is a list, so it might be split into multiple components
-    #     # Join all components from the third one onwards into a single string, and evaluate it to get the color list
-    #     color_str = ",".join(components[2:]).split("=")[1]
-    #     # color_str = color_str.replace("#", "'#").replace(",", "',")[:-1] + "']"
-    #     color = eval(color_str.strip())
-
-    #     # Return the ft.LinearGradient object
-    #     return ft.LinearGradient(begin=begin, end=end, colors=color)
 
     def edit_control_property(
         self, control_uniqe_name: str, property_name: str, new_property_value=None

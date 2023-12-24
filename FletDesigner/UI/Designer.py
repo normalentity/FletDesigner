@@ -5,6 +5,7 @@ import json
 from ..UI.ToolbarItem import ToolbarItem
 from ..widgets.widgets import ALL_WIDGETS
 from .Interactive_Manager import IManager
+from pynput import keyboard
 
 
 global current_control_counter_number
@@ -22,11 +23,17 @@ class DesignerSection(ft.UserControl):
         self.parser_engine = parser_engine
         # self.parser = Parser()
         self.IManager = imanager
+        self.name = None
         self.list_file = "widgets/widgets.json"
         self.all_controls = {}
         self.current_control_counter_number = 0
         self.all_regions = {}
+        self.listener = keyboard.Listener(
+            on_press=self.on_press, on_release=self.on_release
+        )
+        self.listener.start()
         self.selected = None
+        self.ctrl_pressed = None
         self.itemName = None
         self.control_to_name = {}
         self.unique_name = None
@@ -44,6 +51,16 @@ class DesignerSection(ft.UserControl):
         self.supported_widgets = []
 
         self.control_definations = ALL_WIDGETS
+
+    def on_press(self, key):
+        if key == keyboard.Key.ctrl:
+            self.ctrl_pressed = True
+
+    def on_release(self, key):
+        if key == keyboard.Key.ctrl:
+            self.ctrl_pressed = False
+
+    # Listen for the ctrl key press and release events
 
     def buttonDown1(self, e: ft.TapEvent):
         self.buttonDown = True
@@ -90,20 +107,11 @@ class DesignerSection(ft.UserControl):
                     self.unique_name = name
                     break
         else:
-            # print("No item selected")
             name = created_name
             item = self.all_controls.get(name)
             self.selected = item
             self.itemName = name
 
-            # # if self.selected == None:
-            # #     self.IManager.select(
-            # #         defualt_properties=self.IManager.defualt_properties,
-            # #         name="",
-            # #         unique_name=self.unique_name,
-            # #     )
-
-            # # return
         self.show_outline()
         if self.selected is not None:
             item_properties = {k: v[0] for k, v in item._Control__attrs.items()}
@@ -115,9 +123,6 @@ class DesignerSection(ft.UserControl):
         return
 
     def on_pan_end(self, e: ft.DragEndEvent):
-        if self.selected == None:
-            return
-
         self.show_outline()
 
     def on_pan_update(self, e: ft.DragUpdateEvent):
@@ -127,16 +132,15 @@ class DesignerSection(ft.UserControl):
         full_height = 1290  # self.page.window_height #1290 # issue is here
         self.outlineContainer.visible = False
         self.outlineContainer.update()
-        # print(self.selected)
         self.new_left = clamp(
             (self.selected.left if self.selected else 0) + e.delta_x,
             0 + 5,
-            full_width - (self.selected.width if self.selected else 0) - 5,
+            full_width - (self.selected.width * 0.92) - 5,
         )
         self.new_top = clamp(
             (self.selected.top or 0) + e.delta_y,
             0 + 5,
-            full_height - (self.selected.height * 2) - 35,
+            full_height - (self.selected.height * 1.75) - 35,
         )
         # print(self.itemName)
         self.all_regions.update(  # key us tommorow
@@ -152,6 +156,7 @@ class DesignerSection(ft.UserControl):
         self.selected.left = self.new_left
         self.selected.top = self.new_top
         self.selected.update()
+        # print(self.ctrl_pressed)
 
         # Edit & Update the Control Positioning Property via the Parser
         self.parser_engine.edit_control_property(
@@ -169,22 +174,25 @@ class DesignerSection(ft.UserControl):
     def accept_draggable(self, e: ft.DragTargetAcceptEvent):
         global current_control_counter_number
         ctrlname = e.page.get_control(e.src_id)
-        name = ctrlname.content.content.value
+        self.name = ctrlname.content.content.value
         control_data = next(
-            (item for item in self.control_definations if item.get(name)), None
+            (item for item in self.control_definations if item.get(self.name)), None
         )
+
+        self.IManager.nmn = self.name
 
         if control_data is None:
             print("Control will be added later")
             return
         self.load_control_list()
-        default_properties = control_data[name]["default"]
-        object = globals()[name]
+        default_properties = control_data[self.name]["default"]
+        object = globals()[self.name]
         object = object(**default_properties)
         current_control_counter_number = (
             self.parser_engine.get_new_control_counter_number()
         )
-        self.unique_name = f"container{current_control_counter_number}"
+        self.unique_name = f"{self.name}{current_control_counter_number}"
+        # print(self.unique_name)
         self.all_controls.update({self.unique_name: object})
 
         self.all_regions.update(
@@ -207,8 +215,8 @@ class DesignerSection(ft.UserControl):
         # Make The Parser Save This New Control.
         self.parser_engine.add_new_control_to_content(
             control_uniqe_name=str(self.unique_name),
-            control_dict=dict(control_data[name]["default"]),
-            control_class_name=str(name),
+            control_dict=dict(control_data[self.name]["default"]),
+            control_class_name=str(self.name),
         )
 
     def build(self):

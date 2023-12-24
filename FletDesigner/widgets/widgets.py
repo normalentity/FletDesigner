@@ -27,7 +27,6 @@ ALL_WIDGETS = [
                 "opacity",
                 "bgcolor",
                 "padding",
-                "border_radius",
                 "border",
                 "content",
             ],

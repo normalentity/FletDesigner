@@ -1,0 +1,22 @@
+{
+    "sourceFile": "FletDesigner/UI/menu_button.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1703402945866,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1703415692321,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,33 @@\n+from math import pi\n+from typing import Optional\n+\n+from flet import Container, Control, Row, Text, padding\n+\n+\n+class MenuButton(Container):\n+    def __init__(\n+        self, title: str, icon: Optional[Control] = None, selected: bool = False\n+    ):\n+        super().__init__()\n+        self.icon = icon\n+        self.title = title\n+        self._selected = selected\n+        self.padding = padding.only(left=43)\n+        self.height = 38\n+        self.border_radius = 4\n+        self.ink = True\n+        self.on_click = self.item_click\n+\n+    def item_click(self, _):\n+        pass\n+\n+    def _build(self):\n+        row = Row()\n+        if self.icon != None:\n+            row.controls.append(self.icon)\n+        row.controls.append(Text(self.title))\n+        self.content = row\n+\n+    def _before_build_command(self):\n+        self.bgcolor = \"surfacevariant\" if self._selected else None\n+        super()._before_build_command()\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1703402945866,
+            "name": "Commit-0",
+            "content": "           from math import pi\nfrom typing import Optional\n\nfrom flet import Container, Control, Row, Text, padding\n\n\nclass MenuButton(Container):\n    def __init__(\n        self, title: str, icon: Optional[Control] = None, selected: bool = False\n    ):\n        super().__init__()\n        self.icon = icon\n        self.title = title\n        self._selected = selected\n        self.padding = padding.only(left=43)\n        self.height = 38\n        self.border_radius = 4\n        self.ink = True\n        self.on_click = self.item_click\n\n    def item_click(self, _):\n        pass\n\n    def _build(self):\n        row = Row()\n        if self.icon != None:\n            row.controls.append(self.icon)\n        row.controls.append(Text(self.title))\n        self.content = row\n\n    def _before_build_command(self):\n        self.bgcolor = \"surfacevariant\" if self._selected else None\n        super()._before_build_command()"
+        }
+    ]
+}

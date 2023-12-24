@@ -1,4 +1,8 @@
-from .Properties_Toolbar import PropertiesToolbar
+from .Properties_Toolbar import (
+    ContainerPropertiesToolbar,
+    ElevatedButtonPropertiesToolbar,
+)
+
 from ..Parser.parser import ParserEngine
 import flet as ft
 
@@ -7,17 +11,22 @@ import flet as ft
 
 
 class IManager:
-    detail: PropertiesToolbar = None
     object_controller = None
+    # detail
+    eb: ContainerPropertiesToolbar = None
     defualt_properties = {
         "width": "",
         "height": "",
         "opacity": "",
         "bg_color": "",
     }  # properties add them
+    page = None
 
     def __init__(self, parser_engine: ParserEngine) -> None:
         self.parser_engine = parser_engine
+        self.detail: ContainerPropertiesToolbar = ContainerPropertiesToolbar(
+            manager=self, parser_engine=self.parser_engine, page=self.page
+        )
 
     # def submit(self, e):
     #     self.defualt_properties.u
@@ -32,8 +41,10 @@ class IManager:
         defualt_properties=None,
         name=None,
         unique_name=None,
+        # nmn=None,
     ):
         self.defualt_properties11 = defualt_properties
+
         # if defualt_properties == None:
         if self.object_controller.selected is None:
             self.detail.propertiesContainer.visible = False
@@ -42,6 +53,28 @@ class IManager:
             self.detail.control_opacity.content.value = opacity
             # self.color_box,
         else:
+            old_detail = self.detail
+            if isinstance(self.object_controller.selected, ft.ElevatedButton):
+                self.detail = ElevatedButtonPropertiesToolbar(
+                    manager=self, parser_engine=self.parser_engine, page=self.page
+                )
+
+                # self.object_controller.selected.disabled = False
+                self.eb.update_displayarea()
+                self.page.update()
+            if isinstance(self.object_controller.selected, ft.Container):
+                self.detail = ContainerPropertiesToolbar(
+                    manager=self, parser_engine=self.parser_engine, page=self.page
+                )
+                # self.detail.update()
+
+                self.eb.update_displayarea()
+                self.page.update()
+
+            self.detail.update()
+            self.page.update()
+            # self.eb.propertiesContainer.visible = True
+            # if nmn=="El"
             self.detail.propertiesContainer.visible = True
             self.detail.control_width.content.value = defualt_properties[
                 "width"
@@ -147,7 +180,10 @@ class IManager:
                 self.parser_engine.control_counter = (
                     self.parser_engine.control_counter - 1
                 )
-                # self.parser_engine.edit_control_counter(value=-1)
+
+                self.detail.propertiesContainer.visible = False
+                self.detail.propertiesContainer.update()
+                
 
         if prop == "-h":
             if self.object_controller.selected is not None:
@@ -163,12 +199,19 @@ class IManager:
         if prop == "-c":
             if self.object_controller.selected is not None:
                 self.object_controller.selected.bgcolor = value  # check if this exists
+                if isinstance(self.object_controller.selected, ft.ElevatedButton):
+                    self.object_controller.selected.disabled = False
                 self.parser_engine.edit_control_property(
                     control_uniqe_name=self.object_controller.unique_name,
                     property_name="bgcolor",
                     new_property_value=value,
                 )
 
+                self.object_controller.selected.update()
+                self.object_controller.show_outline()
+                if isinstance(self.object_controller.selected, ft.ElevatedButton):
+                    self.object_controller.selected.disabled = True
+                self.detail.hex_holder.content.value = value
                 self.object_controller.selected.update()
                 self.object_controller.show_outline()
         if prop == "-b":
@@ -231,12 +274,8 @@ class IManager:
                 self.object_controller.selected.update()
                 self.detail.gradient_hex_holder.content.value = self.color1
                 self.detail.gradient_hex_holder1.content.value = self.color2
-                self.detail.gradient_color_holder.bgcolor = self.color1
-                self.detail.gradient_color_holder1.bgcolor = self.color2
                 self.detail.gradient_hex_holder.update()
                 self.detail.gradient_hex_holder1.update()
-                self.detail.gradient_color_holder.update()
-                self.detail.gradient_color_holder1.update()
                 self.object_controller.selected.update()
                 self.object_controller.show_outline()
         if prop == "-gcr":
@@ -286,6 +325,15 @@ class IManager:
             if self.object_controller.selected is not None:
                 self.object_controller.selected.gradient.rotation = rotation
                 self.object_controller.selected.update()
+        if prop == "-t":
+            if self.object_controller.selected is not None:
+                self.object_controller.selected.text = value
+                self.object_controller.selected.update()
+                self.parser_engine.edit_control_property(
+                    control_uniqe_name=self.object_controller.unique_name,
+                    property_name="text",
+                    new_property_value=value,
+                )
         if prop == "-ctrlname":
             if (
                 str(self.object_controller.unique_name)
